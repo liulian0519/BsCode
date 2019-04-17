@@ -1,0 +1,125 @@
+@import "basic.less";
+
+/** 登录模态框样式 */
+.modal-backdrop.fade.in{
+    z-index: 0;
+}
+.modal{
+
+    .modal-content{
+        width: 400px;
+        // height: 520px;
+        .login-close{
+            margin: 15px;
+            outline: none;
+        }
+    }
+    .panel-tab{
+        margin: 0 auto;
+        text-align: left;
+        .title{
+            padding-left: 40px;
+            margin: 20px auto;
+            .f1{
+                font-size: 20px;
+                color: @placeholder-color;
+                font-weight: 700;
+            }
+            .title-text{
+                color: #9399a5;
+                padding: 10px 0 20px 0;
+                line-height: 1;
+                font-size: 14px;
+            }
+        }
+        .login-content{
+            padding-right: 35px;
+            ul{
+                list-style: none;
+            }
+            li{
+                color: #9399a5;
+                clear: both;
+                height: 50px;
+                position: relative;
+             
+                .the-input{
+                    border: none;
+                    line-height: 47px;
+                    color: @placeholder-color;
+                    font-size: 14px;
+                    padding-left: 16px;
+                    outline: 0;
+                }
+                .send_verify_code{
+                    text-decoration: none;
+                    color: @placeholder-color;
+                    float: right;
+                    font-size: 16px;
+                    padding: 0 16px;
+                    border-left: 1px solid @border-color;
+                    line-height: 50px;
+                }
+               
+              
+            }
+            .verify-code{
+                width: 125px;
+            }
+            
+        
+            .border-t{
+                border: 1px solid @border-color;
+                border-radius: 2px 2px 0 0;
+            }
+            .border-m{
+                margin-top: -1px;
+                padding: 0;
+                border: 1px solid @border-color;
+            }
+            .border-c{
+                border: 1px solid @border-color;
+                border-top: none;
+                border-radius: 0 0 2px 2px;
+                .btn{
+                    &:hover{
+                        color: #3072f6;
+                    }
+                    &:active{
+                        box-shadow: inset 0 3px 5px rgba(0,0,0,0);
+                    }
+                }
+            }
+            .login-error{
+                color: @error-color;
+                padding: 24px 0 10px 40px;
+                line-height: 14px;
+            }
+            .input-error{
+                border-color: @error-color !important;
+                margin-bottom: 1px;
+            }
+            .btn-login{
+                background-color: @primary-color;
+                width: 323px;
+                margin: 30px 0px 10px 40px;
+                &:hover{
+                    opacity: .9;
+
+                }
+            }
+            .btn:hover{
+                color: #fff
+            }
+            .etc{
+                p{
+                    font-size: @text-size-um;
+                    color: #AAA;
+                    padding-left: 40px;
+                    margin: 20px 0;
+                }
+            }
+          
+        }
+    }
+}

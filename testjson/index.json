@@ -1,0 +1,123 @@
+[
+    {
+        "greenTitle":"二手好房",
+        "greenDesc":"好房源那么多我们为你精选",
+        "newTitle":"优选新房",
+        "newDesc":"真实信息准确同步，楼盘动态一手掌握",
+        "rootTitle":"品质租房",
+        "rootDesc":"高品质租房体验，从贝壳开始",
+        "greenHouse":{
+            "img":"https://ke-image.ljcdn.com/610100-inspection/prod-03425b2f-74ea-4b5f-bf7e-9982bec8c28a.jpg!m_fill,w_265,h_205,f_jpg?from=ke.com",
+            "addName":"春天花园",
+            "addDesc":"长安区子午大道998号",
+            "area":113,
+            "areaType":"三室一厅",
+            "price":"195万"
+        },
+        "newHouse":{
+            "img":" http://image1.ljcdn.com/hdic-resblock/9063541d-16e8-43d9-a745-d37138037e03.jpg.280x210.jpg?from=ke.com",
+            "addName":"万科家园",
+            "price":"11643元/平"
+        },
+        "rootHouse":{
+            "img":" https://ke-image.ljcdn.com/610100-inspection/328ffea3-f6e8-48ee-b042-3ac2fce5f9e1.jpg.280x210.jpg",
+            "addName":"智慧城春天花园",
+            "addDesc":"长安区子午大道近西邮、政法、师大",
+            "areaType":"2室2厅1卫",
+            "position":"朝南/合租/整租均可",
+            "price":"1500/月"
+        }
+       
+    },
+    {
+        "greenTitle":"二手好房",
+        "greenDesc":"好房源那么多我们为你精选",
+        "newTitle":"优选新房",
+        "newDesc":"真实信息准确同步，楼盘动态一手掌握",
+        "rootTitle":"品质租房",
+        "rootDesc":"高品质租房体验，从贝壳开始",
+        "greenHouse":{
+            "img":"https://ke-image.ljcdn.com/610100-inspection/prod-03425b2f-74ea-4b5f-bf7e-9982bec8c28a.jpg!m_fill,w_265,h_205,f_jpg?from=ke.com",
+            "addName":"四季平安",
+            "addDesc":"学府大街47号",
+            "area":90,
+            "areaType":"三室二厅",
+            "price":"130万"
+        },
+        "newHouse":{
+            "img":" http://image1.ljcdn.com/hdic-resblock/9063541d-16e8-43d9-a745-d37138037e03.jpg.280x210.jpg?from=ke.com",
+            "addName":"万科家园",
+            "price":"11643元/平"
+        },
+        "rootHouse":{
+            "img":" https://ke-image.ljcdn.com/610100-inspection/328ffea3-f6e8-48ee-b042-3ac2fce5f9e1.jpg.280x210.jpg",
+            "addName":"智慧城",
+            "addDesc":"长安区子午大道近西安邮电大学",
+            "areaType":"2室2厅1卫",
+            "position":"朝南",
+            "price":"1500/月"
+        }
+       
+    },
+    {
+        "greenTitle":"二手好房",
+        "greenDesc":"好房源那么多我们为你精选",
+        "newTitle":"优选新房",
+        "newDesc":"真实信息准确同步，楼盘动态一手掌握",
+        "rootTitle":"品质租房",
+        "rootDesc":"高品质租房体验，从贝壳开始",
+        "greenHouse":{
+            "img":"https://ke-image.ljcdn.com/610100-inspection/prod-03425b2f-74ea-4b5f-bf7e-9982bec8c28a.jpg!m_fill,w_265,h_205,f_jpg?from=ke.com",
+            "addName":"紫薇花园",
+            "addDesc":"电子二路132号",
+            "area":88,
+            "areaType":"两室一厅",
+            "price":"109万"
+        },
+        "newHouse":{
+            "img":" http://image1.ljcdn.com/hdic-resblock/9063541d-16e8-43d9-a745-d37138037e03.jpg.280x210.jpg?from=ke.com",
+            "addName":"万科家园",
+            "price":"11643元/平"
+        },
+        "rootHouse":{
+            "img":" https://ke-image.ljcdn.com/610100-inspection/328ffea3-f6e8-48ee-b042-3ac2fce5f9e1.jpg.280x210.jpg",
+            "addName":"智慧城",
+            "addDesc":"长安区子午大道近西安邮电大学",
+            "areaType":"2室2厅1卫",
+            "position":"朝南",
+            "price":"1500/月"
+        }
+       
+    },
+    {
+        "greenTitle":"二手好房",
+        "greenDesc":"好房源那么多我们为你精选",
+        "newTitle":"优选新房",
+        "newDesc":"真实信息准确同步，楼盘动态一手掌握",
+        "rootTitle":"品质租房",
+        "rootDesc":"高品质租房体验，从贝壳开始",
+        "greenHouse":{
+            "img":"https://ke-image.ljcdn.com/610100-inspection/prod-03425b2f-74ea-4b5f-bf7e-9982bec8c28a.jpg!m_fill,w_265,h_205,f_jpg?from=ke.com",
+            "addName":"智慧城市",
+            "addDesc":"长安区子午大道998号",
+            "area":227,
+            "areaType":"三室一厅",
+            "price":"290万"
+        },
+        "newHouse":{
+            "img":" http://image1.ljcdn.com/hdic-resblock/9063541d-16e8-43d9-a745-d37138037e03.jpg.280x210.jpg?from=ke.com",
+            "addName":"万科家园",
+            "price":"11643元/平"
+        },
+        "rootHouse":{
+            "img":" https://ke-image.ljcdn.com/610100-inspection/328ffea3-f6e8-48ee-b042-3ac2fce5f9e1.jpg.280x210.jpg",
+            "addName":"智慧城",
+            "addDesc":"长安区子午大道近西安邮电大学",
+            "areaType":"2室2厅1卫",
+            "position":"朝南",
+            "price":"1500/月"
+        }
+       
+    }
+   
+]

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 引入图标库样式 -->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css">
+    <!-- bootstrap样式文件 -->
+    <link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/release.css">
+    <title>发布房源页面</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+    <!--头部导航开始  -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <img alt="logo" src="./img/logo.png" style="width:32px;">
+                </a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="rootHouse.html">租房</a></li>
+                    <li><a href="greenHouse.html">二手房</a></li>
+                    <li><a href="newHouse.html">新房</a></li>
+                    <li class="active"><a href="release.html">发布房源</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a id="myLogin" data-toggle="modal" data-target="#login">
+                            <i class="iconfont iconyonghu"></i>
+                            <span>登录</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- 登录的模态框开始 -->
+                <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <button type="button" class="close login-close" data-dismiss="modal"
+                                aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <div class="panel-tab">
+
+                                <div class="title">
+                                    <div class="f1">手机快捷登录</div>
+                                    <div class="title-text">别担心，手机号码自动注册不会导致手机号被泄露</div>
+                                </div>
+                                <div class="login-content">
+                                    <form>
+                                        <ul>
+                                            <li class="item border-t">
+                                                <input type="text" class="the-input" id="phone_num" maxlength="11"
+                                                    placeholder="请输入手机号" />
+                                            </li>
+                                            <li class="item border-m">
+                                                <input type="text" class="the-input" id="img_code" maxlength="6"
+                                                    placeholder="请输入图片验证码" />
+                                                <img class=" login_verify_img" id="verifyimg">
+                                            </li>
+                                            <li class="item border-c Verify">
+                                                <input type="text" class="the-input Verify-code" id="phone_code"
+                                                    maxlength="6" placeholder="请输入短信验证码">
+                                                <a class="verify_code btn" id="verify_code"
+                                                    href="javascript:;">获取验证码</a>
+                                            </li>
+                                        </ul>
+                                        <div class="login-error hide" id="login_error">ggg</div>
+                                        <button type="button" id="reLogin"
+                                            class="btn btn-lg btn-login"><span>登录</span></button>
+                                        <div class="etc">
+                                            <p>登录即代表同意《ppx隐私政策》及《ppx用户服务协议》</p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 登录的模态框结束 -->
+
+            </div>
+        </div>
+    </nav>
+    <!-- 头部导航结束 -->
+    <!-- 页面大标题开始 -->
+    <div class="sub-headerWrap">
+        <div class="sub-header">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <img alt="logo" src="./img/logo.png" style="width:50px">
+                    <span class="ti">PPX好房好服务</span>
+                </a>
+            </div>
+            <div class="sub-nav">
+                <ul>
+                    <li class="current"><a href="#">我要卖房</a></li>
+                    <li><a href="#">我要出租</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 页面大标题结束 -->
+    <!-- 主要表单信息卖房开始 -->
+    <div class="release-main" >
+        <!-- 标题开始 -->
+        <div class="title-wrap">
+            <div class="tit"><span>发布出售房源</span></div>
+            <div class="sub-tit"><span>数万线下门店 · 快速全城推广 · 专业经纪人服务</span></div>
+        </div>
+        <!-- 标题结束 -->
+
+        <!-- 表单信息开始 -->
+        <div class="form-wrap">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="city" class="col-sm-2 control-label">小区所在城市</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="city" placeholder="西安" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="houseAdd" class="col-sm-2 control-label">小区</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="houseAdd" placeholder="请输入小区名">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">房屋</label>
+                    <div class="col-sm-10 add-detil">
+                        <input type="text" class="form-control" id="add-lou" placeholder="楼栋号">
+                        <input type="text" class="form-control" id="add-unit" placeholder="单元号">
+                        <input type="text" class="form-control" id="add-door" placeholder="门牌号">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="price" class="col-sm-2 control-label">期望售价</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="price" placeholder="请输入期望售价">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">称呼</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="name" placeholder="我们应该如何称呼您">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="col-sm-2 control-label">手机号码</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="phone" placeholder="请输入您的手机号码">
+                    </div>
+                </div>
+                <div id="input_error" class="form-group hide">
+                    <label id="input_error_test"></label>
+                </div>
+            </form>
+            <div class="btn-form">
+                <input type="button" class="btn btn-submit" id="btn-sale" value="提交委托" />
+            </div>
+        </div>
+        <!-- 表单信息结束 -->
+    </div>
+    <!-- 主要表单信息卖房结束 -->
+    <!-- 主要表单信息租房开始 -->
+    <div class="release-main-two hide">
+        <!-- 标题开始 -->
+        <div class="title-wrap">
+                <div class="tit"><span>发布出租房源</span></div>
+                <div class="sub-tit"><span>数万线下门店 · 快速全城推广 · 专业经纪人服务</span></div>
+            </div>
+            <!-- 标题结束 -->
+    
+            <!-- 表单信息开始 -->
+       
+            <div class="form-wrap">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="root-city" class="col-sm-2 control-label">小区所在城市</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="root-city" placeholder="西安" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="root-houseAdd" class="col-sm-2 control-label">小区</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="root-houseAdd" placeholder="请输入小区名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">房屋地址</label>
+                        <div class="col-sm-10 add-detil">
+                            <input type="text" class="form-control" id="root-add-lou" placeholder="楼栋号">
+                            <input type="text" class="form-control" id="root-add-unit" placeholder="单元号">
+                            <input type="text" class="form-control" id="root-add-door" placeholder="门牌号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="root-price" class="col-sm-2 control-label">期望租金</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="root-price" placeholder="请输入期望售价">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="root-name" class="col-sm-2 control-label">称呼</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="root-name" placeholder="我们应该如何称呼您">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="root-phone" class="col-sm-2 control-label">手机号码</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="root-phone" placeholder="请输入您的手机号码">
+                        </div>
+                    </div>
+                </form>
+                <div class="btn-form">
+                    <input type="button" class="btn btn-submit" id="btn-rent" value="提交委托" />
+                </div>
+            </div>
+            <!-- 表单信息结束 -->
+
+
+    </div>
+    <!-- 主要表单信息租房结束 -->
+    <script type="text/javascript" src="./lib/require/require.js"></script>
+    <script type="text/javascript" src="./require.config.js"></script>
+    <script type="text/javascript" src="./js/release.js"></script>
+
+</body>
+
+</html>

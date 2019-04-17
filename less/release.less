@@ -1,0 +1,143 @@
+@import "basic.less";
+@import "loginModal.less";
+// * { -ms-word-wrap: break-word; word-wrap: break-word; }
+// html { -webkit-text-size-adjust: none; text-size-adjust: none; }
+// html, body {height:100%;width:100%; }
+// html, body, h1, h2, h3, h4, h5, h6, div, ul, ol, li, dl, dt, dd, iframe, textarea, input, button, p, strong, b, i, a, span, del, pre, table, tr, th, td, form, fieldset, .pr, .pc { margin: 0; padding: 0; word-wrap: break-word; font-family: verdana,Microsoft YaHei,Tahoma,sans-serif; *font-family: Microsoft YaHei,verdana,Tahoma,sans-serif; }
+// body, ul, ol, li, dl, dd, p, h1, h2, h3, h4, h5, h6, form, fieldset, .pr, .pc, em, del { font-style: normal; font-size: 100%; }
+// ul, ol, dl { list-style: none; }
+._citys { width: 450px; display: inline-block; border: 2px solid #eee; padding: 5px; position: relative; }
+._citys span { color: #56b4f8; height: 15px; width: 15px; line-height: 15px; text-align: center; border-radius: 3px; position: absolute; right: 10px; top: 10px; border: 1px solid #56b4f8; cursor: pointer; }
+._citys0 { width: 100%; height: 34px; display: inline-block; border-bottom: 2px solid #56b4f8; padding: 0; margin: 0; }
+._citys0 li { display: inline-block; line-height: 34px; font-size: 15px; color: #888; width: 80px; text-align: center; cursor: pointer; }
+.citySel { background-color: #56b4f8; color: #fff !important; }
+._citys1 { width: 100%; display: inline-block; padding: 10px 0; }
+._citys1 a { width: 83px; height: 35px; display: inline-block; background-color: #f5f5f5; color: #666; margin-left: 6px; margin-top: 3px; line-height: 35px; text-align: center; cursor: pointer; font-size: 13px; overflow: hidden; }
+._citys1 a:hover { color: #fff; background-color: #56b4f8; }
+.AreaS { background-color: #56b4f8 !important; color: #fff !important; }
+/* 页面大标题样式 */
+.sub-headerWrap{
+    width: 100%;
+    height: 100px;
+    padding: 25px 0;
+    background: #f5f5f6;
+    box-sizing: border-box;
+    margin-top:30px;
+    .sub-header{
+        width: 1150px;
+        margin: 0 auto;
+        .navbar-header{
+            img {
+                display: inline; 
+            }
+            .ti{
+                font-size: 18px;
+                font-weight: 500;
+                color: @primary-color;
+                // line-height: 47px;
+            }
+        }
+        .sub-nav{ 
+            ul{     
+                list-style: none;
+                .current{
+                    a{
+                        color: @primary-color;
+                    }
+                }
+                li{
+                    float: left;
+                    height: 40px;
+                    line-height: 70px;
+                    vertical-align: bottom;
+                    a{
+                        display: block;
+                        font-weight: 700;
+                        text-decoration: none;
+                        color: @placeholder-color;
+                        font-size: @text-size-sm;
+                        padding-left: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+.release-main, .release-main-two{
+    margin: 0px;
+    width: 100%;
+    background: #f5f5f6;
+    padding-top: 30px;
+    .title-wrap{
+        text-align: center; 
+        padding-bottom: 30px;
+        .tit{
+            span{
+                font-weight: 700;
+                color: @placeholder-color;
+                font-size: 33px;
+            }
+        }
+        .sub-tit{
+            padding-top: 10px;
+            span{
+                margin-top: 15px;
+                color: #878787;
+                font-size: 16px;
+            }
+        }
+        
+        
+    }
+    .form-wrap{
+      
+        // padding-top: 30px;
+        background: #ffffff;
+        form{
+            width: 1150px;
+            margin: 0 auto;
+            label{
+                margin-top: 40px;
+            }
+            input{
+                width: 420px;
+                margin-top: 40px;
+                margin-bottom: -15px;
+            }
+            .add-detil{
+                input{
+                    width: 135px;
+                    display: inline-block;
+                    margin-right: 5px;
+                }
+            }
+            #input_error{
+                margin: -10px 0px 15px 300px;
+                label{
+                    color: @error-color;
+                }
+            }
+            .input-error{
+                border: 1px solid @error-color; 
+                box-shadow: inset 0 1px 1px rgba(0,0,0,0), 0 0 8px rgba(0,0,0,0);
+                
+            }
+        }
+        .btn-submit{
+            width: 120px;
+            line-height: 40px;
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            background-color: @primary-color;
+            cursor: pointer;
+            margin: 20px 0px 15px 570px;
+            outline: none;
+        }
+    }
+    
+
+
+}
+

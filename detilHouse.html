@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 引入图标库样式 -->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css">
+    <!-- bootstrap样式文件 -->
+    <link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/detilHouse.css">
+    <title>房源详情页面</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+
+</head>
+
+<body>
+    <!--头部导航开始  -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <img alt="logo" src="./img/logo.png" style="width:32px;">
+                </a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">首页</a></li>
+                    <li class="active"><a href="rootHouse.html">租房</a></li>
+                    <li><a href="greenHouse.html">二手房</a></li>
+                    <li><a href="newHouse.html">新房</a></li>
+                    <li><a href="release.html">发布房源</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a id="myLogin" data-toggle="modal" data-target="#login">
+                            <i class="iconfont iconyonghu"></i>
+                            <span>登录</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- 登录的模态框开始 -->
+                <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <button type="button" class="close login-close" data-dismiss="modal"
+                                aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <div class="panel-tab">
+
+                                <div class="title">
+                                    <div class="f1">手机快捷登录</div>
+                                    <div class="title-text">别担心，手机号码自动注册不会导致手机号被泄露</div>
+                                </div>
+                                <div class="login-content">
+                                    <form>
+                                        <ul>
+                                            <li class="item border-t">
+                                                <input type="text" class="the-input" id="phone_num" maxlength="11"
+                                                    placeholder="请输入手机号" />
+                                            </li>
+                                            <li class="item border-m">
+                                                <input type="text" class="the-input" id="img_code" maxlength="6"
+                                                    placeholder="请输入图片验证码" />
+                                                <img class=" login_verify_img" id="verifyimg">
+                                            </li>
+                                            <li class="item border-c Verify">
+                                                <input type="text" class="the-input Verify-code" id="phone_code"
+                                                    maxlength="6" placeholder="请输入短信验证码">
+                                                <a class="verify_code btn" id="verify_code"
+                                                    href="javascript:;">获取验证码</a>
+                                            </li>
+                                        </ul>
+                                        <div class="login-error hide" id="login_error">ggg</div>
+                                        <button type="button" id="reLogin"
+                                            class="btn btn-lg btn-login"><span>登录</span></button>
+                                        <div class="etc">
+                                            <p>登录即代表同意《ppx隐私政策》及《ppx用户服务协议》</p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 登录的模态框结束 -->
+
+            </div>
+
+        </div>
+
+    </nav>
+    <!-- 头部导航结束 -->
+
+    <!-- 搜索框开始 -->
+    <div class="search-bg">
+        <div class="search-body">
+            <div class="search-left">
+                <img src="./img/logo.png" />
+                <span class="ti">PPX好房好服务</span>
+            </div>
+            <div class="search-right">
+                <input type="text" value="" id="" class="search-input" placeholder="输入二手房信息开始查找" />
+                <i class="iconfont iconicon--"></i>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- 搜索框结束 -->
+    <!-- 房源详细信息开始 -->
+    <div class="houseDetil-wrap">
+        <!-- title和轮播图 -->
+        <div class="detil-title">
+            <div class="detil-biaoti">
+                <span>春天花园</span>
+                <span>三室一厅</span>
+                <span>5500元</span>
+            </div>
+            <div class="detil-text">
+                <div class="detil-time">
+                    <span>房源上架时间</span>
+                    <span>2019-03-04</span>
+                </div>
+                <!-- <div class="detil-img">
+                    <a href="#">营业执照</a>
+                </div> -->
+            </div>
+        </div>
+        <!-- 轮播 -->
+        <div class="detil-lunbo">
+            <div class="zoombox">
+                <div class="zoompic"><img
+                        src="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
+                        width="684" height="394" alt="房源信息" /></div>
+                <div class="sliderbox">
+                    <div id="btn-left" class="arrow-btn dasabled"></div>
+                    <div class="slider" id="thumbnail">
+                        <ul>
+                            <li class="current"><a
+                                    href="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
+                                    target="_blank"><img
+                                        src="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
+                                        width="115" height="74" alt="房源信息" /></a></li>
+                            <li><a href="https://ke-image.ljcdn.com/610100-inspection/328ffea3-f6e8-48ee-b042-3ac2fce5f9e1.jpg.780x439.jpg"
+                                    target="_blank"><img
+                                        src="https://ke-image.ljcdn.com/610100-inspection/328ffea3-f6e8-48ee-b042-3ac2fce5f9e1.jpg.780x439.jpg"
+                                        width="115" height="74" alt="房源信息" /></a></li>
+                            <li><a href="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
+                                    target="_blank"><img
+                                        src="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
+                                        width="115" height="74" alt="房源信息" /></a></li>
+                            <li><a href="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
+                                    target="_blank"><img
+                                        src="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
+                                        width="115" height="74" alt="房源信息" /></a></li>
+                            <li><a href="https://ke-image.ljcdn.com/610100-inspection/328ffea3-f6e8-48ee-b042-3ac2fce5f9e1.jpg.780x439.jpg"
+                                    target="_blank"><img
+                                        src="https://ke-image.ljcdn.com/610100-inspection/328ffea3-f6e8-48ee-b042-3ac2fce5f9e1.jpg.780x439.jpg"
+                                        width="115" height="74" alt="房源信息" /></a></li>
+                            <li><a href="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
+                                    target="_blank"><img
+                                        src="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
+                                        width="115" height="74" alt="房源信息" /></a></li>
+                            <li><a href="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
+                                    target="_blank"><img
+                                        src="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
+                                        width="115" height="74" alt="房源信息" /></a></li>
+                            <li><a href="https://ke-image.ljcdn.com/610100-inspection/328ffea3-f6e8-48ee-b042-3ac2fce5f9e1.jpg.780x439.jpg"
+                                    target="_blank"><img
+                                        src="https://ke-image.ljcdn.com/610100-inspection/328ffea3-f6e8-48ee-b042-3ac2fce5f9e1.jpg.780x439.jpg"
+                                        width="115" height="74" alt="房源信息" /></a></li>
+                            <li><a href="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
+                                    target="_blank"><img
+                                        src="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
+                                        width="115" height="74" alt="房源信息" /></a></li>
+                            <li><a href="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
+                                    target="_blank"><img
+                                        src="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
+                                        width="115" height="74" alt="房源信息" /></a></li>
+                            <li><a href="https://ke-image.ljcdn.com/610100-inspection/328ffea3-f6e8-48ee-b042-3ac2fce5f9e1.jpg.780x439.jpg"
+                                    target="_blank"><img
+                                        src="https://ke-image.ljcdn.com/610100-inspection/328ffea3-f6e8-48ee-b042-3ac2fce5f9e1.jpg.780x439.jpg"
+                                        width="115" height="74" alt="房源信息" /></a></li>
+                            <li><a href="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
+                                    target="_blank"><img
+                                        src="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
+                                        width="115" height="74" alt="房源信息" /></a></li>
+
+                        </ul>
+                    </div>
+                    <div id="btn-right" class="arrow-btn"></div>
+                </div>
+            </div>
+            <div class="content-aside">
+                <p class="aside-price">
+                    <span>5500元/月</span>
+                </p>
+                <div class="aside-tab">
+                    <button class="btn" disabled>近地铁</button>
+                    <button class="btn" disabled>集中供暖</button>
+                    <button class="btn" disabled>随时看房</button>
+                </div>
+                <hr>
+                <ul class="aside-li">
+                    <p class="con-tab">
+                        <span><i class="iconfont iconfangzi"></i>合租</span>
+                        <span><i class="iconfont iconwankeicon-"></i>四室一厅</span>
+                        <span><i class="iconfont iconmianji"></i>147㎡</span>
+                        <span><i class="iconfont iconhaofangtuo400iconfontzhaoxiang"></i>朝南</span>
+                    </p>
+                </ul>
+                <div class="aside-man">
+                    <div class="aside-yonghu"></div>
+                    <div class="man-right">
+                        <span class="man-name">soul</span>
+                        <span class="man-detil">PPX经纪人</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- 房屋详细信息 -->
+        <div class="house-detil">
+            <div class="detil-title">
+                <div class="detil-biaoti">
+                    <span>房屋信息</span>
+                </div>
+            </div>
+            <div class="basic-info">
+                <ul>
+                    <li class="f1 online">基本信息</li>
+                    <li class="f1 online">
+                        <span>发布:</span>
+                        <span>2019-03-04</span>
+                    </li>
+                    <li class="f1 online">
+                        <span>入住:</span>
+                        <span>随时入住</span>
+                    </li>
+                    <li class="f1 online">&nbsp;</li>
+                    <li class="f1 online">
+                        <span>租期:</span>
+                        <span>暂无数据</span>
+                    </li>
+                    <li class="f1 online">
+                        <span>看房:</span>
+                        <span>需提前预约</span>
+                    </li>
+                    <li class="f1 online">&nbsp;</li>
+                    <li class="f1 online">
+                        <span>楼层:</span>
+                        <span>高楼/32层</span>
+                    </li>
+                    <li class="f1 online">
+                        <span>电梯:</span>
+                        <span>有</span>
+                    </li>
+                    <li class="f1 online">&nbsp;</li>
+                    <li class="f1 online">
+                        <span>车位:</span>
+                        <span>暂无数据</span>
+                    </li>
+                    <li class="f1 online">
+                        <span>用水:</span>
+                        <span>民水</span>
+                    </li>
+                    <li class="f1 online">&nbsp;</li>
+                    <li class="f1 online">
+                        <span>用电:</span>
+                        <span>民电</span>
+                    </li>
+                    <li class="f1 online">
+                        <span>燃气:</span>
+                        <span>有</span>
+                    </li>
+
+                </ul>
+            </div>
+            <hr>
+            <div class="equip-info">
+                <ul>
+                    <li class="f1 online">配套设施</li>
+                    <li class="f1 online"><i class="iconfont icondianshi"></i><span>电视</span></li>
+                    <li class="f1 online"><i class="iconfont iconbingxiang"></i><span>冰箱</span></li>
+                    <li class="f1 online"><i class="iconfont iconxiyiji"></i><span>洗衣机</span></li>
+                    <li class="f1 online"><i class="iconfont iconkongtiaoiconx"></i><span>空调</span></li>
+                    <li class="f1 online"><i class="iconfont iconreshuiqi"></i><span>热水器</span></li>
+                    <li class="f1 online"><i class="iconfont iconchuang"></i><span>床</span></li>
+                    <li class="f1 online"><i class="iconfont iconnuanqi"></i><span>暖气</span></li>
+                    <li class="f1 online"><i class="iconfont iconWIFIwofi1"></i><span>WIFI</span></li>
+                    <li class="f1 online"><i class="iconfont iconyigui"></i><span>衣柜</span></li>
+                    <li class="f1 online"><i class="iconfont icontianranqi"></i><span>天然气</span></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 地址和交通 -->
+        <div class="map-Wrapper">
+            <div class="detil-title">
+                <div class="detil-biaoti">
+                    <span>地址和交通</span>
+                </div>
+            </div>
+            <iframe src="./testMap.html"></iframe>
+        </div>
+        
+    </div>
+
+    
+    <!-- 小区成交信息 -->
+    <!-- 推荐房源信息 -->
+    <!-- 房源详细信息结束 -->
+
+
+    <script type="text/javascript" src="./lib/require/require.js"></script>
+    <script type="text/javascript" src="./require.config.js"></script>
+    <script type="text/javascript" src="./js/detilHouse.js"></script>
+</body>
+
+</html>

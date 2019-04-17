@@ -1,0 +1,256 @@
+@import "basic.less";
+@import "loginModal.less";
+@import "zoom.less";
+/** 搜索框样式 */
+.search-bg{
+    width: 100%;
+    height: 100px;
+    padding: 25px 0;
+    background: #f5f5f6;
+    box-sizing: border-box;
+    margin-top: 50px;
+    .search-body{
+        width: 1150px;
+        margin: 0 auto;
+        .search-left{
+            float: left;
+            img{
+               width: 50px;
+               height: 43px;   
+            }
+            .ti{
+                font-size: 18px;
+                font-weight: 500;
+                color: @primary-color;
+                line-height: 47px;
+            }
+        }
+        .search-right{
+            float: right;
+            display: inline-block;
+            line-height: 46px;
+            font-size: 14px;
+            border-radius: 2px;
+            box-shadow: 0 1px 2px -1px rgba(0,0,0,.2);
+            .search-input{
+                width: 710px;
+                border: none;
+                padding-left: 15px;
+                .borderRadius();
+                outline: none
+            }
+            i{
+                position: absolute;
+                top: 77px;
+                left: 1400px;
+            }
+        }
+    }
+    
+}
+/*房源详情样式*/
+.houseDetil-wrap{
+    width: 1150px;
+    margin: 30px auto;
+    .detil-title{
+        .detil-biaoti{
+            span{
+                margin-top: 30px;
+                margin-bottom: 10px;
+                font-size: 28px;
+                font-weight: 700;
+                line-height: 40px;
+                padding-left: 5px;
+                color: @placeholder-color;
+            }
+            
+        }
+        .detil-text{
+           .detil-time{
+               span{
+                color: #9399a5;
+                font-size: 14px;
+                margin-bottom: 30px;
+                line-height: 20px;
+               }
+           }
+        }
+    }
+    .detil-lunbo{
+        .zoombox{
+            float: left;
+        }
+        .content-aside{
+            margin-top: 20px;
+            border: 1px solid #e4e6f0;
+            width: 420px;
+            float: right;
+            .aside-price{
+                padding: 20px 20px;
+                span{
+                    color: #fa5741;
+                    font-size: 32px;
+                    font-weight: 700;
+                    text-decoration: none;
+                }     
+            }
+            .aside-tab{
+                padding: 0px 0px 20px 20px;
+            }
+            hr{
+                margin: 0px 20px 20px 20px;
+            }
+            .aside-li{
+                margin-top: 17px;
+                margin-bottom: 22px;
+                padding-top: 15px;
+                padding-bottom: 22px;
+                position: relative;
+                max-height: 170px;
+                overflow: initial;
+                .con-tab{
+                    span{
+                        float: left;
+                        width: 25%;
+                        font-size: 16px;
+                        color: rgba(16,29,55,.6);
+                        line-height: 22px;
+                        padding-bottom: 15px;
+                        i{
+                            display: block;
+                            margin: 0 auto 5px;
+   
+                        }
+                    }
+                }
+            }
+            .aside-man{
+                border-top: 1px solid #e4e6f0;
+                padding:15px;
+                margin: 20px;
+                margin-top: 40px;
+                .aside-yonghu{
+                    margin: 15px;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    border: 1px solid #e4e6f0;
+                    float: left;
+                }
+                .man-right{
+                    margin-top: 15px;
+                    float: right;
+                    margin-right: 180px;
+                    .man-name{
+                        display: block;
+                        font-size: 20px;
+                        font-weight: 700;
+                        color: #101d37;
+                    }
+                    .man-detil{
+                        font-size: 14px;
+                        margin-bottom: 18px;
+                        color: #101d37;
+                        line-height: 20px;
+                        margin-top: 10px;
+                    }
+                }
+            }
+
+        }
+    }
+    .house-detil{
+        clear: both;
+        padding-top: 30px;
+        .basic-info{
+            ul{
+                .online {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    
+                }
+         
+                li{
+                    float: left;
+                    margin-left: -35px;
+                    width: 33%;
+                    text-align: left;
+                    line-height: 18px;
+                    font-size: 16px;
+                    margin-bottom: 18px;
+                    &:nth-of-type(3n+1){
+                        width: 23.33%;
+                        font-size: 18px;
+                        color: rgba(16,29,55,.6);
+                    }
+                    &:nth-of-type(3n+2){
+                        width: 35.64%;
+                        color: #101d37;
+                    }
+                    &:nth-of-type(3n+3){
+                        width: 41.02%;
+                        color: #101d37;
+                    }
+                }
+       
+
+            }
+            
+           
+        }
+        hr{
+            clear: both;
+        }
+        .equip-info{
+            // width: 686px;
+            margin-left: -40px;
+            margin-bottom: 40px;
+            ul{
+                list-style: none;
+                li{
+                    float: left;
+                    width: 80px;
+                    height: 50px;
+                    text-align: center;
+                    margin-bottom: 28px;
+                    margin-right: 30px;
+                    &:nth-of-type(1) {
+                        font-size: 18px;
+                        padding-right: 150px;
+                        width: 224px;
+                        height: 200px;
+                        margin-left: -50px;
+                        padding-right: 50px;
+                        color: rgba(16,29,55,.6);
+                    }
+                    i{
+                        display: block;
+                    }
+                }
+
+                .oneline {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+      
+        
+        
+    }
+    .map-Wrapper{
+        clear: both;
+        .detil-title{
+            margin-bottom: 20px;
+        }
+        iframe{
+            width: 100%;
+            height: 480px;
+            border: 0;
+        }
+    }
+   
+    
+}
