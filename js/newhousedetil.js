@@ -78,6 +78,13 @@ require(['swiper','jquery', 'bootstrap','login'], function (Swiper) {
     },function (){  
       $("#wxImg").hide();  
     }); 
+
+
+    $(".fold-button").click(function () {
+      $(".flod-box").slideToggle("slow");
+      $(".open").toggle();
+      $(".clo").toggle();
+  });
     
 
     
