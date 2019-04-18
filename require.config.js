@@ -1,13 +1,15 @@
 require.config({
     baseUrl:'./lib/',
     paths:{
+        'swiper':'swiper.min',
         'jquery':'jquery/jquery.min',
         'bootstrap':'bootstrap/js/bootstrap.min',
         'login':'login',
         'slide':'slide',
         'popt':'city/Popt',
         'cityjson':'city/cityJson',
-        'cityset':'city/citySet'
+        'cityset':'city/citySet',
+        
     },
     shim:{
         'bootstrap':{deps:['jquery']},

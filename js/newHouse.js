@@ -8,6 +8,9 @@ require(['jquery', 'bootstrap','login'], function () {
         $(".drop-menu li").bind("click",accAvalue);
         $(".ul-item-perPrice li").bind("click",AccCheckValue);
         $(".ul-item-tolPrice li").bind("click",AccCheckValue);
+        $(".ul-item-area li").bind("click",AccCheckValue);
+        $(".ul-item-type li").bind("click",AccCheckValue);
+        $(".ul-item-status li").bind("click",AccCheckValue);
     });
 
     /**

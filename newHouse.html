@@ -156,29 +156,113 @@
             <div class="select-area">
                 <span>面积</span>
                 <ul class="ul-item-area">
-                    <li><input type="checkbox" name="test" value="一室" />50m²以下</li>
-                    <li><input type="checkbox" name="test" value="两室" />50-70m²</li>
-                    <li><input type="checkbox" name="test" value="三室" />70-90m²</li>
-                    <li><input type="checkbox" name="test" value="四室" />90-110m²</li>
-                    <li><input type="checkbox" name="test" value="四室以上" />110-130m²</li>
-                    <li><input type="checkbox" name="test" value="四室以上" />130-150m²</li>
-                    <li><input type="checkbox" name="test" value="四室以上" />150m²以上</li>
+                    <li><input type="checkbox" name="test" value="50m²以下" />50m²以下</li>
+                    <li><input type="checkbox" name="test" value="50-70m²" />50-70m²</li>
+                    <li><input type="checkbox" name="test" value="70-90m²" />70-90m²</li>
+                    <li><input type="checkbox" name="test" value="90-110m²" />90-110m²</li>
+                    <li><input type="checkbox" name="test" value="110-130m²" />110-130m²</li>
+                    <li><input type="checkbox" name="test" value="130-150m²" />130-150m²</li>
+                    <li><input type="checkbox" name="test" value="150m²以上" />150m²以上</li>
                 </ul>
             </div>
-            <!-- position -->
             <div class="select-type">
                 <span>户型</span>
-                <ul class="ul-item-position">
-                    <li><input type="checkbox" name="test" value="东" />一室</li>
-                    <li><input type="checkbox" name="test" value="西" />两室</li>
-                    <li><input type="checkbox" name="test" value="南" />三室</li>
-                    <li><input type="checkbox" name="test" value="北" />四室</li>
-                    <li><input type="checkbox" name="test" value="北" />五室</li>
+                <ul class="ul-item-type">
+                    <li><input type="checkbox" name="test" value="一室" />一室</li>
+                    <li><input type="checkbox" name="test" value="两室" />两室</li>
+                    <li><input type="checkbox" name="test" value="三室" />三室</li>
+                    <li><input type="checkbox" name="test" value="四室" />四室</li>
+                    <li><input type="checkbox" name="test" value="五室" />五室</li>
+                </ul>
+            </div>
+            <div class="select-status">
+                <span>状态</span>
+                <ul class="ul-item-status">
+                    <li><input type="checkbox" name="test" value="在售" />在售</li>
+                    <li><input type="checkbox" name="test" value="未开盘" />未开盘</li>
+                    <li><input type="checkbox" name="test" value="售罄" />售罄</li>
                 </ul>
             </div>
         </div>
     </div>
     <!-- 条件查询结束 -->
+    <!-- 查询结果展示开始 -->
+    <div class="select-result">
+        <div class="result-title">
+            <p>已经为您找到112套房</p>
+        </div>
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active"><a href="#home" data-toggle="tab">默认排序</a></li>
+            <li><a href="#price" data-toggle="tab">均价</a></li>
+            <li><a href="#time" data-toggle="tab">开盘时间</a></li>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="home">
+                <div class="result-item">
+                    <div class="result-img">
+                        <a href="newhousedetil.html">
+                            <img
+                                src="https://ke-image.ljcdn.com/newhouse-user-image/6e13bcc74a8d298790f635b1c48a9f1c.jpg.592x432.jpg" />
+                        </a>
+                    </div>
+                    <div class="result-detil">
+                        <div class="detil-title">
+                            <span class="name">春天花园</span>
+                            <span class="block-type" style="background: #5F94FF;">在售</span>
+                            <span class="block-type" style="background: #FB9252;">住宅</span>
+                        </div>
+                        <div class="detil-content">
+                            <a href="" title="长安区韦曲街道府东一路320号近西安邮电大学"><i class="iconfont iconditu"></i>长安区韦曲街道府东一路320号近西安邮电大学</a>
+                            <a href=""><i class="iconfont iconfangzi1" style="font-size:16px;"></i>户型：三室/四室 &nbsp; 建面：112-116m²</a>
+                        </div>
+                        <div class="detil-surround">
+                            <span class="surround-type">绿化率高</span>
+                            <span class="surround-type">低密度</span>
+                        </div>
+                    </div> 
+                    <div class="detil-price">
+                        <p>25000<span>元/平(均价)</span></p>
+                    </div>
+                    <hr>
+                </div>
+                <div class="result-item">
+                    <div class="result-img">
+                        <a href="newhousedetil.html">
+                            <img
+                                src="https://ke-image.ljcdn.com/newhouse-user-image/6e13bcc74a8d298790f635b1c48a9f1c.jpg.592x432.jpg" />
+                        </a>
+                    </div>
+                    <div class="result-detil">
+                        <div class="detil-title">
+                            <span class="name">春天花园</span>
+                            <span class="block-type" style="background: #5F94FF;">在售</span>
+                            <span class="block-type" style="background: #FB9252;">住宅</span>
+                        </div>
+                        <div class="detil-content">
+                            <a href="" title="长安区韦曲街道府东一路320号近西安邮电大学"><i class="iconfont iconditu"></i>长安区韦曲街道府东一路320号近西安邮电大学</a>
+                            <a href=""><i class="iconfont iconfangzi1" style="font-size:16px;"></i>户型：三室/四室 &nbsp; 建面：112-116m²</a>
+                        </div>
+                        <div class="detil-surround">
+                            <span class="surround-type">绿化率高</span>
+                            <span class="surround-type">低密度</span>
+                        </div>
+                    </div> 
+                    <div class="detil-price">
+                        <p>25000<span>元/平(均价)</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="price">
+                <p>均价排序展示</p>
+            </div>
+            <div class="tab-pane fade" id="time">
+                <p>开盘时间展示。</p>
+            </div>
+
+        </div>
+    </div>
+    <!-- 查询结果展示结束 -->
+
 
 
     <script type="text/javascript" src="./lib/require/require.js"></script>

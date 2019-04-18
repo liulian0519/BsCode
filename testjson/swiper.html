@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标移上去显示图片或者二维码</title>
+    <style>
+        .fold-box {
+            padding: 10px;
+      
+            border: solid 1px #c3c3c3;
+            display: none;
+            margin: 10px;
+        }
+
+        .fold-button {
+            text-align: center;
+            margin: 0px;
+            padding: 5px;
+        }
+
+        .fold-button span {
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: #32a5e7;
+            color: #fff;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fold-box">
+        <p>这里是要折叠的内容。</p>
+        <p>再次点击收起内容...</p>
+    </div>
+    <div class="fold-button">
+        <span class="open">展开</span>
+        <span class="close" style="display:none;">收起</span>
+    </div>
+
+    <script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $(".fold-button").click(function () {
+                $(".fold-box").slideToggle("slow");
+                $(".open").toggle();
+                $(".close").toggle();
+            });
+        });
+    </script>
+</body>
+
+</html>
