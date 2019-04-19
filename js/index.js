@@ -31,7 +31,7 @@ require(['jquery', 'bootstrap', 'login'], function () {
                 $(".search-menu li").eq(1).find("a").removeClass("style2");
                 $(".search-menu li").eq(2).find("a").removeClass("style3");
                 $(".search-menu i").css({
-                    'left': '274px'
+                    'left': '195px'
                 })
 
             }
@@ -42,7 +42,7 @@ require(['jquery', 'bootstrap', 'login'], function () {
                 $(".search-menu li").eq(0).find("a").removeClass("style1");
                 $(".search-menu li").eq(2).find("a").removeClass("style3");
                 $(".search-menu i").css({
-                    'left': '356px'
+                    'left': '274px'
                 })
             }
             if (index == 2) {
@@ -50,7 +50,7 @@ require(['jquery', 'bootstrap', 'login'], function () {
                 $(".search-menu li").eq(0).find("a").removeClass("style1");
                 $(".search-menu li").eq(1).find("a").removeClass("style2");
                 $(".search-menu i").css({
-                    'left': '436px'
+                    'left': '356px'
                 })
             }
             var index = $(this).index();

@@ -212,8 +212,8 @@
   height: 0;
   transition: all 0.3s ease-in-out;
   position: absolute;
-  top: 368px;
-  left: 274px;
+  top: 369px;
+  left: 196px;
   border-bottom: 10px solid #fff;
   z-index: 9;
 }

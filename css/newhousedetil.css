@@ -258,7 +258,7 @@
 .search-bg .search-body .search-right i {
   position: absolute;
   top: 77px;
-  left: 1400px;
+  left: 1300px;
 }
 .houseDetil-wrap {
   width: 1190px;
@@ -596,13 +596,41 @@
   color: #888;
 }
 .houseDetil-wrap .map-Wrapper {
+  margin-top: 40px;
+  width: 710px;
   clear: both;
 }
-.houseDetil-wrap .map-Wrapper .detil-title {
-  margin-bottom: 20px;
+.houseDetil-wrap .map-Wrapper .map-title {
+  margin-bottom: 30px;
+}
+.houseDetil-wrap .map-Wrapper .map-title .title-name span {
+  font-size: 26px;
+  color: #101d37;
+  font-weight: 600;
+  display: inline-block;
+  margin-right: 10px;
+  line-height: 30px;
 }
 .houseDetil-wrap .map-Wrapper iframe {
   width: 100%;
   height: 480px;
   border: 0;
+}
+.houseDetil-wrap .goodhouse-Wrapper {
+  margin-top: 40px;
+  width: 1150px;
+  border: 1px solid #ccc;
+  height: 800px;
+  clear: both;
+}
+.houseDetil-wrap .goodhouse-Wrapper .goodhouse-title {
+  margin-bottom: 30px;
+}
+.houseDetil-wrap .goodhouse-Wrapper .goodhouse-title .title-name span {
+  font-size: 26px;
+  color: #101d37;
+  font-weight: 600;
+  display: inline-block;
+  margin-right: 10px;
+  line-height: 30px;
 }

@@ -54,7 +54,7 @@ require(['swiper','jquery', 'bootstrap','login'], function (Swiper) {
      * 实现卡片悬浮
      */
     function cardFix(){
-        var fheight = $('.foot').height() + 30; // 获取底部及底部上方边距的总高度
+        var fheight = $('.goodhouse-Wrapper').height() + 30; // 获取底部及底部上方边距的总高度
         var boxfixed = $('.box-fixed');  // 获取固定容器的jquery对象
         $(window).scroll(function() {
             var scrollTop = $(window).scrollTop();  // 获取滚动条滚动的高度

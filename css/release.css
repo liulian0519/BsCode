@@ -294,3 +294,25 @@
   margin: 20px 0px 15px 570px;
   outline: none;
 }
+.release-main .ttt .modal-content p,
+.release-main-two .ttt .modal-content p {
+  font-size: 16px;
+  margin: 25px;
+  text-align: center;
+  font-weight: 700;
+}
+.release-main .ttt .modal-content .btn-more,
+.release-main-two .ttt .modal-content .btn-more {
+  width: 100px;
+  line-height: 25px;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #3072f6;
+  margin: 15px 0px 20px 150px;
+}
+.release-main .ttt .modal-content .btn-more a,
+.release-main-two .ttt .modal-content .btn-more a {
+  color: #fff;
+}

@@ -20,7 +20,7 @@ require(['jquery', 'bootstrap','login','popt','cityjson','cityset'], function ()
             postData();
         })
         // $('#myModal').modal(options)
-
+   
     });
 
 
@@ -60,66 +60,66 @@ require(['jquery', 'bootstrap','login','popt','cityjson','cityset'], function ()
         var salePrice = $('#price').val();
         var name = $('#name').val();
         var phone = $('#phone').val();
-        if(city == ""){
-            $('#input_error').removeClass('hide')
-            $('#city').addClass('input-error');
-            $('#input_error_test').html("请选择正确的城市");
-            $("#city").focus();
-            return; 
-        }else{
-            $('#input_error').addClass('hide')
-            $('#city').removeClass('input-error');
-        }
-        if(houseAdd == ""){
-            $('#input_error').removeClass('hide')
-            $('#houseAdd').addClass('input-error');
-            $('#input_error_test').html("小区地址不能为空");
-            $("#houseAdd").focus();
-            return; 
-        }else{
-            $('#input_error').addClass('hide')
-            $('#houseAdd').removeClass('input-error');
-        }
-        if(addLou == "" || addUnit == "" || addDoor == ""){
-            $('#input_error').removeClass('hide')
-            $('#add-lou').addClass('input-error');
-            $('#input_error_test').html("请输入准确的地址");
-            $("#add-lou").focus();
-            return; 
-        }else{
-            $('#input_error').addClass('hide')
-            $('#add-lou').removeClass('input-error');
-        }
-        if(salePrice == ""){
-            $('#input_error').removeClass('hide')
-            $('#price').addClass('input-error');
-            $('#input_error_test').html("期望售价不能为空呦");
-            $("#price").focus();
-            return; 
-        }else{
-            $('#input_error').addClass('hide')
-            $('#price').removeClass('input-error');
-        }
-        if(name == ""){
-            $('#input_error').removeClass('hide')
-            $('#name').addClass('input-error');
-            $('#input_error_test').html("称呼不能为空");
-            $("#name").focus();
-            return; 
-        }else{
-            $('#input_error').addClass('hide')
-            $('#name').removeClass('input-error');
-        }
-        if(phone == "" || phone.length != 11){
-            $('#input_error').removeClass('hide')
-            $('#phone').addClass('input-error');
-            $('#input_error_test').html("请输入有效的手机号码");
-            $("#phone").focus();
-            return; 
-        }else{
-            $('#input_error').addClass('hide')
-            $('#phone').removeClass('input-error');
-        }
+        // if(city == ""){
+        //     $('#input_error').removeClass('hide')
+        //     $('#city').addClass('input-error');
+        //     $('#input_error_test').html("请选择正确的城市");
+        //     $("#city").focus();
+        //     return; 
+        // }else{
+        //     $('#input_error').addClass('hide')
+        //     $('#city').removeClass('input-error');
+        // }
+        // if(houseAdd == ""){
+        //     $('#input_error').removeClass('hide')
+        //     $('#houseAdd').addClass('input-error');
+        //     $('#input_error_test').html("小区地址不能为空");
+        //     $("#houseAdd").focus();
+        //     return; 
+        // }else{
+        //     $('#input_error').addClass('hide')
+        //     $('#houseAdd').removeClass('input-error');
+        // }
+        // if(addLou == "" || addUnit == "" || addDoor == ""){
+        //     $('#input_error').removeClass('hide')
+        //     $('#add-lou').addClass('input-error');
+        //     $('#input_error_test').html("请输入准确的地址");
+        //     $("#add-lou").focus();
+        //     return; 
+        // }else{
+        //     $('#input_error').addClass('hide')
+        //     $('#add-lou').removeClass('input-error');
+        // }
+        // if(salePrice == ""){
+        //     $('#input_error').removeClass('hide')
+        //     $('#price').addClass('input-error');
+        //     $('#input_error_test').html("期望售价不能为空呦");
+        //     $("#price").focus();
+        //     return; 
+        // }else{
+        //     $('#input_error').addClass('hide')
+        //     $('#price').removeClass('input-error');
+        // }
+        // if(name == ""){
+        //     $('#input_error').removeClass('hide')
+        //     $('#name').addClass('input-error');
+        //     $('#input_error_test').html("称呼不能为空");
+        //     $("#name").focus();
+        //     return; 
+        // }else{
+        //     $('#input_error').addClass('hide')
+        //     $('#name').removeClass('input-error');
+        // }
+        // if(phone == "" || phone.length != 11){
+        //     $('#input_error').removeClass('hide')
+        //     $('#phone').addClass('input-error');
+        //     $('#input_error_test').html("请输入有效的手机号码");
+        //     $("#phone").focus();
+        //     return; 
+        // }else{
+        //     $('#input_error').addClass('hide')
+        //     $('#phone').removeClass('input-error');
+        // }
         
         var reqData = {
             "city":city,
