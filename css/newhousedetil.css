@@ -595,3 +595,14 @@
 .houseDetil-wrap .build-wrap .basic-info .x-box .all-row1 .label-val {
   color: #888;
 }
+.houseDetil-wrap .map-Wrapper {
+  clear: both;
+}
+.houseDetil-wrap .map-Wrapper .detil-title {
+  margin-bottom: 20px;
+}
+.houseDetil-wrap .map-Wrapper iframe {
+  width: 100%;
+  height: 480px;
+  border: 0;
+}

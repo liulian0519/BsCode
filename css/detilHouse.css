@@ -385,6 +385,7 @@
   text-overflow: ellipsis;
 }
 .houseDetil-wrap .map-Wrapper {
+  width: 710px;
   clear: both;
 }
 .houseDetil-wrap .map-Wrapper .detil-title {
@@ -394,4 +395,5 @@
   width: 100%;
   height: 480px;
   border: 0;
+  margin-bottom: 20px;
 }
