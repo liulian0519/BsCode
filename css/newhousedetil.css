@@ -174,6 +174,32 @@
 }
 /** 搜索框样式 */
 /** 搜索框样式 */
+.fold-button .open,
+.moreInfo-button .open,
+.fold-button .clo,
+.moreInfo-button .clo,
+.fold-button .more,
+.moreInfo-button .more,
+.fold-button .sub,
+.moreInfo-button .sub {
+  height: 50px;
+  width: 100%;
+  margin-top: 30px;
+  display: block;
+  color: #3072f6;
+  font-size: 16px;
+  line-height: 50px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #ced2d6;
+  background: #fff;
+  cursor: pointer;
+}
+.flod-box,
+.more-info {
+  display: none;
+}
 .search-bg {
   width: 100%;
   height: 100px;
@@ -239,7 +265,8 @@
   margin: 30px auto;
 }
 .houseDetil-wrap .detil-title .name,
-.houseDetil-wrap .type-title .name {
+.houseDetil-wrap .type-title .name,
+.houseDetil-wrap .build-title .name {
   font-size: 26px;
   color: #101d37;
   font-weight: 600;
@@ -248,7 +275,8 @@
   line-height: 30px;
 }
 .houseDetil-wrap .detil-title .block-type,
-.houseDetil-wrap .type-title .block-type {
+.houseDetil-wrap .type-title .block-type,
+.houseDetil-wrap .build-title .block-type {
   display: inline-block;
   padding: 7px;
   margin-top: -12px;
@@ -263,11 +291,13 @@
   color: #fff;
 }
 .houseDetil-wrap .detil-title .sub-title,
-.houseDetil-wrap .type-title .sub-title {
+.houseDetil-wrap .type-title .sub-title,
+.houseDetil-wrap .build-title .sub-title {
   padding-top: 7px;
 }
 .houseDetil-wrap .detil-title .sub-title span,
-.houseDetil-wrap .type-title .sub-title span {
+.houseDetil-wrap .type-title .sub-title span,
+.houseDetil-wrap .build-title .sub-title span {
   font-size: 13px;
   color: #9399a5;
 }
@@ -457,25 +487,6 @@
 .houseDetil-wrap .housetype-wrap .nav-tabs {
   margin-top: 20px;
 }
-.houseDetil-wrap .housetype-wrap .flod-box {
-  display: none;
-}
-.houseDetil-wrap .housetype-wrap .fold-button .open,
-.houseDetil-wrap .housetype-wrap .fold-button .clo {
-  height: 50px;
-  width: 100%;
-  margin-top: 30px;
-  display: block;
-  color: #3072f6;
-  font-size: 16px;
-  line-height: 50px;
-  text-align: center;
-  box-sizing: border-box;
-  border-radius: 4px;
-  border: 1px solid #ced2d6;
-  background: #fff;
-  cursor: pointer;
-}
 .houseDetil-wrap .housetype-wrap .result-item {
   margin-top: 30px;
 }
@@ -539,4 +550,48 @@
   font-family: HiraginoSansGB-W6;
   font-size: 18px;
   color: #fa5741;
+}
+.houseDetil-wrap .build-wrap {
+  width: 710px;
+  margin-top: 40px;
+}
+.houseDetil-wrap .build-wrap .basic-info {
+  margin-top: 20px;
+}
+.houseDetil-wrap .build-wrap .basic-info .basic-title {
+  font-size: 20px;
+  line-height: 40px;
+}
+.houseDetil-wrap .build-wrap .basic-info .x-box {
+  list-style: none;
+}
+.houseDetil-wrap .build-wrap .basic-info .x-box .all-row {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.houseDetil-wrap .build-wrap .basic-info .x-box .all-row .lab {
+  display: inline-block;
+  width: 100px;
+  font-weight: 700;
+  color: #333;
+  vertical-align: top;
+}
+.houseDetil-wrap .build-wrap .basic-info .x-box .all-row .label-val {
+  color: #888;
+}
+.houseDetil-wrap .build-wrap .basic-info .x-box .all-row1 {
+  display: inline-block;
+  width: 45%;
+  margin-bottom: 15px;
+}
+.houseDetil-wrap .build-wrap .basic-info .x-box .all-row1 .lab {
+  display: inline-block;
+  width: 100px;
+  font-weight: 700;
+  color: #333;
+  vertical-align: top;
+}
+.houseDetil-wrap .build-wrap .basic-info .x-box .all-row1 .label-val {
+  color: #888;
 }

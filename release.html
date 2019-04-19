@@ -163,10 +163,22 @@
                 </div>
             </form>
             <div class="btn-form">
-                <input type="button" class="btn btn-submit" id="btn-sale" value="提交委托" />
+                <input type="button" class="btn btn-submit" data-toggle="modal" data-target="#myModal" id="btn-sale" value="提交委托" />
             </div>
         </div>
-        <!-- 表单信息结束 -->
+        <!-- 表单信息结束 --> 
+        <!-- <button class="btn btn-primary btn-lg" >开始演示模态框</button> -->
+        <!-- 模态框（Modal） -->
+        <div class="modal ttt fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div>
+                        <p>委托成功！请继续完善相关信息</p>
+                        <button class="btn btn-success"><a href="releaseDetil.html">去完善</a></button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
     </div>
     <!-- 主要表单信息卖房结束 -->
     <!-- 主要表单信息租房开始 -->

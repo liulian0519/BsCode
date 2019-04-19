@@ -85,6 +85,11 @@ require(['swiper','jquery', 'bootstrap','login'], function (Swiper) {
       $(".open").toggle();
       $(".clo").toggle();
   });
+  $(".moreInfo-button").click(function () {
+    $(".more-info").slideToggle("slow");
+    $(".more").toggle();
+    $(".sub").toggle();
+});
     
 
     

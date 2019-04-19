@@ -1,88 +1,158 @@
 <!doctype html>
-<html>
+<html lang="zh-CN">
+
 <head>
+    <!-- 原始地址：//webapi.amap.com/ui/1.0/ui/misc/PoiPicker/examples/search.html -->
+    <base href="//webapi.amap.com/ui/1.0/ui/misc/PoiPicker/examples/" />
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
-    <title>公交站点查询</title>
-        <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css"/> 
-    <style type="text/css">
-       html,body,#container{
-           height:100%;
-       }
+    <title>POI搜索</title>
+    <style>
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0;
+        font-size: 13px;
+    }
+    
+    #outer-box {
+        height: 100%;
+        padding-right: 300px;
+    }
+    
+    #container {
+        height: 100%;
+        width: 100%;
+    }
+    
+    #panel {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        height: 100%;
+        overflow: auto;
+        width: 300px;
+        z-index: 999;
+        border-left: 1px solid #eaeaea;
+        background: #fff;
+    }
+    
+    #searchBar {
+        height: 30px;
+        background: #ccc;
+    }
+    
+    #searchInput {
+        width: 100%;
+        height: 30px;
+        line-height: 30%;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        padding: 0 5px;
+    }
+    
+    #searchResults {
+        overflow: auto;
+        height: calc(100% - 30px);
+    }
+    
+    .amap_lib_placeSearch,
+    .amap-ui-poi-picker-sugg-container {
+        border: none!important;
+    }
+    
+    .amap_lib_placeSearch .poibox.highlight {
+        background-color: #CAE1FF;
+    }
+    
+    .poi-more {
+        display: none!important;
+    }
     </style>
 </head>
+
 <body>
-<div id="container"></div>
-<div id="tip" class='info' style='min-width:18rem;'></div>
-
-<div class="input-card" style='width:18rem;'>
-    <label style='color:grey'>公交站点查询</label>
-    <div class="input-item">
-            <div class="input-item-prepend"><span class="input-item-text" >站名</span></div>
-            <input id='stationKeyWord' type="text" value='小寨' >
+    <div id="outer-box">
+        <div id="container" class="map" tabindex="0"></div>
+        <div id="panel" class="scrollbar1">
+            <div id="searchBar">
+                <input id="searchInput" placeholder="输入关键字搜素POI" />
+            </div>
+            <div id="searchResults"></div>
+        </div>
     </div>
-    <input id="search" type="button" class="btn" value="查询" />
-</div>
-
-
-<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.14&key=c0da61b843dd1745362b4b98ea73fcf4&plugin=AMap.StationSearch"></script>
-<script type="text/javascript">
-    var map = new AMap.Map("container", {
-        resizeEnable: true,
-        center: [116.397428, 39.90923],//地图中心点
-        zoom: 18 //地图显示的缩放级别
+    <script type="text/javascript" src='//webapi.amap.com/maps?v=1.4.14&key=c0da61b843dd1745362b4b98ea73fcf4'></script>
+    <!-- UI组件库 1.0 -->
+    <script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+    <script type="text/javascript">
+    var map = new AMap.Map('container', {
+        zoom: 16,
+      center:[108.959845,34.195217]
     });
-	stationSearch();
-    /*公交站点查询*/
-    function stationSearch() {
-        
-        var stationKeyWord  = document.getElementById('stationKeyWord').value
-        if(!stationKeyWord) return
-        //实例化公交站点查询类
-        var station = new AMap.StationSearch({
-            pageIndex: 1, //页码
-            pageSize: 60, //单页显示结果条数
-            city: '029'   //确定搜索城市
+
+    AMapUI.loadUI(['misc/PoiPicker'], function(PoiPicker) {
+
+        var poiPicker = new PoiPicker({
+            input: 'searchInput',
+            placeSearchOptions: {
+                map: map,
+                pageSize: 10
+            },
+            searchResultsContainer: 'searchResults'
         });
-        station.search(stationKeyWord, function(status, result) {
-            if (status === 'complete' && result.info === 'OK') {
-                stationSearch_CallBack(result);
+
+        poiPicker.on('poiPicked', function(poiResult) {
+
+            poiPicker.hideSearchResults();
+
+            var source = poiResult.source,
+                poi = poiResult.item;
+
+            if (source !== 'search') {
+
+                //suggest来源的，同样调用搜索
+                poiPicker.searchByKeyword(poi.name);
+
             } else {
-                document.getElementById('tip').innerHTML = JSON.stringify(result);
+
+                //console.log(poi);
             }
         });
-    }
-    /*公交站点查询返回数据解析*/
-    function stationSearch_CallBack(searchResult) {
-        var stationArr = searchResult.stationInfo;
-        var searchNum = stationArr.length;
-        if (searchNum > 0) {
-            document.getElementById('tip').innerHTML = '查询结果：共' + searchNum + '个相关站点';
-            for (var i = 0; i < searchNum; i++) {
-                var marker = new AMap.Marker({
-                    icon:new AMap.Icon({
-                       image:'https://a.amap.com/jsapi_demos/static/resource/img/pin.png',
-                       size:new AMap.Size(32,32),
-                       imageSize:new AMap.Size(32,32)
-                    }),
-                    offset:new AMap.Pixel(-16,-32),
-                    position: stationArr[i].location,
-                    map: map,
-                    title: stationArr[i].name
-                });
-                marker.info = new AMap.InfoWindow({
-                    content: stationArr[i].name,
-                    offset: new AMap.Pixel(0, -30)
-                });
-                marker.on('mouseover', function(e) {
-                    e.target.info.open(map, e.target.getPosition())
-                })
-            }
-            map.setFitView();
-        }
-    } 
-    document.getElementById('search').onclick = stationSearch;
-</script>
+
+        poiPicker.onCityReady(function() {
+            poiPicker.searchByKeyword('');
+        });
+    });
+    </script>
 </body>
+
 </html>
+
+
+
+var map = new AMap.Map("container", {
+    resizeEnable: true
+});
+AMap.service(["AMap.PlaceSearch"], function() {
+    //构造地点查询类
+    var placeSearch = new AMap.PlaceSearch({ 
+        type: '公交', // 兴趣点类别
+        pageSize: 5, // 单页显示结果条数
+        pageIndex: 1, // 页码
+        city: "029", // 兴趣点城市
+        citylimit: true,  //是否强制限制在设置的城市内搜索
+        map: map, // 展现结果的地图实例
+        panel: "panel", // 结果列表将在此容器中进行展示。
+        autoFitView: true // 是否自动调整地图视野使绘制的 Marker点都处于视口的可见范围
+    });
+    
+    var cpoint = [108.959845,34.195217]; //中心点坐标
+    placeSearch.searchNearBy('', cpoint, 400, function(status, result) {
+
+    });
+});

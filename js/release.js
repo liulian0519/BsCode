@@ -19,6 +19,7 @@ require(['jquery', 'bootstrap','login','popt','cityjson','cityset'], function ()
         $('#btn-sale').click(function(){
             postData();
         })
+        // $('#myModal').modal(options)
 
     });
 
@@ -130,7 +131,7 @@ require(['jquery', 'bootstrap','login','popt','cityjson','cityset'], function ()
             "name":name,
             "phone":phone
         }
-
+        // id="myModal" 
         // console.log(reqData);
         // 向后台发送数据
         // $.ajax({
@@ -147,6 +148,8 @@ require(['jquery', 'bootstrap','login','popt','cityjson','cityset'], function ()
         //     }
 
         // });
+        $('.ttt').attr('id','myModal');
+
     }
 
 
