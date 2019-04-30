@@ -1,0 +1,472 @@
+@import "basic.less";
+    
+/** 页面上部样式 */
+.topbar{
+    width: 100%;
+    height: 600px;
+    background-image: url(../img/bg_header.jpg);
+    .navbar{
+        color: @top-textColor;
+        font-size:@text-size-md;
+        padding:15px;
+        .top-left{
+            float: left;
+            line-height: 109px; 
+            span{
+                color: @top-textColor;
+                font-size: @text-size-md;
+            }
+        }
+        .top-right{
+            float: right;
+            padding: 30px;
+            color: @top-textColor;
+            li{
+                a{
+                    color: @top-textColor;
+                    &:hover, &:active, &:focus{
+                        background-color: rgba(0,0,0,0);
+                    }
+                }
+               
+            }
+        }
+        /** 登录模态框样式 */
+        .modal{
+            .modal-content{
+                width: 400px;
+                // height: 520px;
+                .login-close{
+                    margin: 15px;
+                    outline: none;
+                }
+            }
+            .panel-tab{
+                margin: 0 auto;
+                text-align: left;
+                .title{
+                    padding-left: 40px;
+                    margin: 20px auto;
+                    .f1{
+                        font-size: 20px;
+                        color: @placeholder-color;
+                        font-weight: 700;
+                    }
+                    .title-text{
+                        color: #9399a5;
+                        padding: 10px 0 20px 0;
+                        line-height: 1;
+                        font-size: 14px;
+                    }
+                }
+                .login-content{
+                    padding-right: 35px;
+                    ul{
+                        list-style: none;
+                    }
+                    li{
+                        color: #9399a5;
+                        clear: both;
+                        height: 50px;
+                        position: relative;
+                     
+                        .the-input{
+                            border: none;
+                            line-height: 47px;
+                            color: @placeholder-color;
+                            font-size: 14px;
+                            padding-left: 16px;
+                            outline: 0;
+                        }
+                        .send_verify_code{
+                            text-decoration: none;
+                            color: @placeholder-color;
+                            float: right;
+                            font-size: 16px;
+                            padding: 0 16px;
+                            border-left: 1px solid @border-color;
+                            line-height: 50px;
+                        }
+                       
+                      
+                    }
+                    .verify-code{
+                        width: 125px;
+                    }
+                    
+                
+                    .border-t{
+                        border: 1px solid @border-color;
+                        border-radius: 2px 2px 0 0;
+                    }
+                    .border-m{
+                        margin-top: -1px;
+                        padding: 0;
+                        border: 1px solid @border-color;
+                    }
+                    .border-c{
+                        border: 1px solid @border-color;
+                        border-top: none;
+                        border-radius: 0 0 2px 2px;
+                        .btn{
+                            &:hover{
+                                color: #3072f6;
+                            }
+                            &:active{
+                                box-shadow: inset 0 3px 5px rgba(0,0,0,0);
+                            }
+                        }
+                    }
+                    .login-error{
+                        color: @error-color;
+                        padding: 24px 0 10px 40px;
+                        line-height: 14px;
+                    }
+                    .input-error{
+                        border-color: @error-color !important;
+                        margin-bottom: 1px;
+                    }
+                    .btn-login{
+                        background-color: @primary-color;
+                        width: 323px;
+                        margin: 30px 0px 10px 40px;
+                        &:hover{
+                            opacity: .9;
+
+                        }
+                    }
+                    .btn:hover{
+                        color: #fff
+                    }
+                    .etc{
+                        p{
+                            font-size: @text-size-um;
+                            color: #AAA;
+                            padding-left: 40px;
+                            margin: 20px 0;
+                        }
+                    }
+                  
+                }
+            }
+        }
+       
+    }
+    /** 页面上大标题样式 */
+    .header-wrap{
+        width: 1200px;
+        margin: 0 auto;
+        .wrap-icon{
+            margin-top: 30px;
+            text-align: left;
+            color: @top-textColor;
+            font-size: @text-big;
+            font-weight: 600;
+            letter-spacing: -2.4px;
+            line-height: 68px;
+            .title-small{
+                font-size: @text-small;
+                line-height: @text-small;
+                height: @text-small;
+                font-weight: 400;
+                margin-bottom: 18px;
+                .split-icon{
+                    display: inline-block;
+                    width: 42px;
+                    text-align: center;
+                    line-height: @text-small;
+                    font-weight: lighter;
+                    font-size: 24px;
+                    color: hsla(0,0%,92%,.4);
+                }
+            }
+        }
+    }
+    /** 搜索框部分的样式 */
+    .search-wrapper{
+        float: left;
+        .search-box{
+            ul{
+                list-style: none;
+                padding-left: 0px;
+                margin-top: 50px;
+                li{
+                    list-style: none;
+                    display: inline;
+                    a{
+                        font-size: @text-size-md;
+                        color: #fff;
+                        font-weight: 700;
+                        padding: 0 20px 0 0;
+                        height: 32px;
+                        opacity: .5;
+                        line-height: 32px;
+                        display: inline-block;
+                        cursor: pointer;
+                        &:hover{
+                            text-decoration: none;
+                            opacity: .7;
+                        }
+                    }
+                    .style1{
+                        text-decoration: none;
+                        opacity: 1;
+                    }
+                    .style2{
+                        text-decoration: none;
+                        opacity: 1;
+                    }
+                    .style3{
+                        text-decoration: none;
+                        opacity: 1;
+                    }
+                }
+                i{
+                    border-left: 9px solid transparent;
+                    border-right: 9px solid transparent;
+                    width: 0;
+                    height: 0;
+                    transition: all .3s ease-in-out;
+                    position: absolute;
+                    top: 369px;
+                    left:196px;
+                    border-bottom: 10px solid #fff;
+                    z-index: 9;
+                }
+            }
+            .search-body{
+                .search-input{
+                    width: 494px;
+                    border: 0;
+                    height: 50px;
+                    padding-left: 10px;
+                    border-top-left-radius: 4px;
+                    border-bottom-left-radius: 4px;
+                    outline: none;
+                    font-size: @text-size-md;
+                }
+                .search-btn{
+                    width: 76px;
+                    height: 51px;
+                    background: @primary-color;
+                    border-radius: 0 4px 4px 0;
+                    margin-left: -5px;
+                    margin-top: -3px;
+                    outline: none;
+                }
+            }
+
+        }
+    }
+    
+    
+}
+
+/** 展示房源信息处样式 */
+.houseWrapper{
+    width: 1180px;
+    margin: 80px auto;
+    .greenHouse{
+        .green-title{
+            margin-bottom: 40px;
+            .title-name{
+                font-size: 36px;
+                line-height: 50px;
+                color: #101d37;
+                font-weight: 600;
+            }
+            .greenDesc{
+                margin-top: 5px;
+                .span-left{
+                    float: left;
+                    color: #9399a5;
+                    font-size: @text-size-sm;
+                    line-height: 22px;
+                }
+                .span-right{
+                    float: right;
+                }
+            }
+            
+        }
+        .green-detil{
+            width: 265px;
+
+            display: inline-block;
+            margin-right: 25px;
+            img{
+                .borderRadius();
+                width: 265px;
+                height: 205px;
+            }
+            .address{
+                margin-top: 16px;
+                font-size: @text-size-md;
+                font-weight: 700;
+                line-height: @text-size-md;
+                color: #222;
+                .p-over{
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+
+            }
+            .sapn-bottome{
+                margin-top: 10px;
+                font-size: 12px;
+                color: #616669;
+                line-height: 16px;
+                overflow: hidden;
+                .area{
+        
+                    float: left;
+                }
+                .price{
+                    float: right;
+                    font-weight: 700;
+                    float: right;
+                    font-size: 16px;
+                    color: #fa5741;
+                }
+            }
+            
+
+        }
+       
+        
+       
+    }
+    .newHouse{
+        margin-top: 40px;
+        .new-title{
+            margin-bottom: 40px;
+            .title-name{
+                font-size: 36px;
+                line-height: 50px;
+                color: #101d37;
+                font-weight: 600;
+            }
+            .newDesc{
+                margin-top: 5px;
+                .span-left{
+                    float: left;
+                    color: #9399a5;
+                    font-size: @text-size-sm;
+                    line-height: 22px;
+                }
+                .span-right{
+                    float: right;
+                }
+            }
+           
+        }
+        .new-detil{
+            width: 363px;
+            height: 272px;
+            font-size: 24px;
+            color: #fff;
+            text-align: center;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+            margin-right: 20px;
+            overflow: hidden;
+            img{
+                width: 363px;
+                height: 272px;
+                .borderRadius();
+                transition: all 2s;
+                &:hover{
+                    transform: scale(1.1)
+                }
+            }
+            .new-addName{
+                position: absolute;
+                top: 40%;
+                left: 40%;
+            }
+            .new-addPrice{
+                font-size: 14px;
+                position: absolute;
+                top: 55%;
+                left: 45%;
+            }
+        }
+    }
+    .rootHouse{
+        margin-top: 40px;
+        .root-title{
+            margin-bottom: 40px;
+            .title-name{
+                font-size: 36px;
+                line-height: 50px;
+                color: #101d37;
+                font-weight: 600;
+            }
+            .rootDesc{
+                margin-top: 5px;
+                .span-left{
+                    float: left;
+                    color: #9399a5;
+                    font-size: @text-size-sm;
+                    line-height: 22px;
+                }
+                .span-right{
+                    float: right;
+                }
+            } 
+        }
+        .root-detil{
+            width: 265px;
+            display: inline-block;
+            margin-right: 25px;
+            img{
+                width: 265px;
+                height: 205px;
+                .borderRadius()
+            }
+            .address{
+                margin-top: 16px;
+                font-size: @text-size-md;
+                font-weight: 700;
+                line-height: @text-size-md;
+                color: #222;
+                /*超出两行用省略号代替*/
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+            }
+            .span-bottom{
+                margin-top: 10px;
+                font-size: 12px;
+                color: #616669;
+                line-height: 16px;
+                overflow: hidden;
+                .area{
+        
+                    float: left;
+                   
+                }
+                .price{
+                    float: right;
+                    font-weight: 700;
+                    float: right;
+                    font-size: 16px;
+                    color: #fa5741;
+                }
+            }
+        }
+    }
+}
+
+/** 页脚 */
+.footer{
+    .container{
+        p{
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+require.config({
+    baseUrl:'./lib/',
+    paths:{
+        'swiper':'swiper.min',
+        'jquery':'jquery/jquery.min',
+        'bootstrap':'bootstrap/js/bootstrap.min',
+        'bootstrapvalidator':'bootstrapValidator',
+        'zh':'zh_CN',
+        'login':'login',
+        'slide':'slide',
+        'popt':'city/Popt',
+        'cityjson':'city/cityJson',
+        'cityset':'city/citySet',
+        'layui':'layui/layui'
+        
+    },
+    shim:{
+        'bootstrap':{deps:['jquery']},
+        'login':{deps:['jquery','bootstrap']},
+        'bootstrapvalidator':{deps:['jquery','bootstrap']},
+        'zh':{deps:['bootstrapvalidator']},
+        'slide':{deps:['jquery']},
+        'popt':{deps:['jquery']},
+        'cityjson':{deps:['jquery']},
+        'cityset':{deps:['jquery']},
+    }
+})

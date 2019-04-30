@@ -1,0 +1,260 @@
+/** 登录模态框样式 */
+.modal-backdrop.fade.in {
+  z-index: 0;
+}
+.modal .modal-content {
+  width: 400px;
+}
+.modal .modal-content .login-close {
+  margin: 15px;
+  outline: none;
+}
+.modal .panel-tab {
+  margin: 0 auto;
+  text-align: left;
+}
+.modal .panel-tab .title {
+  padding-left: 40px;
+  margin: 20px auto;
+}
+.modal .panel-tab .title .f1 {
+  font-size: 20px;
+  color: #101d37;
+  font-weight: 700;
+}
+.modal .panel-tab .title .title-text {
+  color: #9399a5;
+  padding: 10px 0 20px 0;
+  line-height: 1;
+  font-size: 14px;
+}
+.modal .panel-tab .login-content {
+  padding-right: 35px;
+}
+.modal .panel-tab .login-content ul {
+  list-style: none;
+}
+.modal .panel-tab .login-content li {
+  color: #9399a5;
+  clear: both;
+  height: 50px;
+  position: relative;
+}
+.modal .panel-tab .login-content li .the-input {
+  border: none;
+  line-height: 47px;
+  color: #101d37;
+  font-size: 14px;
+  padding-left: 16px;
+  outline: 0;
+}
+.modal .panel-tab .login-content li .send_verify_code {
+  text-decoration: none;
+  color: #101d37;
+  float: right;
+  font-size: 16px;
+  padding: 0 16px;
+  border-left: 1px solid #dbdbdb;
+  line-height: 50px;
+}
+.modal .panel-tab .login-content .verify-code {
+  width: 125px;
+}
+.modal .panel-tab .login-content .border-t {
+  border: 1px solid #dbdbdb;
+  border-radius: 2px 2px 0 0;
+}
+.modal .panel-tab .login-content .border-m {
+  margin-top: -1px;
+  padding: 0;
+  border: 1px solid #dbdbdb;
+}
+.modal .panel-tab .login-content .border-c {
+  border: 1px solid #dbdbdb;
+  border-top: none;
+  border-radius: 0 0 2px 2px;
+}
+.modal .panel-tab .login-content .border-c .btn:hover {
+  color: #3072f6;
+}
+.modal .panel-tab .login-content .border-c .btn:active {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0);
+}
+.modal .panel-tab .login-content .login-error {
+  color: #db4c3f;
+  padding: 24px 0 10px 40px;
+  line-height: 14px;
+}
+.modal .panel-tab .login-content .input-error {
+  border-color: #db4c3f !important;
+  margin-bottom: 1px;
+}
+.modal .panel-tab .login-content .btn-login {
+  background-color: #3072f6;
+  width: 323px;
+  margin: 30px 0px 10px 40px;
+}
+.modal .panel-tab .login-content .btn-login:hover {
+  opacity: .9;
+}
+.modal .panel-tab .login-content .btn:hover {
+  color: #ffffff;
+}
+.modal .panel-tab .login-content .etc p {
+  font-size: 14px;
+  color: #AAA;
+  padding-left: 40px;
+  margin: 20px 0;
+}
+.main-body {
+  width: 1150px;
+  margin: 100px auto;
+}
+.main-body .left-wrapper {
+  float: left;
+  width: 170px;
+  border: 1px solid #e6e5e5;
+  padding: 35px 0 9px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+.main-body .left-wrapper .head-path {
+  width: 100%;
+  margin-left: 45px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+.main-body .left-wrapper ul {
+  list-style: none;
+  margin-bottom: 10px;
+}
+.main-body .left-wrapper ul .active {
+  width: 169px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  background-color: #3072f6;
+}
+.main-body .left-wrapper ul .active a {
+  color: #fff;
+}
+.main-body .left-wrapper ul li {
+  width: 169px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+}
+.main-body .left-wrapper ul li:hover,
+.main-body .left-wrapper ul li:active,
+.main-body .left-wrapper ul li:focus {
+  background-color: #3072f6;
+}
+.main-body .left-wrapper ul li a {
+  margin: 0 auto;
+  display: inline-block;
+  text-align: left;
+  color: #555;
+  font-size: 14px;
+}
+.main-body .left-wrapper ul li a:hover,
+.main-body .left-wrapper ul li a:active,
+.main-body .left-wrapper ul li a:focus {
+  background-color: #3072f6;
+  color: #ffffff;
+}
+.main-body .right-wrapper {
+  float: right;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  padding: 35px;
+  background-color: #fff;
+  border: 1px solid #e6e5e5;
+  width: 900px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+.main-body .right-wrapper .result-img {
+  float: left;
+  margin-right: 40px;
+}
+.main-body .right-wrapper .result-img img {
+  width: 250px;
+  height: 180px;
+  border: 1px solid #dfdfdf;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -ms-broder-radius: 4px;
+  border-radius: 4px;
+}
+.main-body .right-wrapper .result-detil .detil-title {
+  padding-top: 10px;
+}
+.main-body .right-wrapper .result-detil .detil-title .name {
+  display: inline-block;
+  margin-right: 7px;
+  max-width: 75%;
+  font-size: 22px;
+  color: #101d37;
+  line-height: 22px;
+  vertical-align: middle;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.main-body .right-wrapper .result-detil .detil-title .block-type {
+  display: inline-block;
+  padding: 7px;
+  margin-right: 7px;
+  line-height: 14px;
+  font-size: 14px;
+  vertical-align: middle;
+  border-radius: 2px;
+  letter-spacing: -0.27px;
+  text-align: center;
+  font-weight: 400;
+  color: #fff;
+}
+.main-body .right-wrapper .result-detil .detil-content {
+  margin: 15px;
+}
+.main-body .right-wrapper .result-detil .detil-content a {
+  color: #9399a5;
+  display: block;
+  padding-bottom: 5px;
+}
+.main-body .right-wrapper .result-detil .detil-content a i {
+  margin-right: 7px;
+}
+.main-body .right-wrapper .result-detil .detil-surround {
+  padding-top: 28px;
+}
+.main-body .right-wrapper .result-detil .detil-surround .surround-type {
+  display: inline-block;
+  height: 30px;
+  margin-right: 10px;
+  padding: 0 14px;
+  line-height: 30px;
+  font-size: 14px;
+  color: #849aae;
+  background: rgba(132, 154, 174, 0.1);
+}
+.main-body .right-wrapper .detil-price {
+  float: right;
+  margin-top: -95px;
+}
+.main-body .right-wrapper .detil-price p {
+  font-size: 30px;
+  line-height: 28px;
+  color: #fe615a;
+}
+.main-body .right-wrapper .detil-price p span {
+  font-size: 16px;
+}
+.main-body .right-wrapper hr {
+  margin-top: 30px;
+  margin-bottom: 0px;
+}

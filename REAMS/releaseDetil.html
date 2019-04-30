@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 引入图标库样式 -->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css">
+    <!-- bootstrap样式文件 -->
+    <link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrapValidator.css" />
+    <link rel="stylesheet" type="text/css" href="./css/releasedetil.css">
+    <title>完善信息页面</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+    <!--头部导航开始  -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <img alt="logo" src="./img/logo.png" style="width:32px;">
+                </a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="rootHouse.html">租房</a></li>
+                    <li><a href="greenHouse.html">二手房</a></li>
+                    <li><a href="newHouse.html">新房</a></li>
+                    <li class="active"><a href="release.html">发布房源</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a id="myLogin" data-toggle="modal" data-target="#login">
+                            <i class="iconfont iconyonghu"></i>
+                            <span>登录</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- 登录的模态框开始 -->
+                <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <button type="button" class="close login-close" data-dismiss="modal"
+                                aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <div class="panel-tab">
+
+                                <div class="title">
+                                    <div class="f1">手机快捷登录</div>
+                                    <div class="title-text">别担心，手机号码自动注册不会导致手机号被泄露</div>
+                                </div>
+                                <div class="login-content">
+                                    <form>
+                                        <ul>
+                                            <li class="item border-t">
+                                                <input type="text" class="the-input" id="phone_num" maxlength="11"
+                                                    placeholder="请输入手机号" />
+                                            </li>
+                                            <li class="item border-m">
+                                                <input type="text" class="the-input" id="img_code" maxlength="6"
+                                                    placeholder="请输入图片验证码" />
+                                                <img class=" login_verify_img" id="verifyimg">
+                                            </li>
+                                            <li class="item border-c Verify">
+                                                <input type="text" class="the-input Verify-code" id="phone_code"
+                                                    maxlength="6" placeholder="请输入短信验证码">
+                                                <a class="verify_code btn" id="verify_code"
+                                                    href="javascript:;">获取验证码</a>
+                                            </li>
+                                        </ul>
+                                        <div class="login-error hide" id="login_error">ggg</div>
+                                        <button type="button" id="reLogin"
+                                            class="btn btn-lg btn-login"><span>登录</span></button>
+                                        <div class="etc">
+                                            <p>登录即代表同意《ppx隐私政策》及《ppx用户服务协议》</p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 登录的模态框结束 -->
+
+            </div>
+        </div>
+    </nav>
+    <!-- 头部导航结束 -->
+    <!-- 表单信息开始 -->
+    <div class="container">
+        <div class="row">
+            <!-- form: -->
+            <section>
+                <div class="col-lg-8 col-lg-offset-2">
+
+                    <form id="defaultForm" method="post" class="form-horizontal">
+                        <div class="mainone">
+                            <span class="title">房源基本信息</span>
+
+                            <div class="form-group" style="margin-top:15px;">
+                                <label class="col-lg-3 control-label"><i class="iconfont iconbitian2-5"></i>小区名称</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" name="name" placeholder="请输入小区名称如:春天花园" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><i class="iconfont iconbitian2-5"></i>小区地址</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" name="address"
+                                        placeholder="请输入小区详细地址如xx市xx区xx街道xx号" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><i class="iconfont iconbitian2-5"></i>房屋户型</label>
+                                <div class="col-lg-3  houseone">
+                                    <input type="text" class="form-control" maxlength="1" name="houseone" />
+                                    <span>室</span>
+                                </div>
+                                <div class="col-lg-3 housetwo">
+                                    <input type="text" class="form-control" maxlength="1" name="housetwo" />
+                                    <span>厅</span>
+                                </div>
+                                <div class="col-lg-3 housethree">
+                                    <input type="text" class="form-control" maxlength="1" name="housethree" />
+                                    <span>卫</span>
+                                </div>
+                            </div>
+                            <div class="form-group area">
+                                <label class="col-lg-3 control-label"><i class="iconfont iconbitian2-5"></i>房屋面积</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" name="area" placeholder="请输入房屋面积" />
+                                    <span>㎡</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><i class="iconfont iconbitian2-5"></i>预售价</label>
+                                <div class="col-lg-6 price">
+                                    <input type="text" class="form-control" name="price" />
+                                    <span>万元</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><i class="iconfont iconbitian2-5"></i>房屋类型</label>
+                                <div class="col-lg-4">
+                                    <select class="form-control" name="type">
+                                        <option value="请选择">请选择</option>
+                                        <option value="住宅" selected>住宅</option>
+                                        <option value="公寓">公寓</option>
+                                        <option value="别墅">别墅</option>
+                                        <option value="四合院">四合院</option>
+                                        <option value="其他">其他</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4">
+                                    <select class="form-control" name="build-type">
+                                        <option value="请选择">请选择</option>
+                                        <option value="塔楼" selected>塔楼</option>
+                                        <option value="板楼">板楼</option>
+                                        <option value="塔板结合">塔板结合</option>
+                                        <option value="其他">其他</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><i class="iconfont iconbitian2-5"></i>房屋朝向</label>
+                                <div class="col-lg-4">
+                                    <select class="form-control" name="position">
+                                        <option value="请选择" selected>请选择</option>
+                                        <option value="东">东</option>
+                                        <option value="西">西</option>
+                                        <option value="南">南</option>
+                                        <option value="北">北</option>
+
+                                    </select>
+                                </div>
+                                <div class="col-lg-4">
+                                    <select class="form-control" name="decorate">
+                                        <option value="请选择">请选择</option>
+                                        <option value="精装修" selected>精装修</option>
+                                        <option value="简装修">简装修</option>
+                                        <option value="毛坯">毛坯</option>
+                                        <option value="其他">其他</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><i class="iconfont iconbitian2-5"></i>楼层</label>
+                                <div class="col-lg-4 floor">
+                                    <span class="left">第</span>
+                                    <input type="text" class="form-control" name="floor" style="padding-left:100px;" />
+                                    <span>层</span>
+                                </div>
+                                <div class="col-lg-4 floor">
+                                    <span class="left">共</span>
+                                    <input type="text" class="form-control" name="all" style="padding-left:100px;" />
+                                    <span>层</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><i class="iconfont iconbitian2-5"></i>产权</label>
+                                <div class="col-lg-4 rightage">
+                                    <input type="text" class="form-control" name="rightage" placeholder="请输入产权年限" />
+                                    <span>年</span>
+                                </div>
+                                <div class="col-lg-4 rightage">
+                                    <input type="text" class="form-control" name="datetime" placeholder="建筑年代" />
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><i class="iconfont iconbitian2-5"></i>挂牌时间</label>
+                                <div class="col-lg-4 ">
+                                    <input type="date" class="form-control" name="datetime" />
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="maintwo">
+                            <span class="title">房源个性描述</span>
+                            <div class="form-group" style="margin-top:15px;">
+                                <label class="col-lg-3 control-label"><i class="iconfont iconbitian2-5"></i>小区简介</label>
+                                <div class="col-lg-8">
+                                    <textarea class="form-control" rows="3" name="introduce"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><i class="iconfont iconbitian2-5"></i>周边环境</label>
+                                <div class="col-lg-8">
+                                    <textarea class="form-control" rows="3" name="surrounding"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><i class="iconfont iconbitian2-5"></i>户型优势</label>
+                                <div class="col-lg-8">
+                                    <textarea class="form-control" rows="3" name="keysale"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><i class="iconfont iconbitian2-5"></i>公交情况</label>
+                                <div class="col-lg-8">
+                                    <textarea class="form-control" rows="3" name="traffic"></textarea>
+                                </div>
+                            </div> 
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><i class="iconfont iconbitian2-5"></i>上传图片</label>
+                                <div class="col-lg-8">
+                                    <input type="file" name="file">
+                                </div>
+                            </div>  
+                        </div>
+                        <!-- 最后那个加法 -->
+                        <div class="form-group">
+                           
+                            <label class="col-lg-3 control-label" id="captchaOperation"></label>     
+                            <div class="col-lg-2">
+                                <input type="text" class="form-control" name="captcha" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-9 col-lg-offset-3">
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" id="validateBtn">提交</button>
+                                <button type="button" class="btn btn-info" id="resetBtn">重置</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+             <!-- 模态框（Modal） -->
+            <div class="modal mymodal fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div>
+                            <p>委托成功！请等待审核</p>
+                            <button class="btn btn-order"><a href="order.html">我的发布</a></button>
+                            <button class="btn btn-index"><a href="index.html">回首页</a></button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal -->
+            </div>
+            <!-- :form -->
+        </div>
+    </div>
+    <!-- 表单信息结束 -->
+
+
+
+    <script type="text/javascript" src="./lib/require/require.js"></script>
+    <script type="text/javascript" src="./require.config.js"></script>
+    <script type="text/javascript" src="./js/releasedetil.js"></script>
+
+</body>
+
+</html>

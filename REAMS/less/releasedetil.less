@@ -1,0 +1,120 @@
+@import "basic.less";
+@import "loginModal.less";
+.container{
+    
+    .row{
+        .has-success{
+            .form-control{
+                border-color: @primary-color;
+            }
+            .form-control-feedback, .control-label{
+                color: @primary-color;
+            }
+            
+        }
+        .mainone{
+            margin-top: -20px;
+            .title{
+                font-size: 18px;
+                font-weight: 700;
+                color: #333;
+                
+            }
+            .form-group{
+                padding-bottom: 20px;
+            }
+            padding-top: 100px;
+            i{
+                padding-right: 7px;
+            }
+    
+            .price, .area{
+                position: relative;
+                span{
+                    position: absolute;
+                    top: 25%;
+                    left: 80%;
+                    color: #ccc;
+                }
+            }
+            .houseone, .housetwo, .housethree, .floor, .rightage{
+                position: relative;
+        
+                .left{
+                    position: absolute;
+                    top: 25%;
+                    left: 20%;
+                    color: #ccc;
+                }
+                span{
+                    position: absolute;
+                    top: 25%;
+                    left: 70%;
+                    color: #ccc;
+                }
+            }
+
+        }
+        .maintwo{
+            margin-top: 20px;
+           
+            .title{
+                font-size: 18px;
+                font-weight: 700;
+                color: #333;
+            }
+        }
+        #validateBtn, #resetBtn{
+            width: 120px;
+            line-height: 40px;
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            background-color:@primary-color;
+            cursor: pointer;
+            outline: none;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            margin-right: 10px;
+        }
+        .mymodal{
+            .modal-content{
+                p{
+                    font-size: 16px;
+                    margin: 25px;
+                    text-align: center;
+                    font-weight: 700;
+                }
+                .btn-order{
+                    width: 100px;
+                    line-height: 25px;
+                    font-size: 16px;
+                    color: #fff;
+                    text-align: center;
+                    border-radius: 4px;
+                    background-color: @primary-color;
+                    margin: 15px 15px 20px 90px;
+                    a{
+                        color: #fff;
+                    }
+                }
+                .btn-index{
+                    width: 100px;
+                    line-height: 25px;
+                    font-size: 16px;
+                    color: #fff;
+                    text-align: center;
+                    border-radius: 4px;
+                    background-color: @primary-color;
+                    margin: 15px 0px 20px 0px;
+                    a{
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        
+    }
+}

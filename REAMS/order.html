@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 引入图标库样式 -->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css">
+    <!-- bootstrap样式文件 -->
+    <link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/order.css">
+    <title>个人中心页面</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+    <!--头部导航开始  -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <img alt="logo" src="./img/logo.png" style="width:32px;">
+                </a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="rootHouse.html">租房</a></li>
+                    <li><a href="greenHouse.html">二手房</a></li>
+                    <li><a href="newHouse.html">新房</a></li>
+                    <li><a href="release.html">发布房源</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a id="myLogin" data-toggle="modal" data-target="#login">
+                            <i class="iconfont iconyonghu"></i>
+                            <span>登录</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- 登录的模态框开始 -->
+                <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <button type="button" class="close login-close" data-dismiss="modal"
+                                aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <div class="panel-tab">
+
+                                <div class="title">
+                                    <div class="f1">手机快捷登录</div>
+                                    <div class="title-text">别担心，手机号码自动注册不会导致手机号被泄露</div>
+                                </div>
+                                <div class="login-content">
+                                    <form>
+                                        <ul>
+                                            <li class="item border-t">
+                                                <input type="text" class="the-input" id="phone_num" maxlength="11"
+                                                    placeholder="请输入手机号" />
+                                            </li>
+                                            <li class="item border-m">
+                                                <input type="text" class="the-input" id="img_code" maxlength="6"
+                                                    placeholder="请输入图片验证码" />
+                                                <img class=" login_verify_img" id="verifyimg">
+                                            </li>
+                                            <li class="item border-c Verify">
+                                                <input type="text" class="the-input Verify-code" id="phone_code"
+                                                    maxlength="6" placeholder="请输入短信验证码">
+                                                <a class="verify_code btn" id="verify_code"
+                                                    href="javascript:;">获取验证码</a>
+                                            </li>
+                                        </ul>
+                                        <div class="login-error hide" id="login_error">ggg</div>
+                                        <button type="button" id="reLogin"
+                                            class="btn btn-lg btn-login"><span>登录</span></button>
+                                        <div class="etc">
+                                            <p>登录即代表同意《ppx隐私政策》及《ppx用户服务协议》</p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 登录的模态框结束 -->
+
+            </div>
+        </div>
+    </nav>
+    <!-- 头部导航结束  -->
+    <div class="main-body">
+        <!-- 侧导航开始 -->
+
+        <div class="left-wrapper">
+            <div class="head-path">
+                <img style="border:1px solid #ccc;width:80px;height: 80px">
+            </div>
+            <ul class="nav nav-stacked main-nav">
+                <li class="active"><a href="#" class="nav-header collapsed" data-toggle="collapse">我的发布</a></li>
+                <li><a href="#" class="nav-header collapsed" data-toggle="collapse">我的订单</a></li>
+                <li><a href="#" class="nav-header collapsed" data-toggle="collapse">我的信息</a></li>
+            </ul>
+        </div>
+        <!-- 侧导航结束 -->
+
+        <!-- 右侧面板开始 -->
+        <div class="right-wrapper">
+
+            <div class="result-img">
+                <a href="newhousedetil.html">
+                    <img
+                        src="https://ke-image.ljcdn.com/newhouse-user-image/6e13bcc74a8d298790f635b1c48a9f1c.jpg.592x432.jpg" />
+                </a>
+            </div>
+            <div class="result-detil">
+                <div class="detil-title">
+                    <span class="name">春天花园</span>
+                    <span class="block-type" style="background: #5F94FF;">在售</span>
+                    <span class="block-type" style="background: #FB9252;">住宅</span>
+                </div>
+                <div class="detil-content">
+                    <a href="" title="长安区韦曲街道府东一路320号近西安邮电大学"><i
+                            class="iconfont iconditu"></i>长安区韦曲街道府东一路320号近西安邮电大学</a>
+                    <a href=""><i class="iconfont iconfangzi1" style="font-size:16px;"></i>户型：三室/四室 &nbsp;
+                        建面：112-116m²</a>
+                </div>
+                <div class="detil-surround">
+                    <span class="surround-type">绿化率高</span>
+                    <span class="surround-type">低密度</span>
+                </div>
+            </div>
+            <div class="detil-price">
+                <p>25000<span>元/平(均价)</span></p>
+            </div>
+
+        </div>
+
+        <!-- 右侧面板结束 -->
+    </div>
+
+
+
+    <script type="text/javascript" src="./lib/require/require.js"></script>
+    <script type="text/javascript" src="./require.config.js"></script>
+    <script type="text/javascript" src="./js/order.js"></script>
+
+</body>
+
+</html>
