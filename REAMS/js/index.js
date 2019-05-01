@@ -94,7 +94,7 @@ require(['jquery', 'bootstrap', 'login'], function () {
         // var greenDetil = new Array();
 
         var greenImg = new Array();
-        var addName = new Array();
+        var addName = new Array(); 
         var addDesc = new Array();
         var area = new Array();
         var areaType = new Array();

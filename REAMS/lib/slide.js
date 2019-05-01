@@ -3,6 +3,7 @@
  */
 //点击小图切换大图
 $("#thumbnail li a").click(function () {
+	console.log("uuuu")
 	$(".zoompic img").hide().attr({ "src": $(this).attr("href"), "title": $("> img", this).attr("title") });
 	$("#thumbnail li.current").removeClass("current");
 	$(this).parents("li").addClass("current");
@@ -26,6 +27,7 @@ if ($slider_child_l < 5) {
 }
 
 $('#btn-right').click(function () {
+	console.log("right")
 	if ($slider_child_l < 5 || slider_count >= $slider_child_l - 5) {
 		return false;
 	}
