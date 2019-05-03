@@ -276,11 +276,12 @@
 }
 .houseDetil-wrap .detil-lunbo .content-aside .aside-li .con-tab span {
   float: left;
-  width: 25%;
+  width: 23%;
   font-size: 16px;
   color: rgba(16, 29, 55, 0.6);
   line-height: 22px;
   padding-bottom: 15px;
+  text-align: center;
 }
 .houseDetil-wrap .detil-lunbo .content-aside .aside-li .con-tab span i {
   display: block;

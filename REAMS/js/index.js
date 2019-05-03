@@ -101,7 +101,7 @@ require(['jquery', 'bootstrap', 'login'], function () {
         var price = new Array();
         var id = new Array();
 
-        for (var i = 0; i < response.greenHouses.length; i++) {
+        for (var i = 0; i <4; i++) {
             greenImg[i] = response.greenHouses[i].url[0];
             addName[i] = response.greenHouses[i].name;
             addDesc[i] = response.greenHouses[i].address;
@@ -126,7 +126,7 @@ require(['jquery', 'bootstrap', 'login'], function () {
         $('#house_wrapper').append(greenHouse);
 
         var greenDesc = ""
-        for (var i = 0; i < response.greenHouses.length; i++) {
+        for (var i = 0; i < 4; i++) {
             greenDesc +=
                 '   <div class="green-detil">\n' +
                 '       <a href="./greenHouseDetil.html?id='+id[i]+'">\n' +
@@ -137,8 +137,8 @@ require(['jquery', 'bootstrap', 'login'], function () {
                 '               <p class="p-over">' + addDesc[i] + '</p>\n' +
                 '           </div>\n' +
                 '           <div class="sapn-bottome">\n' +
-                '               <span class="area">' + areaType[i] + '·' + area[i] + '</span>\n' +
-                '               <span class="price">' + price[i] + '</span>\n' +
+                '               <span class="area">' + areaType[i] + '·' + area[i] + '㎡</span>\n' +
+                '               <span class="price">' + price[i] + '万</span>\n' +
                 '           </div>\n' +
                 '   </div>'
         }
@@ -169,7 +169,7 @@ require(['jquery', 'bootstrap', 'login'], function () {
         var newPrice = new Array();
         var id = new Array();
 
-        for (var i = 0; i < response.newHouses.length; i++) {
+        for (var i = 0; i <3; i++) {
           
             newImg[i] = response.newHouses[i].url[0];
             newAddName[i] = response.newHouses[i].name;
@@ -178,14 +178,14 @@ require(['jquery', 'bootstrap', 'login'], function () {
         }
 
         var newDesc = "";
-        for (var j = 0; j < response.newHouses.length; j++) {
+        for (var j = 0; j < 3; j++) {
             newDesc +=
                 '<div class="new-detil">\n' +
                 '   <a href="./newHouseDetil.html?id='+id[j]+'">\n' +
                 '       <img src="' + newImg[j] + '">\n' +
                 '   </a>\n' +
                 '   <span class="new-addName">' + newAddName[j] + '</span>\n' +
-                '   <span class="new-addPrice">' + newPrice[j] + '</span>\n' +
+                '   <span class="new-addPrice">' + newPrice[j] + '元/平</span>\n' +
                 '</div>'
         }
         $('.newHouse').append(newDesc);
@@ -216,7 +216,7 @@ require(['jquery', 'bootstrap', 'login'], function () {
         var rootPrice = new Array();
         var id = new Array();
 
-        for (var i = 0; i < response.rentHouses.length; i++) {
+        for (var i = 0; i < 4; i++) {
             rootImg[i] = response.rentHouses[i].url[0];
             rootAddName[i] = response.rentHouses[i].name;
             rootAddDesc[i] =response.rentHouses[i].address;
@@ -227,7 +227,7 @@ require(['jquery', 'bootstrap', 'login'], function () {
         }
 
         var rootDesc = "";
-        for (var j = 0; j < response.rentHouses.length; j++) {
+        for (var j = 0; j < 4; j++) {
             rootDesc +=
                 '<div class="root-detil">\n' +
                 '   <a href="./detilHouse.html?id='+id[j]+'">\n' +
@@ -236,7 +236,7 @@ require(['jquery', 'bootstrap', 'login'], function () {
                 '   <p class="address">' + rootAddName[j] + '·' + rootAddDesc[j] + '·' + rootPosition[j] + '</p>\n' +
                 '   <div class="span-bottom">\n' +
                 '       <span class="area">' + rootAreaType[j] + '</span>\n' +
-                '       <span class="price">' + rootPrice[j] + '</span>\n' +
+                '       <span class="price">' + rootPrice[j] + '元/月</span>\n' +
                 '   </div>\n' +
                 '</div>'
         }
