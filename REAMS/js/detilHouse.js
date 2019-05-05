@@ -53,6 +53,17 @@ require(['jquery', 'bootstrap','login'], function () {
         }else{
             response.rentHouse.rent_type = '合租';
         }
+        if(response.rentHouse.fire){
+            response.rentHouse.fire = '有'
+        }else{
+            response.rentHouse.fire = '没有'
+        }
+        if(response.rentHouse.elevator){
+            response.rentHouse.elevator = '有'
+        }else{
+            response.rentHouse.elevator = '没有'
+        }
+
 
         var detilTitle = "";
         detilTitle += 
@@ -106,7 +117,7 @@ require(['jquery', 'bootstrap','login'], function () {
                     '</p>\n'+
                     '<div class="aside-tab">\n'+
                         '<button class="btn" disabled>'+response.rentHouse.heating+'</button>\n'+
-                        '<button class="btn" disabled>集中供暖</button>\n'+
+                        
                         '<button class="btn" disabled>'+traffic+'</button>\n'+
                     '</div>\n'+
                     '<hr>\n'+
@@ -119,10 +130,15 @@ require(['jquery', 'bootstrap','login'], function () {
                         '</p>\n'+
                     '</ul>\n'+
                     '<div class="aside-man">\n'+
-                        '<div class="aside-yonghu"></div>\n'+
+                        '<div class="aside-yonghu">\n'+
+                            '<img src="'+response.agents[0].image+' "width="60" height="60" title="'+ response.agents[0].introduce+'" />\n'+
+                        '</div>\n'+
                         '<div class="man-right">\n'+
-                            '<span class="man-name">soul</span>\n'+
+                            '<span class="man-name">'+response.agents[0].name+'</span>\n'+
                             '<span class="man-detil">PPX经纪人</span>\n'+
+                        '</div>\n'+
+                        '<div class="con-man">\n'+
+                            '<span class="man-tab">联系他</span>\n'+
                         '</div>\n'+
                     '</div>\n'+
                 '</div>\n'+
@@ -143,7 +159,7 @@ require(['jquery', 'bootstrap','login'], function () {
                     '</div>\n'+
                 '</div>\n'+
                 '<div class="basic-info">\n'+
-                    '<ul>\n';
+                    '<ul>\n'+
                         '<li class="f1 online">基本信息</li>\n'+
                         '<li class="f1 online">\n'+
                             '<span>发布:</span>\n'+
@@ -153,52 +169,132 @@ require(['jquery', 'bootstrap','login'], function () {
                             '<span>入住:</span>\n'+
                             '<span>随时入住</span>\n'+
                         '</li>\n'+
-
-            //         <li class="f1 online">&nbsp;</li>
-            //         <li class="f1 online">
-            //             <span>租期:</span>
-            //             <span>暂无数据</span>
-            //         </li>
-            //         <li class="f1 online">
-            //             <span>看房:</span>
-            //             <span>需提前预约</span>
-            //         </li>
-            //         <li class="f1 online">&nbsp;</li>
-            //         <li class="f1 online">
-            //             <span>楼层:</span>
-            //             <span>高楼/32层</span>
-            //         </li>
-            //         <li class="f1 online">
-            //             <span>电梯:</span>
-            //             <span>有</span>
-            //         </li>
-            //         <li class="f1 online">&nbsp;</li>
-            //         <li class="f1 online">
-            //             <span>车位:</span>
-            //             <span>暂无数据</span>
-            //         </li>
-            //         <li class="f1 online">
-            //             <span>用水:</span>
-            //             <span>民水</span>
-            //         </li>
-            //         <li class="f1 online">&nbsp;</li>
-            //         <li class="f1 online">
-            //             <span>用电:</span>
-            //             <span>民电</span>
-            //         </li>
-            //         <li class="f1 online">
-            //             <span>燃气:</span>
-            //             <span>有</span>
-            //         </li>
-
-            //     </ul>
-            // </div>
-            // <hr>
-
+                        '<li class="f1 online">&nbsp;</li>\n'+
+                        '<li class="f1 online">\n'+
+                            '<span>租期:</span>\n'+
+                            '<span>'+response.rentHouse.rent_time+'</span>\n'+
+                        '</li>\n'+
+                        '<li class="f1 online">\n'+
+                            '<span>看房:</span>\n'+
+                            '<span>需提前预约</span>\n'+
+                        '</li>\n'+
+                        '<li class="f1 online">&nbsp;</li>\n'+
+                        '<li class="f1 online">\n'+
+                            '<span>楼层:</span>\n'+
+                            '<span>'+response.rentHouse.floor+'</span>\n'+
+                        '</li>\n'+
+                        '<li class="f1 online">\n'+
+                            '<span>电梯:</span>\n'+
+                            '<span>'+response.rentHouse.elevator+'</span>\n'+
+                        '</li>\n'+
+                        '<li class="f1 online">&nbsp;</li>\n'+
+                        '<li class="f1 online">\n'+
+                            '<span>用水:</span>\n'+
+                            '<span>'+response.rentHouse.eletric+'</span>\n'+
+                        '</li>\n'+
+                        '<li class="f1 online">\n'+
+                            '<span>用电:</span>\n'+
+                            '<span>'+response.rentHouse.water+'</span>\n'+
+                        '</li>\n'+
+                        '<li class="f1 online">&nbsp;</li>\n'+
+                        '<li class="f1 online">\n'+
+                            '<span>燃气:</span>\n'+
+                            '<span>'+response.rentHouse.fire+'</span>\n'+
+                        '</li>\n'+
+                    '</ul>\n'+
+                '</div>\n'+
+                '<hr>\n'+
+                '<div class="equip-info">\n'+
+                    '<ul>\n'+
+                        '<li class="f1 online">配套设施</li>\n'
+                        
+                        if(response.rentHouse.tv){
+                            detilHouse +=
+                            '<li class="f1 online"><i class="iconfont icondianshi"></i><span>电视</span></li>\n'
+                        }else{
+                            detilHouse +=
+                            '<li class="f1 online iconNo"><i class="iconfont iconyigui-copy"></i><span>电视</span></li>\n'
+                        }
+                        if(response.rentHouse.fridge){
+                            detilHouse +=
+                            '<li class="f1 online"><i class="iconfont iconbingxiang"></i><span>冰箱</span></li>\n'
+                        }else{
+                            detilHouse +=
+                            '<li class="f1 online iconNo"><i class="iconfont iconbingxiang-copy"></i><span>冰箱</span></li>\n'
+                        }
+                        if(response.rentHouse.washer){
+                            detilHouse +=
+                            '<li class="f1 online"><i class="iconfont iconxiyiji"></i><span>洗衣机</span></li>\n'
+                        }else{
+                            detilHouse +=
+                            '<li class="f1 online iconNo"><i class="iconfont iconxiyiji-copy"></i><span>洗衣机</span></li>\n'
+                        }
+                        if(response.rentHouse.air_condition){
+                            detilHouse +=
+                            '<li class="f1 online"><i class="iconfont iconkongtiaoiconx"></i><span>空调</span></li>\n'
+                        }else{
+                            detilHouse +=
+                            '<li class="f1 online iconNo"><i class="iconfont iconkongtiaoiconx-copy"></i><span>空调</span></li>\n'
+                        }
+                        if(response.rentHouse.shower){
+                            detilHouse +=
+                            '<li class="f1 online"><i class="iconfont iconreshuiqi"></i><span>热水器</span></li>\n'
+                        }else{
+                            detilHouse +=
+                            '<li class="f1 online iconNo"><i class="iconfont iconreshuiqi-copy"></i><span>热水器</span></li>\n'
+                        }
+                        if(response.rentHouse.bed){
+                            detilHouse +=
+                            '<li class="f1 online"><i class="iconfont iconchuang"></i><span>床</span></li>\n'
+                        }else{
+                            detilHouse +=
+                            '<li class="f1 online iconNo"><i class="iconfont iconchuang-copy"></i><span>床</span></li>\n'
+                        }
+                        if(response.rentHouse.wifi){
+                            detilHouse +=
+                            '<li class="f1 online"><i class="iconfont iconWIFIwofi1"></i><span>WIFI</span></li>\n'
+                        }else{
+                            detilHouse +=
+                            '<li class="f1 online iconNo"><i class="iconfont iconWIFIwofi1-copy"></i><span>WIFI</span></li>\n'
+                        }
+                        if(response.rentHouse.heating){
+                            detilHouse +=
+                            '<li class="f1 online"><i class="iconfont iconnuanqi"></i><span>暖气</span></li>\n'
+                        }else{
+                            detilHouse +=
+                            '<li class="f1 online iconNo"><i class="iconfont iconnuanqi-copy"></i><span>床</span></li>\n'
+                        }
+                        if(response.rentHouse.closespress){
+                            detilHouse +=
+                            '<li class="f1 online"><i class="iconfont iconyigui"></i><span>衣柜</span></li>\n'
+                        }else{
+                            detilHouse +=
+                            '<li class="f1 online iconNo"><i class="iconfont iconyigui-copy"></i><span>衣柜</span></li>\n'
+                        }
+                        if(response.rentHouse.gas){
+                            detilHouse +=
+                            '<li class="f1 online"><i class="iconfont iconyigui"></i><span>天然气</span></li>\n'
+                        }else{
+                            detilHouse +=
+                            '<li class="f1 online iconNo"><i class="iconfont iconyigui-copy"></i><span>天然气</span></li>\n'
+                        }    
+                    '</ul>\n'+
+                '</div>\n'+
+            '</div>'
+            '<hr>'         
+            $('.houseDetil-wrap').append(detilHouse);
             
-  $('.houseDetil-wrap').append(detilHouse);
-       
- 
+            var mapWrapper = "";
+            mapWrapper += 
+            '<div class="map-Wrapper">\n'+
+                '<div class="detil-title">\n'+
+                    '<div class="detil-biaoti">\n'+
+                        '<span>地址和交通</span>\n'+
+                    '</div>\n'+
+                '</div>\n'+
+                '<iframe id="ted" src="./detil.html?x='+response.rentHouse.housex+'&y='+response.rentHouse.housey+'"></iframe>\n'+
+           '</div>'
+            $('.houseDetil-wrap').append(mapWrapper);
     }
    
 }); 
