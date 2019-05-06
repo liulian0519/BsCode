@@ -9,12 +9,13 @@
     <link rel="stylesheet" type="text/css" href="css/iconfont.css">
     <!-- bootstrap样式文件 -->
     <link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./css/detilHouse.css">
-    <title>租房详情页面</title>
+    <link rel="stylesheet" type="text/css" href="./css/newhousedetil.css">
+    <link rel="stylesheet" type="text/css" href="./css/swiper.min.css">
+    <title>新房详情页面</title>
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    
-</head>
 
+</head>
+ 
 <body>
     <!--头部导航开始  -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -27,9 +28,9 @@
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="index.html">首页</a></li>
-                    <li class="active"><a href="rootHouse.html">租房</a></li>
+                    <li><a href="rootHouse.html">租房</a></li>
                     <li><a href="greenHouse.html">二手房</a></li>
-                    <li><a href="newHouse.html">新房</a></li>
+                    <li class="active"><a href="newHouse.html">新房</a></li>
                     <li><a href="release.html">发布房源</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -37,7 +38,7 @@
                         <a id="myLogin" data-toggle="modal" data-target="#login">
                             <i class="iconfont iconyonghu"></i>
                             <span>登录</span>
-                        </a> 
+                        </a>
                     </li>
                 </ul>
                 <!-- 登录的模态框开始 -->
@@ -99,224 +100,495 @@
         <div class="search-body">
             <div class="search-left">
                 <img src="./img/logo.png" />
-                <span class="ti">PPX好房好服务</span>
+                <span class="ti">PPX新房</span>
+                <a class="s-city" data-xftrack="10124" title="选择城市"><span>西安<i class="iconfont iconditu"
+                            style="margin-left:7px;"></i></span></a>
             </div>
             <div class="search-right">
-                <input type="text" value="" id="" class="search-input" placeholder="输入二手房信息开始查找" />
+                <input type="text" value="" id="" class="search-input" placeholder="请输入楼盘名开始查找" />
                 <i class="iconfont iconicon--"></i>
             </div>
         </div>
-
-
     </div>
     <!-- 搜索框结束 -->
     <!-- 房源详细信息开始 -->
     <div class="houseDetil-wrap">
-        <!-- title和轮播图 -->
+        <!-- title and swiper start -->
         <div class="detil-title">
-            <div class="detil-biaoti">
-                <span>春天花园</span>
-                <span>三室一厅</span>
-                <span>5500元</span>
+            <span class="name">春天花园</span>
+            <span class="block-type" style="background: #5F94FF;">在售</span>
+            <span class="block-type" style="background: #FB9252;">住宅</span>
+            <div class="sub-title">
+                <span>别名：韦曲∙春天花园</span>
             </div>
-            <div class="detil-text">
-                <div class="detil-time">
-                    <span>房源上架时间</span>
-                    <span>2019-03-04</span>
+        </div>
+        <div class="detil-swiper">
+            <div class="swiper-container gallery-top">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"
+                        style="background-image:url(https://ke-image.ljcdn.com/hdic-resblock/prod-57d14b46-2551-4ca5-b5e4-7a185eda939fphpVJT4Fg!m_fill,w_1000,l_fbk); ">
+                    </div>
+                    <div class="swiper-slide"
+                        style="background-image:url(https://ke-image.ljcdn.com/hdic-resblock/10bee88b-e6ad-49f3-8be0-2c8e538b2a3e.jpg!m_fill,w_1000,l_fbk)">
+                    </div>
+                    <div class="swiper-slide"
+                        style="background-image:url(https://ke-image.ljcdn.com/hdic-resblock/88504cac-a4b6-47e6-9cda-3d03db245faa.jpg!m_fill,w_1000,l_fbk)">
+                    </div>
+                    <div class="swiper-slide"
+                        style="background-image:url(https://ke-image.ljcdn.com/hdic-resblock/prod-48ccbf71-5fb8-413d-8f55-f69b9a8261c4php5XFHHW!m_fill,w_1000,l_fbk)">
+                    </div>
                 </div>
+                <div class="swiper-pagination"></div> 
+                <!-- Add Arrows -->
+                 <div class="swiper-button-next swiper-button-white"></div>
+                <div class="swiper-button-prev swiper-button-white"></div>
+            </div>
+            <div class="swiper-container gallery-thumbs">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"
+                        style="background-image:url(https://ke-image.ljcdn.com/hdic-resblock/prod-57d14b46-2551-4ca5-b5e4-7a185eda939fphpVJT4Fg!m_fill,w_1000,l_fbk)">
+                    </div>
+                    <div class="swiper-slide"
+                        style="background-image:url(https://ke-image.ljcdn.com/hdic-resblock/10bee88b-e6ad-49f3-8be0-2c8e538b2a3e.jpg!m_fill,w_1000,l_fbk)">
+                    </div>
+                    <div class="swiper-slide"
+                        style="background-image:url(https://ke-image.ljcdn.com/hdic-resblock/88504cac-a4b6-47e6-9cda-3d03db245faa.jpg!m_fill,w_1000,l_fbk)">
+                    </div>
+                    <div class="swiper-slide"
+                        style="background-image:url(https://ke-image.ljcdn.com/hdic-resblock/prod-48ccbf71-5fb8-413d-8f55-f69b9a8261c4php5XFHHW!m_fill,w_1000,l_fbk)">
+                    </div>
 
+                </div>
             </div>
         </div> 
-        <!-- 轮播 -->
-        <div class="detil-lunbo">
-            <div class="zoombox">
-                <div class="zoompic"><img
-                        src="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
-                        width="684" height="394" alt="房源信息" /></div>
-                      
-                <div class="sliderbox">
-                    <div id="btn-left" class="arrow-btn dasabled"></div>
-                    <div class="slider" id="thumbnail">
-                        <ul>
-                            <li class="current"><a
-                                    href="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
-                                    target="_blank"><img
-                                        src="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
-                                        width="115" height="74" alt="房源信息" /></a></li>
-                            <li><a href="https://ke-image.ljcdn.com/610100-inspection/328ffea3-f6e8-48ee-b042-3ac2fce5f9e1.jpg.780x439.jpg"
-                                    target="_blank"><img
-                                        src="https://ke-image.ljcdn.com/610100-inspection/328ffea3-f6e8-48ee-b042-3ac2fce5f9e1.jpg.780x439.jpg"
-                                        width="115" height="74" alt="房源信息" /></a></li>
-                            <li><a href="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
-                                    target="_blank"><img
-                                        src="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
-                                        width="115" height="74" alt="房源信息" /></a></li>
-                            <li><a href="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
-                                    target="_blank"><img
-                                        src="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
-                                        width="115" height="74" alt="房源信息" /></a></li>
-                            <li><a href="https://ke-image.ljcdn.com/610100-inspection/328ffea3-f6e8-48ee-b042-3ac2fce5f9e1.jpg.780x439.jpg"
-                                    target="_blank"><img
-                                        src="https://ke-image.ljcdn.com/610100-inspection/328ffea3-f6e8-48ee-b042-3ac2fce5f9e1.jpg.780x439.jpg"
-                                        width="115" height="74" alt="房源信息" /></a></li>
-                            <li><a href="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
-                                    target="_blank"><img
-                                        src="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
-                                        width="115" height="74" alt="房源信息" /></a></li>
-                            <li><a href="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
-                                    target="_blank"><img
-                                        src="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
-                                        width="115" height="74" alt="房源信息" /></a></li>
-                            <li><a href="https://ke-image.ljcdn.com/610100-inspection/328ffea3-f6e8-48ee-b042-3ac2fce5f9e1.jpg.780x439.jpg"
-                                    target="_blank"><img
-                                        src="https://ke-image.ljcdn.com/610100-inspection/328ffea3-f6e8-48ee-b042-3ac2fce5f9e1.jpg.780x439.jpg"
-                                        width="115" height="74" alt="房源信息" /></a></li>
-                            <li><a href="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
-                                    target="_blank"><img
-                                        src="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
-                                        width="115" height="74" alt="房源信息" /></a></li>
-                            <li><a href="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
-                                    target="_blank"><img
-                                        src="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
-                                        width="115" height="74" alt="房源信息" /></a></li>
-                            <li><a href="https://ke-image.ljcdn.com/610100-inspection/328ffea3-f6e8-48ee-b042-3ac2fce5f9e1.jpg.780x439.jpg"
-                                    target="_blank"><img
-                                        src="https://ke-image.ljcdn.com/610100-inspection/328ffea3-f6e8-48ee-b042-3ac2fce5f9e1.jpg.780x439.jpg"
-                                        width="115" height="74" alt="房源信息" /></a></li>
-                            <li><a href="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
-                                    target="_blank"><img
-                                        src="https://ke-image.ljcdn.com/610100-inspection/b307029a-d4cd-4945-ac8f-d41417daa08f.jpg.780x439.jpg"
-                                        width="115" height="74" alt="房源信息" /></a></li>
-
-                        </ul>
-                    </div>
-                    <div id="btn-right" class="arrow-btn"></div>
+        <!-- title and swiper end -->
+        <!-- 右边的卡片 -->
+         <div class="card-wrap">
+            <div class="box-fixed">
+                <div class="card-price">
+                    <p>25000<span>元/平(均价)</span></p>
+                    <p class="sub-price">此价格来源于日常交易积累</p>
+                    <span class="block-tag">住宅</span>
+                    <span class="block-tag">绿化率高</span>
+                    <span class="block-tag">低密度</span>
                 </div>
-            </div>
-            <div class="content-aside">
-                <p class="aside-price">
-                    <span>5500元/月</span>
-                </p>
-                <div class="aside-tab">
-                    <button class="btn" disabled>近地铁</button>
-                    <button class="btn" disabled>集中供暖</button>
-                    <button class="btn" disabled>随时看房</button>
+                <div class="preOrder">
+                    <input type="button" class="btn btn-preOrder" value="预购" />
                 </div>
                 <hr>
-                <ul class="aside-li">
-                    <p class="con-tab">
-                        <span><i class="iconfont iconfangzi"></i>合租</span>
-                        <span><i class="iconfont iconwankeicon-"></i>四室一厅</span>
-                        <span><i class="iconfont iconmianji"></i>147㎡</span>
-                        <span><i class="iconfont iconhaofangtuo400iconfontzhaoxiang"></i>朝南</span>
-                    </p>
-                </ul>
+                <div class="mid-info">
+                    <ul class="info-list">
+                        <li class="info-item">
+                            <span class="title">物业类型:</span>
+                            <p class="content">住宅</p>
+                        </li>
+                        <li class="info-item">
+                            <span class="title">项目地址:</span>
+                            <p class="content">春天花园位于韦曲街道学府大街444号近西安邮电大学我只是想证明这段话很长</p>
+                        </li>
+                        <li class="info-item">
+                            <span class="title">开盘时间:</span>
+                            <p class="content">2018.09.12</p>
+                        </li>
+                        <li class="info-item">
+                            <span class="title">楼盘户型:</span>
+                            <p class="content">三居室 &nbsp; 四居室</p>
+                            <a class="all-type">全部户型</a>
+                        </li>
+                    </ul>
+                </div>
+                <hr>
                 <div class="aside-man">
                     <div class="aside-yonghu"></div>
                     <div class="man-right">
                         <span class="man-name">soul</span>
                         <span class="man-detil">PPX经纪人</span>
                     </div>
-                </div>
+                    <div class="reply">
+                        <div class="phone-btn">
+                            <span>13609219504</span>
+                        </div>
+                        <div class="link">
+                            <span id="callme">联系经纪人</span>
+                            <img id="wxImg" src="./img/qr.jpg" style="display: none">
+                        </div>
 
-            </div>
-        </div> 
-        <!-- 房屋详细信息 -->
-      <div class="house-detil">
-            <div class="detil-title">
-                <div class="detil-biaoti">
-                    <span>房屋信息</span>
+                    </div>
+
                 </div>
+            </div>
+        </div>
+        <!-- 户型信息开始 -->
+       <div class="housetype-wrap">
+            <div class="type-title">
+                <span class="name">户型介绍</span>
+            </div>
+            <ul id="myTab" class="nav nav-tabs">
+                <li class="active"><a href="#home" data-toggle="tab">全部户型</a></li>
+                <li><a href="#price" data-toggle="tab">三居室</a></li>
+                <li><a href="#time" data-toggle="tab">四居室</a></li>
+            </ul>
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade in active" id="home">
+                    <div class="result-item">
+                        <div class="result-img">
+                            <a id="myhousetype" data-toggle="modal" data-target="#housetype1">
+                                <img
+                                    src="https://ke-image.ljcdn.com/hdic-frame/d3a56198-ad8d-483a-85f3-b0d9d3847047.jpg.280x.jpg" />
+                            </a>
+                        </div> 
+                        <!-- 户型图模态框开始 -->
+                        <div class="modal fade" id="housetype1" tabindex="-1" role="dialog"
+                            aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+
+                                <img
+                                    src="https://ke-image.ljcdn.com/hdic-frame/d3a56198-ad8d-483a-85f3-b0d9d3847047.jpg.280x.jpg" />
+
+                            </div>
+                        </div> 
+                        <!-- 户型图模态框结束 -->
+                         <div class="housetype-detil">
+                            <div class="housetype-title">
+                                <p class="name">
+                                    <span class="name-f1">160.53/160.99平米 户型 4室2厅3卫</span>
+                                    <span class="block-tag">在售</span>
+                                </p>
+                                <span class="sub-name">建面161m²</span>
+                            </div>
+                            <div class="tag">
+                                <span class="block-tag">全明格局</span>
+                                <span class="block-tag">多卫</span>
+                                <span class="block-tag">阳台</span>
+                                <span class="block-tag">干湿分离</span>
+                            </div>
+                            <div class="housetype-price">
+                                <span>约403万/套</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-img">
+                            <a id="myhousetype" data-toggle="modal" data-target="#housetype2">
+                                <img
+                                    src="https://ke-image.ljcdn.com/hdic-frame/d3a56198-ad8d-483a-85f3-b0d9d3847047.jpg.280x.jpg" />
+                            </a>
+                        </div> 
+                        <!-- 户型图模态框开始 -->
+                       <div class="modal fade" id="housetype2" tabindex="-1" role="dialog"
+                            aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <img src="./img/01.jpg" />
+                                </div>
+                            </div>
+                        </div> 
+                        <!-- 户型图模态框结束 -->
+                         <div class="housetype-detil">
+                            <div class="housetype-title">
+                                <p class="name">
+                                    <span class="name-f1">160.53/160.99平米 户型 4室2厅3卫</span>
+                                    <span class="block-tag">在售</span>
+                                </p>
+                                <span class="sub-name">建面161m²</span>
+                            </div>
+                            <div class="tag">
+                                <span class="block-tag">全明格局</span>
+                                <span class="block-tag">多卫</span>
+                                <span class="block-tag">阳台</span>
+                                <span class="block-tag">干湿分离</span>
+                            </div>
+                            <div class="housetype-price">
+                                <span>约403万/套</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-img">
+                            <a id="myhousetype" data-toggle="modal" data-target="#housetype3">
+                                <img
+                                    src="https://ke-image.ljcdn.com/hdic-frame/d3a56198-ad8d-483a-85f3-b0d9d3847047.jpg.280x.jpg" />
+                            </a>
+                        </div> 
+                        <!-- 户型图模态框开始 -->
+                         <div class="modal fade" id="housetype3" tabindex="-1" role="dialog"
+                            aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    测试
+                                </div>
+                            </div>
+                        </div> 
+                        <!-- 户型图模态框结束 -->
+                         <div class="housetype-detil">
+                            <div class="housetype-title">
+                                <p class="name">
+                                    <span class="name-f1">160.53/160.99平米 户型 4室2厅3卫</span>
+                                    <span class="block-tag">在售</span>
+                                </p>
+                                <span class="sub-name">建面161m²</span>
+                            </div>
+                            <div class="tag">
+                                <span class="block-tag">全明格局</span>
+                                <span class="block-tag">多卫</span>
+                                <span class="block-tag">阳台</span>
+                                <span class="block-tag">干湿分离</span>
+                            </div>
+                            <div class="housetype-price">
+                                <span>约403万/套</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flod-box">
+                        <div class="result-item">
+                            <div class="result-img">
+                                <a id="myhousetype" data-toggle="modal" data-target="#housetype1">
+                                    <img
+                                        src="https://ke-image.ljcdn.com/hdic-frame/d3a56198-ad8d-483a-85f3-b0d9d3847047.jpg.280x.jpg" />
+                                </a>
+                            </div> 
+                            <!-- 户型图模态框开始 -->
+                            <div class="modal fade" id="housetype1" tabindex="-1" role="dialog"
+                                aria-labelledby="myModalLabel">
+                                <div class="modal-dialog" role="document">
+
+                                    <img
+                                        src="https://ke-image.ljcdn.com/hdic-frame/d3a56198-ad8d-483a-85f3-b0d9d3847047.jpg.280x.jpg" />
+
+                                </div>
+                            </div>
+                            <!-- 户型图模态框结束 --> 
+                            <div class="housetype-detil">
+                                <div class="housetype-title">
+                                    <p class="name">
+                                        <span class="name-f1">160.53/160.99平米 户型 4室2厅3卫</span>
+                                        <span class="block-tag">在售</span>
+                                    </p>
+                                    <span class="sub-name">建面161m²</span>
+                                </div>
+                                <div class="tag">
+                                    <span class="block-tag">全明格局</span>
+                                    <span class="block-tag">多卫</span>
+                                    <span class="block-tag">阳台</span>
+                                    <span class="block-tag">干湿分离</span>
+                                </div>
+                                <div class="housetype-price">
+                                    <span>约403万/套</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-img">
+                                <a id="myhousetype" data-toggle="modal" data-target="#housetype2">
+                                    <img
+                                        src="https://ke-image.ljcdn.com/hdic-frame/d3a56198-ad8d-483a-85f3-b0d9d3847047.jpg.280x.jpg" />
+                                </a>
+                            </div> 
+                            <!-- 户型图模态框开始 -->
+                             <div class="modal fade" id="housetype2" tabindex="-1" role="dialog"
+                                aria-labelledby="myModalLabel">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <img src="./img/01.jpg" />
+                                    </div>
+                                </div>
+                            </div> 
+                            <!-- 户型图模态框结束 -->
+                          <div class="housetype-detil">
+                                <div class="housetype-title">
+                                    <p class="name">
+                                        <span class="name-f1">160.53/160.99平米 户型 4室2厅3卫</span>
+                                        <span class="block-tag">在售</span>
+                                    </p>
+                                    <span class="sub-name">建面161m²</span>
+                                </div>
+                                <div class="tag">
+                                    <span class="block-tag">全明格局</span>
+                                    <span class="block-tag">多卫</span>
+                                    <span class="block-tag">阳台</span>
+                                    <span class="block-tag">干湿分离</span>
+                                </div>
+                                <div class="housetype-price">
+                                    <span>约403万/套</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-img">
+                                <a id="myhousetype" data-toggle="modal" data-target="#housetype3">
+                                    <img
+                                        src="https://ke-image.ljcdn.com/hdic-frame/d3a56198-ad8d-483a-85f3-b0d9d3847047.jpg.280x.jpg" />
+                                </a>
+                            </div>
+                            <!-- 户型图模态框开始 -->
+                           <div class="modal fade" id="housetype3" tabindex="-1" role="dialog"
+                                aria-labelledby="myModalLabel">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        测试
+                                    </div>
+                                </div>
+                            </div> 
+                            <!-- 户型图模态框结束 -->
+                             <div class="housetype-detil">
+                                <div class="housetype-title">
+                                    <p class="name">
+                                        <span class="name-f1">160.53/160.99平米 户型 4室2厅3卫</span>
+                                        <span class="block-tag">在售</span>
+                                    </p>
+                                    <span class="sub-name">建面161m²</span>
+                                </div>
+                                <div class="tag">
+                                    <span class="block-tag">全明格局</span>
+                                    <span class="block-tag">多卫</span>
+                                    <span class="block-tag">阳台</span>
+                                    <span class="block-tag">干湿分离</span>
+                                </div>
+                                <div class="housetype-price">
+                                    <span>约403万/套</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fold-button">
+                        <span class="open">展开</span>
+                        <span class="clo" style="display:none;">收起</span>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="price">
+                    <p>三居室展示</p>
+                </div>
+                <div class="tab-pane fade" id="time">
+                    <p>四居室展示。</p>
+                </div>
+            </div>
+        </div>
+        <!-- 户型信息结束 --> 
+        <!-- 楼栋信息开始 -->
+        <div class="build-wrap">
+            <div class="build-title">
+                <span class="name">楼栋信息</span>
             </div>
             <div class="basic-info">
-                <ul>
-                    <li class="f1 online">基本信息</li>
-                    <li class="f1 online">
-                        <span>发布:</span>
-                        <span>2019-03-04</span>
+                <p class="basic-title">基本信息</p>
+                <ul class="x-box">
+                    <li class="all-row">
+                        <span class="lab">物业类型：</span>
+                        <span class="label-val">住宅</span>
                     </li>
-                    <li class="f1 online">
-                        <span>入住:</span>
-                        <span>随时入住</span>
+                    <li class="all-row">
+                        <span class="lab">参考价格：</span>
+                        <span class="label-val">
+                            <span>均价 25000元/平</span>
+                        </span>
                     </li>
-                    <li class="f1 online">&nbsp;</li>
-                    <li class="f1 online">
-                        <span>租期:</span>
-                        <span>暂无数据</span>
+                    <li class="all-row">
+                        <span class="lab">项目特色：</span>
+                        <span class="label-val tese-val" title="绿化率高 低密度 ">绿化率高 低密度 </span>
                     </li>
-                    <li class="f1 online">
-                        <span>看房:</span>
-                        <span>需提前预约</span>
+                    <li class="all-row">
+                        <span class="lab">区域位置：</span>
+                        <span class="label-val">西安-长安</span>
                     </li>
-                    <li class="f1 online">&nbsp;</li>
-                    <li class="f1 online">
-                        <span>楼层:</span>
-                        <span>高楼/32层</span>
+                    <li class="all-row">
+                        <span class="lab">楼盘地址：</span>
+                        <span class="label-val">科技七路与木塔寨一路交汇处东南角</span>
                     </li>
-                    <li class="f1 online">
-                        <span>电梯:</span>
-                        <span>有</span>
+                    <li class="all-row">
+                        <span class="lab">售楼处地址：</span>
+                        <span class="label-val">科技六路木塔寺公园向东500米（接待时间 09:00 - 18:00）</span>
                     </li>
-                    <li class="f1 online">&nbsp;</li>
-                    <li class="f1 online">
-                        <span>车位:</span>
-                        <span>暂无数据</span>
+                    <li class="all-row">
+                        <span class="lab">开发商：</span>
+                        <span class="label-val">西安兰轩置业有限公司</span>
                     </li>
-                    <li class="f1 online">
-                        <span>用水:</span>
-                        <span>民水</span>
-                    </li>
-                    <li class="f1 online">&nbsp;</li>
-                    <li class="f1 online">
-                        <span>用电:</span>
-                        <span>民电</span>
-                    </li>
-                    <li class="f1 online">
-                        <span>燃气:</span>
-                        <span>有</span>
-                    </li>
+                </ul>
+                <div class="more-info">
+                    <p class="basic-title">更多信息</p>
+                    <ul class="x-box">
+                            <li class="all-row1">
+                                <span class="lab">建筑类型：</span>
+                                <span class="label-val">塔板结合</span>
+                            </li>
+                            <li class="all-row1">
+                                <span class="lab">建筑面积：</span>
+                                <span class="label-val">
+                                    <span> 29,069㎡</span>
+                                </span>
+                            </li>
+                            <li class="all-row1">
+                                <span class="lab">规划户数：</span>
+                                <span class="label-val">870户</span>
+                            </li>
+                            <li class="all-row1">
+                                <span class="lab">产权年限：</span>
+                                <span class="label-val">70年</span>
+                            </li>
+                            <li class="all-row1">
+                                <span class="lab">绿化率：</span>
+                                <span class="label-val">31%</span>
+                            </li>
+                            <li class="all-row1">
+                                <span class="lab">容积率：</span>
+                                <span class="label-val">3.10</span>
+                            </li>
+                            <li class="all-row1">
+                                <span class="lab">物业费：</span>
+                                <span class="label-val">1.5元/m²/月</span>
+                            </li>
+                            <li class="all-row1">
+                                <span class="lab">供暖方式：</span>
+                                <span class="label-val">集中供暖</span>
+                            </li>
+                            <li class="all-row1">
+                                <span class="lab">供电方式：</span>
+                                <span class="label-val">民电</span>
+                            </li>
+                            <li class="all-row1">
+                                <span class="lab">供水方式：</span>
+                                <span class="label-val">民水</span>
+                            </li>
+                        </ul>
+                </div>
+                <div class="moreInfo-button">
+                    <span class="more">更多</span>
+                    <span class="sub" style="display:none;">收起</span>
+                    
 
-                </ul>
-            </div>
-            <hr>
-            <div class="equip-info">
-                <ul>
-                    <li class="f1 online">配套设施</li>
-                    <li class="f1 online"><i class="iconfont icondianshi"></i><span>电视</span></li>
-                    <li class="f1 online"><i class="iconfont iconbingxiang"></i><span>冰箱</span></li>
-                    <li class="f1 online"><i class="iconfont iconxiyiji"></i><span>洗衣机</span></li>
-                    <li class="f1 online"><i class="iconfont iconkongtiaoiconx"></i><span>空调</span></li>
-                    <li class="f1 online"><i class="iconfont iconreshuiqi"></i><span>热水器</span></li>
-                    <li class="f1 online"><i class="iconfont iconchuang"></i><span>床</span></li>
-                    <li class="f1 online"><i class="iconfont iconnuanqi"></i><span>暖气</span></li>
-                    <li class="f1 online"><i class="iconfont iconWIFIwofi1"></i><span>WIFI</span></li>
-                    <li class="f1 online"><i class="iconfont iconyigui"></i><span>衣柜</span></li>
-                    <li class="f1 online"><i class="iconfont icontianranqi"></i><span>天然气</span></li>
-                </ul>
+                </div>
             </div>
         </div> 
-        <!-- 地址和交通 -->
-         <div class="map-Wrapper">
-            <div class="detil-title">
-                <div class="detil-biaoti">
+        <!-- 楼栋信息结束 -->
+        <!-- 地图信息开始 -->
+        <div class="map-Wrapper">
+            <div class="map-title">
+                <div class="title-name">
                     <span>地址和交通</span>
                 </div>
             </div>
-            <iframe id="ted" src="./detil.html?x=108.906929&y=34.160134"></iframe>
+            <iframe id="ted" src="./detil.html?x=108.959845&y=34.195217"></iframe>
         </div> 
-        
-    </div>
+        <!-- 地图信息结束 -->
+        <!-- 好房推荐开始 -->
+        <div class="goodhouse-Wrapper">
+            <div class="goodhouse-title">
+                <div class="title-name">
+                    <span>好房推荐</span>
+                </div>
+            </div>
+        </div>
+        <!-- 好房推荐结束 -->
 
-    
-    <!-- 小区成交信息 -->
-    <!-- 推荐房源信息 -->
-    <!-- 房源详细信息结束 -->
+      
+        <!-- 房源详细信息结束 -->
 
 
-    <script type="text/javascript" src="./lib/require/require.js"></script>
-    <script type="text/javascript" src="./require.config.js"></script>
-    <script type="text/javascript" src="./lib/bootstrap/js/one.js"></script>
-   
+        <footer class="foot" style="margin-top: 100px;">页面底部</footer>
+
+
+        <!-- <script type="text/javascript" src="./lib/require/require.js"></script>
+        <script type="text/javascript" src="./require.config.js"></script>
+        <script type="text/javascript" src="./js/newhousedetil.js"></script> -->
 </body>
 
 </html>

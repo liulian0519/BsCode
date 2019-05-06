@@ -436,6 +436,9 @@
   border: 1px solid #e4e6f0;
   float: left;
 }
+.houseDetil-wrap .card-wrap .box-fixed .aside-man .aside-yonghu img {
+  border-radius: 50%;
+}
 .houseDetil-wrap .card-wrap .box-fixed .aside-man .man-right {
   margin-top: 20px;
   float: right;
@@ -643,8 +646,7 @@
 .houseDetil-wrap .goodhouse-Wrapper {
   margin-top: 40px;
   width: 1150px;
-  border: 1px solid #ccc;
-  height: 800px;
+  margin-bottom: 30px;
   clear: both;
 }
 .houseDetil-wrap .goodhouse-Wrapper .goodhouse-title {
@@ -657,4 +659,39 @@
   display: inline-block;
   margin-right: 10px;
   line-height: 30px;
+}
+.houseDetil-wrap .goodhouse-Wrapper .new-detil {
+  width: 363px;
+  height: 272px;
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+  overflow: hidden;
+}
+.houseDetil-wrap .goodhouse-Wrapper .new-detil img {
+  width: 363px;
+  height: 272px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -ms-broder-radius: 4px;
+  border-radius: 4px;
+  transition: all 2s;
+}
+.houseDetil-wrap .goodhouse-Wrapper .new-detil img:hover {
+  transform: scale(1.1);
+}
+.houseDetil-wrap .goodhouse-Wrapper .new-detil .new-addName {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+.houseDetil-wrap .goodhouse-Wrapper .new-detil .new-addPrice {
+  font-size: 14px;
+  position: absolute;
+  top: 55%;
+  left: 45%;
 }

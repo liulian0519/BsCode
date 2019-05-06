@@ -97,7 +97,7 @@
             display: inline-block;
             margin-right: 10px;
             line-height: 30px;
-        }
+        } 
         .block-type{
             display: inline-block;
             padding: 7px;
@@ -261,6 +261,9 @@
                     border-radius: 50%;
                     border: 1px solid #e4e6f0;
                     float: left;
+                    img{
+                        border-radius: 50%;
+                    }
                 }
                 .man-right{
                     margin-top:20px;
@@ -491,8 +494,7 @@
     .goodhouse-Wrapper{
         margin-top: 40px;
         width:1150px;
-        border: 1px solid #ccc;
-        height: 800px;
+        margin-bottom: 30px;
         clear: both;
         .goodhouse-title{
             
@@ -506,6 +508,38 @@
                     margin-right: 10px;
                     line-height: 30px;
                 }
+            }
+        }
+        .new-detil{
+            width: 363px;
+            height: 272px;
+            font-size: 24px;
+            color: #fff;
+            text-align: center;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+            margin-right: 20px;
+            overflow: hidden;
+            img{
+                width: 363px;
+                height: 272px;
+                .borderRadius();
+                transition: all 2s;
+                &:hover{
+                    transform: scale(1.1)
+                }
+            }
+            .new-addName{
+                position: absolute;
+                top: 40%;
+                left: 40%;
+            }
+            .new-addPrice{
+                font-size: 14px;
+                position: absolute;
+                top: 55%;
+                left: 45%;
             }
         }
     }

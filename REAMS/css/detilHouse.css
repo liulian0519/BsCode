@@ -323,7 +323,22 @@
   margin-top: 10px;
 }
 .houseDetil-wrap .detil-lunbo .content-aside .aside-man .con-man {
-  clear: both;
+  padding-left: 250px;
+}
+.houseDetil-wrap .detil-lunbo .content-aside .aside-man .con-man .man-tab {
+  display: inline-block;
+  padding: 7px;
+  margin-top: -12px;
+  margin-right: 10px;
+  line-height: 16px;
+  font-size: 16px;
+  vertical-align: middle;
+  border-radius: 2px;
+  letter-spacing: -0.27px;
+  text-align: center;
+  font-weight: 400;
+  color: #fff;
+  background: #3072f6;
 }
 .houseDetil-wrap .house-detil {
   clear: both;
@@ -405,4 +420,54 @@
   width: 100%;
   height: 480px;
   border: 0;
+}
+.houseDetil-wrap .shareWrapper {
+  width: 1180px;
+  margin-top: 30px;
+  clear: both;
+}
+.houseDetil-wrap .shareWrapper .detil-title {
+  margin-bottom: 20px;
+}
+.houseDetil-wrap .shareWrapper .root-detil {
+  width: 265px;
+  display: inline-block;
+  margin-right: 25px;
+}
+.houseDetil-wrap .shareWrapper .root-detil img {
+  width: 265px;
+  height: 205px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -ms-broder-radius: 4px;
+  border-radius: 4px;
+}
+.houseDetil-wrap .shareWrapper .root-detil .address {
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 18px;
+  color: #222;
+  /*超出两行用省略号代替*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.houseDetil-wrap .shareWrapper .root-detil .span-bottom {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #616669;
+  line-height: 16px;
+  overflow: hidden;
+}
+.houseDetil-wrap .shareWrapper .root-detil .span-bottom .area {
+  float: left;
+}
+.houseDetil-wrap .shareWrapper .root-detil .span-bottom .price {
+  font-weight: 700;
+  float: right;
+  font-size: 16px;
+  color: #fa5741;
 }

@@ -158,11 +158,28 @@
                         line-height: 20px;
                         margin-top: 10px;
                     }
+                   
                     
                 }
                 .con-man{
-                    clear: both;
+                    padding-left: 250px;
+                    .man-tab{
+                        display: inline-block;
+                        padding: 7px;
+                        margin-top: -12px;
+                        margin-right: 10px;
+                        line-height: 16px;
+                        font-size: 16px;
+                        vertical-align: middle;
+                        border-radius: 2px;
+                        letter-spacing: -.27px;
+                        text-align: center;
+                        font-weight: 400;
+                        color: #fff;
+                        background: #3072f6;
+                    }
                 }
+              
             }
 
         }
@@ -266,6 +283,56 @@
             height: 480px;
             border: 0;
             
+        }
+    }
+    .shareWrapper{
+        width: 1180px;
+        margin-top: 30px;
+        clear: both;
+        .detil-title{
+            margin-bottom: 20px;
+        }
+        .root-detil{
+            width: 265px;
+            display: inline-block;
+            margin-right: 25px;
+            img{
+                width: 265px;
+                height: 205px;
+                .borderRadius()
+            }
+            .address{
+                margin-top: 16px;
+                font-size: @text-size-md;
+                font-weight: 700;
+                line-height: @text-size-md;
+                color: #222;
+                /*超出两行用省略号代替*/
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+            }
+            .span-bottom{
+                margin-top: 10px;
+                font-size: 12px;
+                color: #616669;
+                line-height: 16px;
+                overflow: hidden;
+                .area{
+        
+                    float: left;
+                   
+                }
+                .price{
+                    float: right;
+                    font-weight: 700;
+                    float: right;
+                    font-size: 16px;
+                    color: #fa5741;
+                }
+            }
         }
     }
    

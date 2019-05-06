@@ -24,11 +24,27 @@ require(['jquery', 'bootstrap','login'], function () {
             success: function (response) {
          
                 fillData(response);
+                $.ajax({
+                    type: "get",
+                    url: "http://localhost:8080/list",
+                    data: reqData,
+                    dataType: "json",
+                    success: function (response) {
+                        /** 好房推荐模块 */
+                        share(response.rentHouses);
+                    },
+                    error:function(response){
+                        console.log(response);
+                    }
+                });
             },
             error:function(response){
                 console.log(response);
             }
         });
+
+       
+        
     }
     function getUrlParam(name){
         var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
@@ -71,7 +87,7 @@ require(['jquery', 'bootstrap','login'], function () {
             '<div class="detil-biaoti">\n' +
                 '<span>'+response.rentHouse.name+'</span>\n' +
                 '<span>'+response.rentHouse.area_type+'</span>\n' +
-                '<span>'+response.rentHouse.price+'</span>\n' +
+                '<span>'+response.rentHouse.price+'元/月</span>\n' +
             '</div>\n'+
             '<div class="detil-text">\n'+
                 '<div class="detil-time">\n'+
@@ -136,10 +152,12 @@ require(['jquery', 'bootstrap','login'], function () {
                         '<div class="man-right">\n'+
                             '<span class="man-name">'+response.agents[0].name+'</span>\n'+
                             '<span class="man-detil">PPX经纪人</span>\n'+
+                          
                         '</div>\n'+
                         '<div class="con-man">\n'+
-                            '<span class="man-tab">联系他</span>\n'+
-                        '</div>\n'+
+                        '<span class="man-tab" title="'+response.agents[0].phone+'">联系他</span>\n'+
+                    '</div>\n'+
+                        
                     '</div>\n'+
                 '</div>\n'+
             '</div>\n' 
@@ -213,7 +231,7 @@ require(['jquery', 'bootstrap','login'], function () {
                             '<li class="f1 online"><i class="iconfont icondianshi"></i><span>电视</span></li>\n'
                         }else{
                             detilHouse +=
-                            '<li class="f1 online iconNo"><i class="iconfont iconyigui-copy"></i><span>电视</span></li>\n'
+                            '<li class="f1 online iconNo"><i class="iconfont icondianshi-copy-copy"></i><span>电视</span></li>\n'
                         }
                         if(response.rentHouse.fridge){
                             detilHouse +=
@@ -295,6 +313,54 @@ require(['jquery', 'bootstrap','login'], function () {
                 '<iframe id="ted" src="./detil.html?x='+response.rentHouse.housex+'&y='+response.rentHouse.housey+'"></iframe>\n'+
            '</div>'
             $('.houseDetil-wrap').append(mapWrapper);
+    }
+    function share(response){
+        console.log(response);
+        var rootImg = new Array();
+        var rootAddName = new Array();
+        var rootAddDesc = new Array();
+        var rootAreaType = new Array();
+        var rootPosition = new Array();
+        var rootPrice = new Array();
+        var id = new Array();
+
+        for (var i = 0; i < 4; i++) {
+            rootImg[i] = response[i].url[0];
+            rootAddName[i] = response[i].name;
+            rootAddDesc[i] =response[i].address;
+            rootAreaType[i] = response[i].type;
+            rootPosition[i] = response[i].position;
+            rootPrice[i] = response[i].price;
+            id[i] = response[i].id;
+        }
+
+        var rootDesc = "";
+        
+            rootDesc +=
+            '<div class="shareWrapper">\n'+
+                '<div class="detil-title">\n'+
+                    '<div class="detil-biaoti">\n'+
+                        '<span>好房推荐</span>\n'+
+                    '</div>\n'+
+                '</div>\n'
+            for (var j = 0; j < 4; j++) {
+                rootDesc +=
+             
+                '<div class="root-detil">\n' +
+                '   <a href="./detilHouse.html?id='+id[j]+'">\n' +
+                '       <img src="' + rootImg[j] + '">\n' +
+                '   </a>\n' +
+                '   <p class="address">' + rootAddName[j] + '·' + rootAddDesc[j] + '·' + rootPosition[j] + '</p>\n' +
+                '   <div class="span-bottom">\n' +
+                '       <span class="area">' + rootAreaType[j] + '</span>\n' +
+                '       <span class="price">' + rootPrice[j] + '元/月</span>\n' +
+                '   </div>\n' +
+                '</div>\n' 
+            }
+            rootDesc +='</div>'
+
+        $('.houseDetil-wrap').append(rootDesc);
+
     }
    
 }); 
