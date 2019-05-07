@@ -130,28 +130,36 @@
                 font-size: @text-size-md;
                 float: left;
                 line-height: 25px;
+                padding-right: 10px;
             }
             .ul-item-type{
-                list-style: none;
-                display: inline;
-                line-height: 25px;
-                .active-type{
-                    color: @primary-color;
-                    font-weight: 700;
-                }
-                li{
-                    float: left;
-                    margin: 0 15px;
+                .active{
                     a{
-                        font-size: @text-size-sm;
-                        color: #666;
+                        background: @primary-color;
+                        .borderRadius();
+                        color: #ffffff;
                         &:hover, &:active, &:focus{
                             text-decoration: none;
-                            color: @primary-color;
                         }
                     }
-                }
+               }
+                list-style: none;
+                margin-left: 15px;
+                li{
+                   float: left;
+                   margin-right: 10px;
+                   margin-bottom: 15px;
+                   a{
+                       font-size: 16px;
+                       padding: 5px;
+                       color: #666;
+                       &:hover, &:active, &:focus{
+                          text-decoration: none; 
+                       }
+                    }   
+                } 
             }
+         
         }
         .select-price, .select-hole, .select-position{
             margin-top: 20px;
@@ -204,6 +212,18 @@
                 color: #4a4a4a;
                 font-weight: 700;
             }
+        }
+    }
+    .tab-content{
+        #realData,#realData2,#realData4{
+            position: absolute;
+            margin-top: 480px;
+            margin-left: 600px;
+        }
+        #realData3{
+            position: absolute;
+            margin-top: 720px;
+            margin-left: 600px;
         }
     }
     .result-item{
@@ -265,11 +285,4 @@
 
     }
 }
-#realData{
-    margin-top: -80px;
-    float: right;
-    margin-right: 300px;
-    .layui-laypage .layui-laypage-curr .layui-laypage-em{
-        background-color:@primary-color;
-    }
-}
+

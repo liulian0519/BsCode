@@ -241,29 +241,39 @@
   font-size: 18px;
   float: left;
   line-height: 25px;
+  padding-right: 10px;
 }
 .select-wrap .select-body .select-type .ul-item-type {
   list-style: none;
-  display: inline;
-  line-height: 25px;
+  margin-left: 15px;
 }
-.select-wrap .select-body .select-type .ul-item-type .active-type {
-  color: #3072f6;
-  font-weight: 700;
+.select-wrap .select-body .select-type .ul-item-type .active a {
+  background: #3072f6;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -ms-broder-radius: 4px;
+  border-radius: 4px;
+  color: #ffffff;
+}
+.select-wrap .select-body .select-type .ul-item-type .active a:hover,
+.select-wrap .select-body .select-type .ul-item-type .active a:active,
+.select-wrap .select-body .select-type .ul-item-type .active a:focus {
+  text-decoration: none;
 }
 .select-wrap .select-body .select-type .ul-item-type li {
   float: left;
-  margin: 0 15px;
+  margin-right: 10px;
+  margin-bottom: 15px;
 }
 .select-wrap .select-body .select-type .ul-item-type li a {
   font-size: 16px;
+  padding: 5px;
   color: #666;
 }
 .select-wrap .select-body .select-type .ul-item-type li a:hover,
 .select-wrap .select-body .select-type .ul-item-type li a:active,
 .select-wrap .select-body .select-type .ul-item-type li a:focus {
   text-decoration: none;
-  color: #3072f6;
 }
 .select-wrap .select-body .select-price,
 .select-wrap .select-body .select-hole,
@@ -357,6 +367,18 @@
   color: #4a4a4a;
   font-weight: 700;
 }
+.select-result .tab-content #realData,
+.select-result .tab-content #realData2,
+.select-result .tab-content #realData4 {
+  position: absolute;
+  margin-top: 480px;
+  margin-left: 600px;
+}
+.select-result .tab-content #realData3 {
+  position: absolute;
+  margin-top: 720px;
+  margin-left: 600px;
+}
 .select-result .result-item {
   margin: 30px 0;
   clear: both;
@@ -409,12 +431,4 @@
 .select-result .result-item hr {
   clear: both;
   margin-top: 15px;
-}
-#realData {
-  margin-top: -80px;
-  float: right;
-  margin-right: 300px;
-}
-#realData .layui-laypage .layui-laypage-curr .layui-laypage-em {
-  background-color: #3072f6;
 }

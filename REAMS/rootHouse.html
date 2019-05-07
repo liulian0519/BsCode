@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 </head>
 
-<body>
+<body> 
     <!--头部导航开始  -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -104,7 +104,8 @@
                 <span class="ti">PPX租房</span>
             </div>
             <div class="search-right">
-                <input type="text" value="" id="" class="search-input" placeholder="输入二手房信息开始查找" />
+                <input type="text" value="" id="" class="search-input" placeholder="输入二手房信息开始查找"  />
+                
                 <i class="iconfont iconicon--"></i>
             </div>
         </div>
@@ -140,7 +141,7 @@
             <div class="select-type">
                 <span>方式</span>
                 <ul class="ul-item-type">
-                    <li><a class="active-type" href="#">不限</a></li>
+                    <li class="active"><a href="#">不限</a></li>
                     <li><a href="#">整租</a></li>
                     <li><a href="#">合租</a></li>
                 </ul>
@@ -148,32 +149,32 @@
             <div class="select-price">
                 <span>租金</span>
                 <ul class="ul-item-price">
-                    <li><input type="checkbox" name="test" value="500元以下" />500元以下</li>
-                    <li><input type="checkbox" name="test" value="500-1000元" />500-1000元</li>
-                    <li><input type="checkbox" name="test" value="1000-1500元" />1000-1500元</li>
-                    <li><input type="checkbox" name="test" value="1500-2000元" />1500-2000元</li>
-                    <li><input type="checkbox" name="test" value="2000-3000元" />2000-3000元</li>
-                    <li><input type="checkbox" name="test" value="3000-4000元" />3000-4000元</li>
-                    <li><input type="checkbox" name="test" value="4000元以上" />4000元以上</li>
+                    <li><input type="checkbox" name="price" value="500元以下" />500元以下</li>
+                    <li><input type="checkbox" name="price" value="500-1000元" />500-1000元</li>
+                    <li><input type="checkbox" name="price" value="1000-1500元" />1000-1500元</li>
+                    <li><input type="checkbox" name="price" value="1500-2000元" />1500-2000元</li>
+                    <li><input type="checkbox" name="price" value="2000-3000元" />2000-3000元</li>
+                    <li><input type="checkbox" name="price" value="3000-4000元" />3000-4000元</li>
+                    <li><input type="checkbox" name="price" value="4000元以上" />4000元以上</li>
                 </ul>
             </div>
             <div class="select-hole">
                 <span>厅室</span>
                 <ul class="ul-item-hole">
-                    <li><input type="checkbox" name="test" value="一室" />一室</li>
-                    <li><input type="checkbox" name="test" value="两室" />两室</li>
-                    <li><input type="checkbox" name="test" value="三室" />三室</li>
-                    <li><input type="checkbox" name="test" value="四室" />四室</li>
-                    <li><input type="checkbox" name="test" value="四室以上" />四室以上</li>
+                    <li><input type="checkbox" name="area" value="1室" />一室</li>
+                    <li><input type="checkbox" name="area" value="2室" />两室</li>
+                    <li><input type="checkbox" name="area" value="3室" />三室</li>
+                    <li><input type="checkbox" name="area" value="4室" />四室</li>
+                    <li><input type="checkbox" name="area" value="4室以上" />四室以上</li>
                 </ul>
             </div>
             <div class="select-position">
                 <span>朝向</span>
                 <ul class="ul-item-position">
-                    <li><input type="checkbox" name="test" value="东" />东</li>
-                    <li><input type="checkbox" name="test" value="西" />西</li>
-                    <li><input type="checkbox" name="test" value="南" />南</li>
-                    <li><input type="checkbox" name="test" value="北" />北</li>
+                    <li><input type="checkbox" name="position" value="东" />东</li>
+                    <li><input type="checkbox" name="position" value="西" />西</li>
+                    <li><input type="checkbox" name="position" value="南" />南</li>
+                    <li><input type="checkbox" name="position" value="北" />北</li>
                 </ul>
             </div>
         </div>
@@ -182,10 +183,9 @@
 
     <!-- 查询结果展示开始 -->
     <div class="select-result">
-        <div class="reee">
-
-        </div>
-        <div class="result-title">
+           
+      
+        <!-- <div class="result-title">
             <p>已经为您找到112套房</p>
         </div>
         <ul id="myTab" class="nav nav-tabs">
@@ -270,12 +270,12 @@
                 <p>按面积。</p>
             </div>
 
-        </div> 
+        </div>  -->
     </div>
 
 
     <!-- 分页 -->
-    <div id="realData"></div>
+    
     
 
     <!-- 查询结果展示结束 -->
