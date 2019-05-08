@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 引入图标库样式 -->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css">
+    <!-- bootstrap样式文件 -->
+    <link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/greenhousedetil.css">
+    <link rel="stylesheet" type="text/css" href="./css/swiper.min.css">
+    <title>二手房详情页面</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+    <!--头部导航开始  -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <img alt="logo" src="./img/logo.png" style="width:32px;">
+                </a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="rootHouse.html">租房</a></li>
+                    <li class="active"><a href="greenHouse.html">二手房</a></li>
+                    <li><a href="newHouse.html">新房</a></li>
+                    <li><a href="release.html">发布房源</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a id="myLogin" data-toggle="modal" data-target="#login">
+                            <i class="iconfont iconyonghu"></i>
+                            <span>登录</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- 登录的模态框开始 -->
+                <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <button type="button" class="close login-close" data-dismiss="modal"
+                                aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <div class="panel-tab">
+
+                                <div class="title">
+                                    <div class="f1">手机快捷登录</div>
+                                    <div class="title-text">别担心，手机号码自动注册不会导致手机号被泄露</div>
+                                </div>
+                                <div class="login-content">
+                                    <form>
+                                        <ul>
+                                            <li class="item border-t">
+                                                <input type="text" class="the-input" id="phone_num" maxlength="11"
+                                                    placeholder="请输入手机号" />
+                                            </li>
+                                            <li class="item border-m">
+                                                <input type="text" class="the-input" id="img_code" maxlength="6"
+                                                    placeholder="请输入图片验证码" />
+                                                <img class=" login_verify_img" id="verifyimg">
+                                            </li>
+                                            <li class="item border-c Verify">
+                                                <input type="text" class="the-input Verify-code" id="phone_code"
+                                                    maxlength="6" placeholder="请输入短信验证码">
+                                                <a class="verify_code btn" id="verify_code"
+                                                    href="javascript:;">获取验证码</a>
+                                            </li>
+                                        </ul>
+                                        <div class="login-error hide" id="login_error">ggg</div>
+                                        <button type="button" id="reLogin"
+                                            class="btn btn-lg btn-login"><span>登录</span></button>
+                                        <div class="etc">
+                                            <p>登录即代表同意《ppx隐私政策》及《ppx用户服务协议》</p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 登录的模态框结束 -->
+
+            </div>
+
+        </div>
+
+    </nav>
+    <!-- 头部导航结束 -->
+
+    <!-- 搜索框开始 -->
+    <div class="search-bg">
+        <div class="search-body">
+            <div class="search-left">
+                <img src="./img/logo.png" />
+                <span class="ti">PPX二手房</span>
+            </div>
+            <div class="search-right">
+                <input type="text" value="" id="" class="search-input" placeholder="请输入二手房信息开始查找" />
+                <i class="iconfont iconicon--"></i>
+            </div>
+        </div>
+    </div>
+    <!-- 搜索框结束 -->
+    <!-- 房源详细信息开始 -->
+    <div class="houseDetil-wrap">
+        <!-- title and swiper start -->
+        <!-- <div class="detil-title">
+            <span class="name">春天花园 3室1厅1卫 南</span>
+        </div> -->
+        <!-- <div class="detil-swiper">
+            <div class="swiper-container gallery-top">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"
+                        style="background-image:url(https://ke-image.ljcdn.com/hdic-resblock/prod-57d14b46-2551-4ca5-b5e4-7a185eda939fphpVJT4Fg!m_fill,w_1000,l_fbk); ">
+                    </div>
+                    <div class="swiper-slide"
+                        style="background-image:url(https://ke-image.ljcdn.com/hdic-resblock/10bee88b-e6ad-49f3-8be0-2c8e538b2a3e.jpg!m_fill,w_1000,l_fbk)">
+                    </div>
+                    <div class="swiper-slide"
+                        style="background-image:url(https://ke-image.ljcdn.com/hdic-resblock/88504cac-a4b6-47e6-9cda-3d03db245faa.jpg!m_fill,w_1000,l_fbk)">
+                    </div>
+                    <div class="swiper-slide"
+                        style="background-image:url(https://ke-image.ljcdn.com/hdic-resblock/prod-48ccbf71-5fb8-413d-8f55-f69b9a8261c4php5XFHHW!m_fill,w_1000,l_fbk)">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div> -->
+                <!-- Add Arrows -->
+                <!-- <div class="swiper-button-next swiper-button-white"></div>
+                <div class="swiper-button-prev swiper-button-white"></div>
+            </div>
+            <div class="swiper-container gallery-thumbs">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"
+                        style="background-image:url(https://ke-image.ljcdn.com/hdic-resblock/prod-57d14b46-2551-4ca5-b5e4-7a185eda939fphpVJT4Fg!m_fill,w_1000,l_fbk)">
+                    </div>
+                    <div class="swiper-slide"
+                        style="background-image:url(https://ke-image.ljcdn.com/hdic-resblock/10bee88b-e6ad-49f3-8be0-2c8e538b2a3e.jpg!m_fill,w_1000,l_fbk)">
+                    </div>
+                    <div class="swiper-slide"
+                        style="background-image:url(https://ke-image.ljcdn.com/hdic-resblock/88504cac-a4b6-47e6-9cda-3d03db245faa.jpg!m_fill,w_1000,l_fbk)">
+                    </div>
+                    <div class="swiper-slide"
+                        style="background-image:url(https://ke-image.ljcdn.com/hdic-resblock/prod-48ccbf71-5fb8-413d-8f55-f69b9a8261c4php5XFHHW!m_fill,w_1000,l_fbk)">
+                    </div>
+
+                </div>
+            </div>
+        </div> -->
+        <!-- title and swiper end -->  
+        <!-- 右边的卡片 -->
+        <!-- <div class="card-wrap">
+            <div class="box-fixed">
+                <div class="card-price">
+                    <p class="left">175<span>万</span></p>
+                    <input type="button" class="btn btn-preOrder" value="预约" />
+                    <p class="sub">首付及税费情况请咨询经纪人</p>
+                </div>
+                <hr>
+                <div class="card-detil">
+                    <div class="room">
+                        <div class="mainInfo">3室1厅1卫</div>
+                        <div class="subInfo">低楼层/共25层</div>
+                    </div>
+                    <div class="type">
+                        <div class="mainInfo">南</div>
+                        <div class="subInfo">精装</div>
+                    </div>
+                    <div class="area">
+                        <div class="mainInfo">125㎡</div>
+                        <div class="subInfo">2016年/板楼</div>
+                    </div>
+                </div>
+                <hr>
+                <div class="card-house">
+                    <div class="communityName">
+                        <span class="label">小区名称</span>
+                        <span class="info">春天花园</span>
+                        <a class="map">地图</a>
+                    </div>
+                    <div class="areaName">
+                        <span class="label">所在区域</span>
+                        <span class="info">陕西省西安市长安区西安邮电大学东区</span>
+                    </div>
+                    <div class="houseNum">
+                        <span class="label">规划户数</span>
+                        <span class="info">758户</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="aside-man">
+                    <div class="aside-yonghu">
+                        <img src="" width="70" height="70" title="" />
+                    </div>
+                    <div class="man-right">
+                        <span class="man-name">刘莲</span>
+                        <span class="man-detil">PPX经纪人</span>               
+                    </div>         
+                    <div class="reply">
+                        <div class="phone-btn">
+                            <span>13609219504</span>
+                        </div>
+                        <div class="link">
+                            <span id="callme">联系经纪人</span>
+                            <img id="wxImg" src="./img/qr.jpg" style="display: none">
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- 房源基本信息 -->
+        <!-- <div class="community-wrap">
+            <div class="community-title">
+                <span class="name">房源基本信息</span>
+            </div>
+            <div class="basic-info">
+                <p class="basic-title">基本属性</p>
+                <ul class="x-box">
+                    <li class="all-row">
+                        <span class="lab">房屋户型：</span>
+                        <span class="label-val">住宅</span>
+                    </li>
+                    <li class="all-row">
+                        <span class="lab">所在楼层：</span>
+                        <span class="label-val">货到付款</span>
+                    </li>
+                    <li class="all-row">
+                        <span class="lab">房屋面积：</span>
+                        <span class="label-val tese-val" title="绿化率高 低密度 ">绿化率高 低密度 </span>
+                    </li>
+                    <li class="all-row">
+                        <span class="lab">建筑类型：</span>
+                        <span class="label-val">西安-长安</span>
+                    </li>
+                    <li class="all-row">
+                        <span class="lab">房屋朝向：</span>
+                        <span class="label-val">科技七路与</span>
+                    </li>
+                    <li class="all-row">
+                        <span class="lab">装修情况：</span>
+                        <span class="label-val">科技六路木塔）</span>
+                    </li>
+                    <li class="all-row">
+                        <span class="lab">梯户比例：</span>
+                        <span class="label-val">西安兰轩置</span>
+                    </li>
+                    <li class="all-row">
+                        <span class="lab">供暖方式：</span>
+                        <span class="label-val">西安兰轩置</span>
+                    </li>
+                    <li class="all-row">
+                        <span class="lab">配备电梯：</span>
+                        <span class="label-val">西安兰轩置</span>
+                    </li>
+                    <li class="all-row">
+                        <span class="lab">产权年限：</span>
+                        <span class="label-val">西安兰轩置</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="more-info">
+                <p class="basic-title">交易属性</p>
+                <ul class="x-box">
+                    <li class="all-row">
+                        <span class="lab">发布时间：</span>
+                        <span class="label-val">塔板结合</span>
+                    </li>
+                    <li class="all-row">
+                        <span class="lab">房屋用途：</span>
+                        <span> 29,069㎡</span>
+                        
+                    </li>
+                    <li class="all-row">
+                        <span class="lab">抵押信息：</span>
+                        <span class="label-val">870户</span>
+                    </li>
+
+                </ul>
+            </div>
+        </div> -->
+        <!-- 房源特色 -->
+        <!-- <div class="house-wrap">
+            <div class="house-title">
+                <span class="name">房源特色</span>
+            </div>
+            <div class="house-content">
+                <div class="baseSale">
+                    <div class="name">核心卖点</div>
+                    <div class="content">
+                        <span>南北通透乱七八杂 产权啥的</span>
+                    </div>
+                </div>
+            
+                <div class="baseSale">
+                    <div class="name">交通出行</div>
+                    <div class="content">
+                        <span>南北通透乱七八杂 产权啥的</span>
+                    </div>
+                </div>
+              
+                <div class="baseSale">
+                    <div class="name">周边配套</div>
+                    <div class="content">
+                        <span>南北通透乱七八杂dgbjgobjosgfkaunjsbnbn看见对方的即可是是的内部监控覆盖北京康师傅 产权啥的</span>
+                    </div>
+                </div>
+             
+                <div class="baseSale">
+                    <div class="name">小区介绍</div>
+                    <div class="content">
+                        <span>南北通透乱七八杂 产权啥的</span>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- 房源照片 -->
+        <!-- <div class="img-Wrap">
+            <div class="img-title">
+                <span class="name">房源照片</span>
+            </div>
+            <div class="content">
+                <div data-index="0">
+                    <img src="https://ke-image.ljcdn.com/610100-inspection/prod-c40125d8-d7bb-4078-8e06-dca83818a1da.jpg!m_fill,w_710,h_400,lg_north_west,lx_0,ly_0,l_fbk,f_jpg,ls_50?from=ke.com" alt="卧室A">
+                   
+                </div>
+                <div data-index="1">
+                    <img src="https://ke-image.ljcdn.com/hdic-frame/prod-3b5ae4c7-7ff6-4989-a619-2a30cf710d54.png!m_fill,w_710,h_400,l_bk,f_jpg,ls_50?from=ke.com" alt="户型图">
+                    
+                </div>
+                <div data-index="2">
+                    <img src="https://ke-image.ljcdn.com/610100-inspection/prod-99be87a1-702c-41ec-b6f8-f91404ccfadf.jpg!m_fill,w_710,h_400,lg_north_west,lx_0,ly_0,l_fbk,f_jpg,ls_50?from=ke.com" alt="卧室B">
+                    
+                </div>
+                <div data-index="3">
+                    <img src="https://ke-image.ljcdn.com/610100-inspection/prod-7a7da717-5cae-4f94-9506-0d05136a1db3.jpg!m_fill,w_710,h_400,lg_north_west,lx_0,ly_0,l_fbk,f_jpg,ls_50?from=ke.com" alt="卧室C">
+                    
+                </div>
+                <div data-index="4">
+                    <img src="https://ke-image.ljcdn.com/610100-inspection/prod-331c63f2-6646-4950-90c4-0a0b3485ce67.jpg!m_fill,w_710,h_400,lg_north_west,lx_0,ly_0,l_fbk,f_jpg,ls_50?from=ke.com" alt="客厅">
+                    
+                </div>
+                <div data-index="5">
+                    <img src="https://ke-image.ljcdn.com/610100-inspection/prod-1e5fbc65-5be2-43bc-b2cb-9575c612ab85.jpg!m_fill,w_710,h_400,lg_north_west,lx_0,ly_0,l_fbk,f_jpg,ls_50?from=ke.com" alt="卫生间A">
+                    
+                </div>
+                <div data-index="3">
+                    <img src="https://ke-image.ljcdn.com/610100-inspection/prod-7a7da717-5cae-4f94-9506-0d05136a1db3.jpg!m_fill,w_710,h_400,lg_north_west,lx_0,ly_0,l_fbk,f_jpg,ls_50?from=ke.com" alt="卧室C">
+                    
+                </div>
+            </div>
+        </div> -->
+        <!-- 小区简介 -->
+        <!-- <div class="introduce-wrap">
+            <div class="introduce-title">
+                <span class="name">小区简介</span>
+            </div>
+            <div class="content">
+                <div class="xiaoqu-info">
+                    <div class="xiaoqu-main-label">小区名称</div>
+                    <span class="xiaoqu-main-info">春天花园</span>
+                   
+                </div>
+                <div class="xiaoqu-info">
+                    <div class="xiaoqu-main-label">建筑年代</div>
+                    <span class="xiaoqu-main-info">2016年12月25日</span>
+                  
+                </div>
+                <div class="xiaoqu-info">
+                    <div class="xiaoqu-main-label">建筑类型</div>
+                    <span class="xiaoqu-main-info">塔楼/板楼/塔板结合</span>
+                    
+                </div>
+                <div class="xiaoqu-info">
+                    <div class="xiaoqu-main-label">规划户数</div>
+                 
+                    <span class="xiaoqu-main-info">1053</span>
+                   
+                </div>
+            </div>
+        </div> -->
+        <!-- 地图信息 -->
+        <!-- <div class="map-Wrapper">
+            <div class="map-title">
+                <div class="title-name">
+                    <span>地址和交通</span>
+                </div>
+            </div>
+            <iframe id="ted" src="./detil.html?x=108.959845&y=34.195217"></iframe>
+        </div>
+
+        <div class="goodhouse-Wrapper">
+            <div class="goodhouse-title">
+                <div class="title-name">
+                    <span>好房推荐</span>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- 房源详细信息结束 -->
+
+    <script type="text/javascript" src="./lib/require/require.js"></script>
+    <script type="text/javascript" src="./require.config.js"></script>
+    <script type="text/javascript" src="./js/greenHouseDetil.js"></script>  
+</body>
+</html> 

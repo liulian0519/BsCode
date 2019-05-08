@@ -604,4 +604,4 @@ require(['jquery', 'bootstrap', 'login', 'layui'], function () {
 
     }
 
-})
+}) 

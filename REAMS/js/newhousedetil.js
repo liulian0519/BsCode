@@ -175,7 +175,7 @@ require(['jquery','bootstrap', 'login'], function () {
               '<p class="content">三居室 &nbsp; 四居室</p>\n'+
               '<a class="all-type">全部户型</a>\n'+
             '</li>\n'+
-          '</ul>\n'+
+          '</ul>\n'+ 
         '</div>\n'+
         '<hr>\n'+
         '<div class="aside-man">\n'+

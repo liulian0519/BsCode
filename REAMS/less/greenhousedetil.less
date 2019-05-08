@@ -1,0 +1,406 @@
+@import "basic.less";
+@import "loginModal.less";
+.search-bg{
+    width: 100%;
+    height: 100px;
+    padding: 25px 0;
+    background: #f5f5f6;
+    box-sizing: border-box;
+    margin-top: 50px;
+    .search-body{
+        width: 1150px;
+        margin: 0 auto;
+        .search-left{
+            float: left;
+            img{
+               width: 50px;
+               height: 43px;   
+            }
+            .ti{
+                font-size: 18px;
+                font-weight: 500;
+                color: @primary-color;
+                line-height: 47px;
+            }
+        }
+        .search-right{
+            float: right;
+            display: inline-block;
+            line-height: 46px;
+            font-size: 14px;
+            border-radius: 2px;
+            box-shadow: 0 1px 2px -1px rgba(0,0,0,.2);
+            .search-input{
+                width: 710px;
+                border: none;
+                padding-left: 15px;
+                .borderRadius();
+                outline: none
+            }
+            i{
+                position: absolute;
+                top: 77px;
+                left: 1300px;
+            }
+        }
+    }
+    
+}
+.houseDetil-wrap{
+    width: 1190px;
+    margin: 30px auto;
+    .detil-title, .community-title, .house-title, .img-title, .introduce-title, .map-title{
+        .name{
+            font-size: 26px;
+            color: #101d37;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 10px;
+            line-height: 30px;
+        } 
+    } 
+    // swiper样式
+    .detil-swiper{
+        margin-top: 15px;
+        width: 700px;
+        float: left;
+        // 轮播图样式
+        .swiper-slide{
+            background-size: cover;
+        }
+        .gallery-thumbs .swiper-slide {
+            height: 100%;
+            opacity: 0.7;
+        }
+        .gallery-thumbs .swiper-slide-thumb-active {
+            opacity: 1;
+        }
+        .gallery-thumbs .swiper-wrapper .swiper-slide{
+            height: 100px;
+        }
+        .allery-top .swiper-slide{
+            width: 710px;
+            height: 400px;
+        }
+        .swiper-container {
+            width: 710px;
+            height: 400px;
+        }
+        .swiper-container.gallery-thumbs.swiper-container-initialized.swiper-container-horizontal.swiper-container-free-mode.swiper-container-thumbs{
+            height: 100px;
+        }
+    } 
+    // 右侧卡片样式  
+    .card-wrap{
+        float: right;
+        width: 420px;
+        height: 600px;
+       
+        .box-fixed{
+            width: 425px;
+            height: 600px;
+            padding-top: 20px;
+            .card-price{
+                margin-bottom: 20px;
+                .left{
+                    float: left;
+                    font-size: 40px;
+                    color: #fe615a;
+                    font-weight: 700;
+                    span{
+                        font-size: 16px;
+                    }
+                }
+                .btn-preOrder{
+                    float: right;
+                    margin-right: 100px;
+                    margin-top: 25px;
+                    width: 80px;
+                    line-height: 35px;
+                    font-size: 18px;
+                    color: #fff;
+                    text-align: center;
+                    border-radius: 4px;
+                    background-color: @primary-color;
+                    outline: none;
+                }
+                .sub{
+                    clear: both;
+                    font-size: 12px;
+                    color: @primary-color;
+                }
+            }
+            .card-detil{
+                margin-bottom: 20px;
+                .room, .type, .area{
+                    float: left;
+                    width: 33.3%;
+                    .mainInfo{
+                        font-size: 22px;
+                        font-weight: 700;
+                        color: #101d37;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        -o-text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                    .subInfo{
+                        margin-top: 7px;
+                        font-size: 14px;
+                        color: #101d37;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        -o-text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                    margin-bottom: 20px;
+    
+                }  
+            }
+            hr{
+
+                clear: both;
+            }
+            .card-house{
+                .communityName, .areaName, .houseName{
+                    margin-bottom: 10px;
+                }
+                .label{
+                    color: #9399a5;
+                    margin-right: 20px;
+                    font-size: 14px;
+                    font-weight: 500;
+
+                }
+                .info{
+                    color: #101d37;
+                }
+            }
+            .aside-man{
+                .aside-yonghu{
+                    margin: 10px;
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;
+                    border: 1px solid #e4e6f0;
+                    float: left;
+                    img{
+                        border-radius: 50%;
+                    }
+                }
+                .man-right{
+                    margin-top:20px;
+                    float: right;
+                    margin-right: 200px;
+                    .man-name{
+                        display: block;
+                        font-size: 20px;
+                        font-weight: 700;
+                        color: #101d37;
+                    }
+                    .man-detil{
+                        font-size: 14px;
+                        margin-bottom: 18px;
+                        color: #101d37;
+                        line-height: 20px;
+                        margin-top: 10px;
+                    }
+                }
+                .reply{
+                    clear: both;
+                    padding-top: 25px;
+                    .phone-btn{
+                     
+                        width: 150px;
+                        font-family: PingFangSC-Semibold;
+                        font-size: 15px;
+                        line-height: 40px;
+                        color: #fff;
+                        font-weight: 700;
+                        background: @primary-color;
+                        border-radius: 2px;
+                        text-align: center;
+                        display: inline-block;
+                        padding: 0 15px;
+                        vertical-align: middle;
+                        margin-right: 6px;
+                    }
+                    .link{
+                        margin-left: 20px;
+                        width: auto;
+                        max-width: 200px;
+                        display: inline-block;
+                        height: 38px;
+                        padding: 0 12px 0 12px;
+                        font-size: 14px;
+                        color: @primary-color;
+                        border: 1px solid @primary-color;
+                        border-radius: 2px;
+                        cursor: pointer;
+                        line-height: 40px;
+                        font-weight: 700;
+                        text-align: center;
+                        img{
+                            height: 150px;
+                            position: absolute;
+                            top: 85%;
+                            left: 73%;
+                        }
+                    }
+                  
+                }
+            }
+            
+        }
+        .tab_fix_bottom {
+            position: absolute;
+            bottom: 0px;
+            top: auto;
+        }
+        .tab_fix{
+            position:fixed;
+            top: 10%;
+        }
+    }
+    // 房源基本信息样式
+    .community-wrap{ 
+        width: 710px;
+        margin-top: 560px;
+        .basic-info, .more-info{
+            margin-top: 20px;
+            .basic-title{
+                font-size: 20px;
+                line-height: 40px;
+            }
+            .x-box{
+                list-style: none;
+                .all-row{
+                    display: inline-block;
+                    width: 45%;
+                    margin-bottom: 15px;
+                    .lab{
+                        display: inline-block;
+                        width: 100px;
+                        font-weight: 700;
+                        color: #333;
+                        vertical-align: top;
+                    }
+                    .label-val{
+                        color: #888;
+                    }
+                }
+                
+                
+                
+            }
+        }
+    }
+    // 房源样式
+    .house-wrap{
+        width: 710px;
+        margin-top: 30px;
+        .house-content{
+            text-align: justify;
+            margin-top: 20px;
+            .baseSale{
+                width: 710px;
+                margin: 20px 0;
+                display: block;
+                .name{
+                    float: left;
+                    width: 188px;
+                    text-align: left;
+                    color: #9399a5;
+                    line-height: 25px;
+                    padding: 15px 0;
+                }
+                .content{
+                    width: 522px;
+                    float: left;
+                    line-height: 25px;
+                    padding: 15px 0;
+                }
+            }
+        }
+    }
+    // 房源照片样式
+    .img-Wrap{
+        clear: both;
+        width: 710px;
+        margin-top: 300px;
+        .content{
+            margin: 0 auto;
+            margin-top: 15px;
+            width: 710px;
+            text-align: justify;
+            line-height: 0;
+            div{
+                width: 350px;
+                height: 230px;
+                margin-bottom: 10px;
+                display: inline-block;
+                position: relative;
+                text-align: center;
+                img{
+                    max-width: 100%;
+    height: 100%;
+                }
+                &:first-child{
+                    width: 710px;
+                    height: 400px;
+                }
+            }
+   
+        }
+    }
+    // 小区简介样式
+    .introduce-wrap{
+        width: 710px;
+        margin-top: 30px;
+        .content{
+            .xiaoqu-info{
+                margin-top: 13px;
+                font-size: 14px;
+                .xiaoqu-main-label{
+                    color: #7f8183;
+                    float: left;
+                    margin-right: 40px
+                }
+                .xiaoqu-main-info{
+                    span{
+                        margin-left: 24px;
+                        color: #101d37;
+                    }
+                    
+                }
+            }
+        }
+        
+    }
+    // 地图信息样式
+    .map-Wrapper{
+        margin-top: 40px;
+        width:1150px;
+        clear: both;
+        .map-title{
+            
+            margin-bottom: 30px;
+            .title-name{
+                span{
+                    font-size: 26px;
+                    color: #101d37;
+                    font-weight: 600;
+                    display: inline-block;
+                    margin-right: 10px;
+                    line-height: 30px;
+                }
+            }
+        }
+        iframe{
+            width: 100%;
+            height: 480px;
+            border: 0;
+        }
+    }
+
+}
