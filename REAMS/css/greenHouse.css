@@ -378,6 +378,14 @@
   background-color: #3072f6;
   color: #fff;
 }
+.select-result .tab-content #realData,
+.select-result .tab-content #realData2,
+.select-result .tab-content #realData3,
+.select-result .tab-content #realData4 {
+  position: absolute;
+  margin-top: 480px;
+  margin-left: 730px;
+}
 .select-result .result-item {
   padding-bottom: 20px;
   margin-top: 20px;

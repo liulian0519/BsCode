@@ -20,7 +20,7 @@ require(['jquery', 'bootstrap', 'login', 'layui'], function () {
             $(".active-tab span").html(activeTab);
             $(".previous-tab span").html(previousTab);
         });
-
+ 
         /**
          * 搜索框搜索
          */
@@ -32,6 +32,7 @@ require(['jquery', 'bootstrap', 'login', 'layui'], function () {
                 search(val);
             }
         });
+
         /**渲染页面总函数 */
         initUI();
 
@@ -387,7 +388,9 @@ require(['jquery', 'bootstrap', 'login', 'layui'], function () {
         } else {
             rent_type = 1;
         }
-
+        if (address == "全城") {
+            address = "";
+        }
 
         var price = "";
         var area = "";
