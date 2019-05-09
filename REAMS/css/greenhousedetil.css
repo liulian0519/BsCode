@@ -162,8 +162,10 @@
 .houseDetil-wrap .community-title .name,
 .houseDetil-wrap .house-title .name,
 .houseDetil-wrap .img-title .name,
+.houseDetil-wrap .sale-title .name,
 .houseDetil-wrap .introduce-title .name,
-.houseDetil-wrap .map-title .name {
+.houseDetil-wrap .map-title .name,
+.houseDetil-wrap .goodhouse-title .name {
   font-size: 26px;
   color: #101d37;
   font-weight: 600;
@@ -495,4 +497,118 @@
   width: 100%;
   height: 480px;
   border: 0;
+}
+.houseDetil-wrap .good-Wrapper .goodhouse-title {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.houseDetil-wrap .good-Wrapper .goodhouse-title .name {
+  font-size: 26px;
+  color: #101d37;
+  font-weight: 600;
+  display: inline-block;
+  margin-right: 10px;
+  line-height: 30px;
+}
+.houseDetil-wrap .good-Wrapper .green-detil {
+  width: 265px;
+  display: inline-block;
+  margin-right: 25px;
+}
+.houseDetil-wrap .good-Wrapper .green-detil img {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -ms-broder-radius: 4px;
+  border-radius: 4px;
+  width: 265px;
+  height: 205px;
+}
+.houseDetil-wrap .good-Wrapper .green-detil .address {
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 18px;
+  color: #222;
+}
+.houseDetil-wrap .good-Wrapper .green-detil .address .p-over {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.houseDetil-wrap .good-Wrapper .green-detil .sapn-bottome {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #616669;
+  line-height: 16px;
+  overflow: hidden;
+}
+.houseDetil-wrap .good-Wrapper .green-detil .sapn-bottome .area {
+  float: left;
+}
+.houseDetil-wrap .good-Wrapper .green-detil .sapn-bottome .price {
+  font-weight: 700;
+  float: right;
+  font-size: 16px;
+  color: #fa5741;
+}
+.houseDetil-wrap .sale-Wrapper {
+  width: 1150px;
+  margin-bottom: 220px;
+}
+.houseDetil-wrap .sale-Wrapper .sale-title {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.houseDetil-wrap .sale-Wrapper .content ul {
+  list-style: none;
+  text-align: center;
+}
+.houseDetil-wrap .sale-Wrapper .content ul li {
+  float: left;
+  position: relative;
+  width: 375px;
+  height: 160px;
+  margin-left: 12px;
+  font-size: 12px;
+  color: #fff;
+  padding-top: 45px;
+}
+.houseDetil-wrap .sale-Wrapper .content ul li:first-child {
+  margin-left: -40px;
+}
+.houseDetil-wrap .sale-Wrapper .content ul li .marsk {
+  opacity: .4;
+  filter: alpha(opacity=40);
+  position: absolute;
+  z-index: 1;
+  background-color: #000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.houseDetil-wrap .sale-Wrapper .content ul li .tit {
+  font-size: 20px;
+  margin-bottom: 14px;
+}
+.houseDetil-wrap .sale-Wrapper .content ul li .sub-tit {
+  color: #d0d1d2;
+  margin-bottom: 14px;
+}
+.houseDetil-wrap .sale-Wrapper .content ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+.houseDetil-wrap .sale-Wrapper .content ul li > * {
+  position: relative;
+  z-index: 2;
+}
+.houseDetil-wrap .sale-Wrapper .content ul .item-sale {
+  background-image: url(https://s1.ljcdn.com/pegasus/redskull/images/common/yezhu-maifang.png?v=fceaf418);
+}
+.houseDetil-wrap .sale-Wrapper .content ul .item-order {
+  background-image: url(https://s1.ljcdn.com/pegasus/redskull/images/common/yezhu-gujia.png?v=7e008630);
+}
+.houseDetil-wrap .sale-Wrapper .content ul .item-home {
+  background-image: url(https://s1.ljcdn.com/pegasus/redskull/images/common/yezhu-xiazai.png?v=ccbb7fc8);
 }

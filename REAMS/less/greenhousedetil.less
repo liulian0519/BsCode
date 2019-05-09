@@ -49,7 +49,7 @@
 .houseDetil-wrap{
     width: 1190px;
     margin: 30px auto;
-    .detil-title, .community-title, .house-title, .img-title, .introduce-title, .map-title{
+    .detil-title, .community-title, .house-title, .img-title, .sale-title, .introduce-title, .map-title, .goodhouse-title{
         .name{
             font-size: 26px;
             color: #101d37;
@@ -343,7 +343,7 @@
                 text-align: center;
                 img{
                     max-width: 100%;
-    height: 100%;
+                    height: 100%;
                 }
                 &:first-child{
                     width: 710px;
@@ -383,7 +383,6 @@
         width:1150px;
         clear: both;
         .map-title{
-            
             margin-bottom: 30px;
             .title-name{
                 span{
@@ -400,6 +399,126 @@
             width: 100%;
             height: 480px;
             border: 0;
+        }
+    }
+    // 好房推荐模块
+    .good-Wrapper{
+       .goodhouse-title{
+           margin-top: 30px;
+           margin-bottom: 20px;
+           .name{
+            font-size: 26px;
+            color: #101d37;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 10px;
+            line-height: 30px;
+           }
+       }
+        .green-detil{
+            width: 265px;
+
+            display: inline-block;
+            margin-right: 25px;
+            img{
+                .borderRadius();
+                width: 265px;
+                height: 205px;
+            }
+            .address{
+                margin-top: 16px;
+                font-size: @text-size-md;
+                font-weight: 700;
+                line-height: @text-size-md;
+                color: #222;
+                .p-over{
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+
+            }
+            .sapn-bottome{
+                margin-top: 10px;
+                font-size: 12px;
+                color: #616669;
+                line-height: 16px;
+                overflow: hidden;
+                .area{
+        
+                    float: left;
+                }
+                .price{
+                    float: right;
+                    font-weight: 700;
+                    float: right;
+                    font-size: 16px;
+                    color: #fa5741;
+                }
+            }
+        }
+    }
+    .sale-Wrapper{
+        width: 1150px;
+        margin-bottom: 220px;
+        .sale-title{
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        .content{
+            ul{
+                list-style: none;
+                text-align: center;
+                li{
+                    float: left;
+                    position: relative;
+                    width: 375px;
+                    height: 160px;
+                    margin-left: 12px;
+                    font-size: 12px;
+                    color: #fff;
+                    padding-top: 45px;
+                    &:first-child{
+                        margin-left: -40px;
+                    }
+                    .marsk{
+                        opacity: .4;
+                        filter: alpha(opacity=40);
+                        position: absolute;
+                        z-index: 1;
+                        background-color: #000;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .tit{
+                        font-size: 20px;
+                         margin-bottom: 14px;
+                    }
+                    .sub-tit{
+                        color: #d0d1d2;
+                        margin-bottom: 14px;
+                    }
+                    a{
+                        color: #fff;
+                        text-decoration: none;
+                    }
+                }
+                li > *{
+                    position: relative;
+                    z-index: 2;
+                }
+                .item-sale{
+                    background-image: url(https://s1.ljcdn.com/pegasus/redskull/images/common/yezhu-maifang.png?v=fceaf418);
+                }
+                .item-order{
+                    background-image: url(https://s1.ljcdn.com/pegasus/redskull/images/common/yezhu-gujia.png?v=7e008630);
+                }
+                .item-home{
+                    background-image: url(https://s1.ljcdn.com/pegasus/redskull/images/common/yezhu-xiazai.png?v=ccbb7fc8);
+                }
+            }
         }
     }
 
