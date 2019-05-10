@@ -26,47 +26,14 @@ require(['jquery', 'bootstrap','login','layui'], function () {
         initUI();
     });
 
-    /**
-     * 渲染页面总函数
-     */
     function initUI(){
         $.ajax({
             type: "get",
             url: "http://localhost:8080/listCount",
             dataType: "json",
             success: function (response) {
+                fillNum(response);
                 var count = response.count;
-                var result = "";
-                result +=
-                '<div class="result-title">\n' +
-                    '<p>已经为您找到' + response.count + '套房</p>\n' +
-                '</div>\n' +
-                '<ul id="myTab" class="nav nav-tabs">\n' +
-                    '<li class="active"><a href="#home" data-toggle="tab">综合排序</a></li>\n' +
-                    '<li><a href="#latest" data-toggle="tab">最新</a></li>\n' +
-                    '<li><a href="#price" data-toggle="tab">总价</a></li>\n' +
-                    '<li><a href="#area" data-toggle="tab">面积</a></li>\n' +
-                '</ul>\n' +
-                '<div id="myTabContent" class="tab-content">\n' +
-                '<div class="tab-pane fade in active" id="home">\n' +
-                // '<p>moren</p>\n'+  
-                '<div id="realData"></div>\n' + 
-                '<div id="realDatacopy"></div>\n' + 
-                '</div>\n' +
-                '<div class="tab-pane fade" id="latest">\n' +
-                // '<p>最新</p>\n'+ 
-                '<div id="realData2"></div>\n' +  
-                '</div>\n' +
-                '<div class="tab-pane fade" id="price">\n' +
-                // '<p>总价</p>\n'+ 
-                '<div id="realData3"></div>\n' +    
-                '</div>\n' +
-                '<div class="tab-pane fade" id="area">\n' +
-                // '<p>面积</p>\n'+   
-                '<div id="realData4"></div>\n' +   
-                '</div>\n' +
-                '</div>\n'
-                $(".select-result").append(result);
                 /**
                  * 默认排序分页
                  */
@@ -98,8 +65,54 @@ require(['jquery', 'bootstrap','login','layui'], function () {
             }
         });
     }
-
-    /**
+    function fillNum(response){
+        var num;
+        var count = response.count;
+        var total = response.total;
+        console.log(count);
+        console.log(total);
+        
+        if(count>0){
+            num = count;
+           
+        }
+        if(total>0){
+            num = total;
+        }
+        console.log(num);
+        var result = "";
+        result +=
+        '<div class="result-title">\n' +
+            '<p>已经为您找到' + num + '套房</p>\n' +
+        '</div>\n' +
+        '<ul id="myTab" class="nav nav-tabs">\n' +
+            '<li class="active"><a href="#home" data-toggle="tab">综合排序</a></li>\n' +
+            '<li><a href="#latest" data-toggle="tab">最新</a></li>\n' +
+            '<li><a href="#price" data-toggle="tab">总价</a></li>\n' +
+            '<li><a href="#area" data-toggle="tab">面积</a></li>\n' +
+        '</ul>\n' +
+        '<div id="myTabContent" class="tab-content">\n' +
+        '<div class="tab-pane fade in active" id="home">\n' +
+        // '<p>moren</p>\n'+  
+        '<div id="realData"></div>\n' + 
+        '<div id="realDatacopy"></div>\n' + 
+        '</div>\n' +
+        '<div class="tab-pane fade" id="latest">\n' +
+        // '<p>最新</p>\n'+ 
+        '<div id="realData2"></div>\n' +  
+        '</div>\n' +
+        '<div class="tab-pane fade" id="price">\n' +
+        // '<p>总价</p>\n'+ 
+        '<div id="realData3"></div>\n' +    
+        '</div>\n' +
+        '<div class="tab-pane fade" id="area">\n' +
+        // '<p>面积</p>\n'+   
+        '<div id="realData4"></div>\n' +   
+        '</div>\n' +
+        '</div>\n'
+        $(".select-result").append(result);
+    }
+     /**
      * 综合排序分页
      */
     function fillMoren(count){
@@ -132,8 +145,8 @@ require(['jquery', 'bootstrap','login','layui'], function () {
             });
         });
     }
-    
-    /**
+
+     /**
      * 最新的分页
      * @param {} response 
      */
@@ -170,8 +183,7 @@ require(['jquery', 'bootstrap','login','layui'], function () {
             });
         });
     }
-
-     /**
+        /**
      * 按价格降序分页
      */
     function fillPrice(count) {
@@ -242,17 +254,16 @@ require(['jquery', 'bootstrap','login','layui'], function () {
             });
         });
     }
+
+    /**
+     * 综合排序渲染数据
+     */
     function fillData(response){
         $(".result-item").remove();
         $("#home").append(fillZonghe(response));
     }
-    function fillDataCopy(response){
-        $(".result-title").remove();
-        $("#realData").remove();
-        $(".result-item").remove();
-        $("#home").append(fillZonghe(response));
-    }
-     /**
+ 
+    /**
      * 
      * @param {*} response 
      * 最新的渲染数据
@@ -317,90 +328,93 @@ require(['jquery', 'bootstrap','login','layui'], function () {
         
     }
 
-
+    /**
+     * 得到标签页值并渲染数据
+     */
     function accAvalue() {
         $(this).siblings().removeClass('active');
         $(this).addClass('active');
+
         var address = $(".select-body .active").children("a:eq(0)").text();
         if (address == "全城") {
             address = "";
         }
-  
         var current = 1;
         var heating = 2;
         var area_type = "";
         var position = "";
-                    var build_use = "";
-                    $.ajax({
-                        type: "post",
-                        url: "http://localhost:8080/greenhouseBySql",
-                        data: {
-                            "pageNum": current,
-                            "address": address,
-                            "area_type": area_type,
-                            "position": position,
-                            "build_use": build_use,
-                            "heating": heating
-                        },
-                        dataType: "json",
-                        success: function (response) {
-                            total =response.total
-                            // console.log(response);
-                            // console.log(response.total)
-                            // /**渲染数据 */
-                            // fillDataCopy(response);
+        var build_use = "";
+        $.ajax({
+            type: "get",
+            url: "http://localhost:8080/greenhouseByPage",
+            data: {
+                "pageNum": current,
+            },
+            dataType: "json",
+            success: function (response) {
+                total =response.total;
 
-                        },
-                        error: function (response) {
-                            console.log(response);
+                layui.use(['laypage', 'layer'], function () {
+                    var laypage = layui.laypage
+                        , layer = layui.layer;
+                    laypage.render({
+                        elem: realDatacopy
+                        , theme: '#3072f6'
+                        , count: total
+                        , limit: 2
+                        , jump: function (e) {
+                            console.log(e);
+                            // $("#home").append('<div id="realDatacopy"></div>\n')
+                            $.ajax({
+                                type: "post",
+                                url: "http://localhost:8080/greenhouseBySql",
+                                data: {
+                                    "pageNum": e.curr,
+                                    "address": address,
+                                    "area_type": area_type,
+                                    "position": position,
+                                    "build_use": build_use,
+                                    "heating": heating
+                                },
+                                dataType: "json",
+                                success: function (response) {
+                                    console.log(response);
+                                    console.log(response.total);
+                                    // $(".result-title").remove();
+                                    // $("#realData").remove();
+                                    $(".result-item").remove();
+                                    // $("#myTab").remove();
+                                    // $("#myTabContent").remove();
+                                    
+                                    fillNum(response);
+                                   
+                                    $("#home").append(fillZonghe(response));
+             
+                                    
+        
+                                },
+                                error: function (response) {
+                                    console.log(response);
+                                }
+                            });
+        
                         }
                     });
-                   
-
-        layui.use(['laypage', 'layer'], function () {
-            var laypage = layui.laypage
-                , layer = layui.layer;
-            laypage.render({
-                elem: realDatacopy
-                , theme: '#3072f6'
-                , count: total
-                , limit: 2
-                , jump: function (e) {
-
-                    console.log(e);
-                    var heating = 2;
-                    var area_type = "";
-                    var position = "";
-                    var build_use = "";
-                    $.ajax({
-                        type: "post",
-                        url: "http://localhost:8080/greenhouseBySql",
-                        data: {
-                            "pageNum": e.curr,
-                            "address": address,
-                            "area_type": area_type,
-                            "position": position,
-                            "build_use": build_use,
-                            "heating": heating
-                        },
-                        dataType: "json",
-                        success: function (response) {
-                            console.log(response);
-                            console.log(response.total)
-                            /**渲染数据 */
-                            fillDataCopy(response);
-
-                        },
-                        error: function (response) {
-                            console.log(response);
-                        }
-                    });
-
-
-                }
-            });
+                });
+            },
+            error: function (response) {
+                console.log(response);
+            }
         });
+        
 
+        
+    }
+    function fillDataCopy(response){
+        // $(".result-title").remove();
+        // $("#realData").remove();
+        $(".result-item").remove();
+        $("#home").append(fillZonghe(response));
     }
 
     function AccCheckValue(){
