@@ -347,6 +347,11 @@
   vertical-align: left;
   margin: 40px 0 40px 180px;
 }
+.select-result #realDatacopy {
+  position: absolute;
+  left: 70%;
+  top: 900px;
+}
 .select-result .result-title {
   font-size: 16px;
   color: #101d37;
@@ -429,18 +434,18 @@
   color: #3072f6;
 }
 .select-result .result-item .result-detil .detil-content {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .select-result .result-item .result-detil .detil-content a {
   color: #9399a5;
   display: block;
-  padding-bottom: 7px;
+  padding-bottom: 5px;
 }
 .select-result .result-item .result-detil .detil-content a i {
   margin-right: 7px;
 }
 .select-result .result-item .result-detil .detil-surround {
-  padding-top: 28px;
+  padding-top: 18px;
 }
 .select-result .result-item .result-detil .detil-surround .surround-type {
   display: inline-block;

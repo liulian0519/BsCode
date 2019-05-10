@@ -48,23 +48,23 @@ require(['jquery', 'bootstrap','login','layui'], function () {
                     '<li><a href="#area" data-toggle="tab">面积</a></li>\n' +
                 '</ul>\n' +
                 '<div id="myTabContent" class="tab-content">\n' +
-                '<div class="tab-pane fade in active" id="home">\n' +
+                    '<div class="tab-pane fade in active" id="home">\n' +
                 // '<p>moren</p>\n'+  
-                '<div id="realData"></div>\n' + 
-                '<div id="realDatacopy"></div>\n' + 
-                '</div>\n' +
-                '<div class="tab-pane fade" id="latest">\n' +
+                        '<div id="realData"></div>\n' + 
+                        '<div id="realDatacopy"></div>\n' + 
+                    '</div>\n' +
+                    '<div class="tab-pane fade" id="latest">\n' +
                 // '<p>最新</p>\n'+ 
-                '<div id="realData2"></div>\n' +  
-                '</div>\n' +
-                '<div class="tab-pane fade" id="price">\n' +
+                        '<div id="realData2"></div>\n' +  
+                    '</div>\n' +
+                    '<div class="tab-pane fade" id="price">\n' +
                 // '<p>总价</p>\n'+ 
-                '<div id="realData3"></div>\n' +    
-                '</div>\n' +
-                '<div class="tab-pane fade" id="area">\n' +
+                        '<div id="realData3"></div>\n' +    
+                    '</div>\n' +
+                    '<div class="tab-pane fade" id="area">\n' +
                 // '<p>面积</p>\n'+   
-                '<div id="realData4"></div>\n' +   
-                '</div>\n' +
+                        '<div id="realData4"></div>\n' +   
+                    '</div>\n' +
                 '</div>\n'
                 $(".select-result").append(result);
                 /**

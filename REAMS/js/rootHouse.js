@@ -297,6 +297,7 @@ require(['jquery', 'bootstrap', 'login', 'layui'], function () {
      * @param {*} response 
      */
     function fillZonghe(response) {
+        console.log(response);
         var result = ""
         for (var i = 0; i < response.list.length; i++) {
             result +=

@@ -21,9 +21,23 @@ require(['jquery', 'bootstrap','login','layui'], function () {
         });
 
         /**
+         * 搜索框搜索
+         */
+        $('.search-input').keydown(function (e) {
+            var event = window.event || arguments.callee.caller.arguments[0];
+            if (event.keyCode == 13) {
+                var val = $(this).val();
+                /**触发搜索事件 */
+                search(val);
+            }
+        });
+
+        /**
          * 渲染页面总函数
          */
-        initUI();
+        initUI(); 
+        
+           
     });
 
     function initUI(){
@@ -69,8 +83,6 @@ require(['jquery', 'bootstrap','login','layui'], function () {
         var num;
         var count = response.count;
         var total = response.total;
-        console.log(count);
-        console.log(total);
         
         if(count>0){
             num = count;
@@ -95,7 +107,7 @@ require(['jquery', 'bootstrap','login','layui'], function () {
         '<div class="tab-pane fade in active" id="home">\n' +
         // '<p>moren</p>\n'+  
         '<div id="realData"></div>\n' + 
-        '<div id="realDatacopy"></div>\n' + 
+        // '<div id="realDatacopy"></div>\n' + 
         '</div>\n' +
         '<div class="tab-pane fade" id="latest">\n' +
         // '<p>最新</p>\n'+ 
@@ -119,6 +131,7 @@ require(['jquery', 'bootstrap','login','layui'], function () {
         layui.use(['laypage', 'layer'], function () {
             var laypage = layui.laypage
                 , layer = layui.layer;
+               
             laypage.render({
                 elem: realData
                 , theme: '#3072f6'
@@ -134,6 +147,7 @@ require(['jquery', 'bootstrap','login','layui'], function () {
                         dataType: "json",
                         success: function (response) {
                             /**渲染数据 */
+                            
                             fillData(response);
 
                         },
@@ -293,7 +307,7 @@ require(['jquery', 'bootstrap','login','layui'], function () {
      * 数据公共部分
      */
     function fillZonghe(response){
-        console.log(response);
+       
         var detil = "";
         for(var i=0;i<response.list.length;i++){
             detil +=
@@ -312,7 +326,8 @@ require(['jquery', 'bootstrap','login','layui'], function () {
                     '<div class="detil-content">\n'+
                         '<a><i class="iconfont iconditu"></i>'+response.list[i].address+'</a>\n'+
                         '<a><i class="iconfont iconfangzi1"></i>'+response.list[i].floor+' | '+response.list[i].build_time+'建 | '+response.list[i].area_type+' | '+response.list[i].area+'平方米 | '+response.list[i].position+' </a>\n'+
-                    '</div>\n'+
+                        '<a><i class="iconfont iconshijian"></i>' + response.list[i].con_time + '</a>\n' +
+                        '</div>\n'+
                     '<div class="detil-surround">\n'+
                         '<span class="block-type" style="background: #FB9252;">'+response.list[i].build_use+'</span>\n'+
                         '<span class="surround-type">随时看房</span>\n'+
@@ -328,6 +343,42 @@ require(['jquery', 'bootstrap','login','layui'], function () {
         
     }
 
+    function fillZonghe2(response){
+       
+        var detil = "";
+        for(var i=0;i<response.length;i++){
+            detil +=
+            '<div class="result-item">\n'+
+                '<div class="result-img">\n'+
+                    '<a href="greenHouseDetil.html?id=' + response[i].id + '">\n' +
+                        '<img src="'+response[i].url[0]+'">\n'+
+                    '</a>\n' +
+                '</div>\n' +
+                '<div class="result-detil">\n' +
+                    '<div class="detil-title">\n'+
+                        '<span class="name">\n'+
+                            '<a href="greenHouseDetil.html?id=' + response[i].id + '">'+response[i].name+'|'+response[i].area_type+'|'+response[i].position+'</a>\n'+
+                        '</span>\n'+
+                    '</div>\n'+
+                    '<div class="detil-content">\n'+
+                        '<a><i class="iconfont iconditu"></i>'+response[i].address+'</a>\n'+
+                        '<a><i class="iconfont iconfangzi1"></i>'+response[i].floor+' | '+response[i].build_time+'建 | '+response[i].area_type+' | '+response[i].area+'平方米 | '+response[i].position+' </a>\n'+
+                        '<a><i class="iconfont iconshijian"></i>' + response[i].con_time + '</a>\n' +
+                        '</div>\n'+
+                    '<div class="detil-surround">\n'+
+                        '<span class="block-type" style="background: #FB9252;">'+response[i].build_use+'</span>\n'+
+                        '<span class="surround-type">随时看房</span>\n'+
+                    '</div>\n'+
+                    '<div class="detil-price">\n' +
+                        '<p>'+response[i].price+'<span>万</span></p>\n' +
+                    '</div>\n' +
+                '</div>\n' +
+                '<hr>\n' +
+            '</div>\n'              
+        }
+        return detil;
+        
+    }
     /**
      * 得到标签页值并渲染数据
      */
@@ -339,89 +390,190 @@ require(['jquery', 'bootstrap','login','layui'], function () {
         if (address == "全城") {
             address = "";
         }
-        var current = 1;
+        console.log(address);
+        
         var heating = 2;
         var area_type = "";
         var position = "";
         var build_use = "";
+
+        var reqData = {
+            "address":address,
+            "area_type":area_type,
+            "position":position,
+            "build_use":build_use,
+            "heating":heating
+        }
         $.ajax({
-            type: "get",
-            url: "http://localhost:8080/greenhouseByPage",
-            data: {
-                "pageNum": current,
-            },
+            type: "post",
+            url: "http://localhost:8080/greenhouseBysql",
+            data: reqData,
             dataType: "json",
             success: function (response) {
-                total =response.total;
-
-                layui.use(['laypage', 'layer'], function () {
-                    var laypage = layui.laypage
-                        , layer = layui.layer;
-                    laypage.render({
-                        elem: realDatacopy
-                        , theme: '#3072f6'
-                        , count: total
-                        , limit: 2
-                        , jump: function (e) {
-                            console.log(e);
-                            // $("#home").append('<div id="realDatacopy"></div>\n')
-                            $.ajax({
-                                type: "post",
-                                url: "http://localhost:8080/greenhouseBySql",
-                                data: {
-                                    "pageNum": e.curr,
-                                    "address": address,
-                                    "area_type": area_type,
-                                    "position": position,
-                                    "build_use": build_use,
-                                    "heating": heating
-                                },
-                                dataType: "json",
-                                success: function (response) {
-                                    console.log(response);
-                                    console.log(response.total);
-                                    // $(".result-title").remove();
-                                    // $("#realData").remove();
-                                    $(".result-item").remove();
-                                    // $("#myTab").remove();
-                                    // $("#myTabContent").remove();
-                                    
-                                    fillNum(response);
-                                   
-                                    $("#home").append(fillZonghe(response));
-             
-                                    
-        
-                                },
-                                error: function (response) {
-                                    console.log(response);
-                                }
-                            });
-        
-                        }
-                    });
-                });
+                /**渲染数据 */
+                fill(response.greenHouseTests);
             },
             error: function (response) {
                 console.log(response);
             }
         });
-        
-
-        
     }
-    function fillDataCopy(response){
-        // $(".result-title").remove();
-        // $("#realData").remove();
-        $(".result-item").remove();
-        $("#home").append(fillZonghe(response));
-    }
+    function fill(response) {
+        $(".result-title").remove();
+        $(".nav-tabs").remove();
+        $(".tab-content").remove();
+        
+        var count = response.length;
+        var result = "";
+        result +=
+            '<div class="result-title">\n' +
+            '<p>已经为您找到' + count + '套房</p>\n' +
+            '</div>\n' +
+            '<ul id="myTab" class="nav nav-tabs">\n' +
+            '<li class="active"><a href="#home" data-toggle="tab">综合排序</a></li>\n' +
+            '<li><a href="#latest" data-toggle="tab">最新</a></li>\n' +
+            '<li><a href="#price" data-toggle="tab">价格</a></li>\n' +
+            '<li><a href="#area" data-toggle="tab">面积</a></li>\n' +
+            '</ul>\n' +
+            '<div id="myTabContent" class="tab-content">\n' +
+            '<div class="tab-pane fade in active" id="home">\n' +
+            // '<p>moren排序。</p>\n'+
+            '<div id="realData"></div>\n' +
+            '</div>\n' +
+            '<div class="tab-pane fade" id="latest">\n' +
+            // 按时间排序
+            // '<p>按shijians排序。</p>\n'+
+            '<div id="realData2"></div>\n' +
+            '</div>\n' +
+            '<div class="tab-pane fade" id="price">\n' +
+            // '<p>按价格排序。</p>\n' +
+            '<div id="realData3"></div>\n' +
+            '</div>\n' +
+            '<div class="tab-pane fade" id="area">\n' +
+            // '<p>按面积。</p>\n' +
+            '<div id="realData4"></div>\n' +
+            '</div>\n' +
+            '</div>\n'
+        $(".select-result").append(result);
+        $("#home").append(fillZonghe2(response));
+        
+        var newDataTime = response;
+        newDataTime.sort(timedown);
 
+        $("#latest").append(fillZonghe2(newDataTime));
+
+        var newDataPrice = response;
+        newDataPrice.sort(pricedown);
+
+        $("#price").append(fillZonghe2(newDataPrice));
+
+        var newDataArea = response;
+        newDataArea.sort(areaup);
+
+        $("#area").append(fillZonghe2(newDataArea));
+    }
+    // 时间降序函数
+    function timedown(x, y) {
+        return new Date(y.con_time).getTime() - new Date(x.con_time).getTime()
+    }
+    // 价钱降序函数
+    function pricedown(x, y) {
+        return x.price - y.price;
+    }
+    // 面积降序函数
+    function areaup(x, y) {
+        return x.area - y.area;
+    }
+   /**
+    * 多选框按钮事件
+    */
     function AccCheckValue(){
         if ($(this).children().is(":checked")) {
             $(this).children().prop("checked", false);
         } else {
             $(this).children().prop("checked", true);
         }
+
+        var area_type = "";
+        $('input[name="type"]:checked').each(function () {
+            if ($(this).val() == "4室以上") {
+                var a = '5室';
+                area_type += a;
+
+            } else {
+                area_type += $(this).val();
+            }
+
+        });
+        var position = "";
+        $('input[name="position"]:checked').each(function () {
+            position += $(this).val();
+        });
+        var address = $(".select-body .active").children("a:eq(0)").text();
+        if (address == "全城") {
+            address = "";
+        }
+        var use = "";
+        $('input[name="use"]:checked').each(function () {
+            use += $(this).val();
+        });
+        var heating = 2;
+        $('input[name="heating"]:checked').each(function () {
+            if($(this).val() == "集中供暖"){
+                heating=1;
+            }else if($(this).val() == "自供暖"){
+                heating = 0;
+            }else{
+                heating = 2
+            }
+        });
+        var reqData = {
+            "address":address,
+            "area_type":area_type,
+            "position":position,
+            "build_use":use,
+            "heating":heating
+        }
+        $.ajax({
+            type: "post",
+            url: "http://localhost:8080/greenhouseBysql",
+            data: reqData,
+            dataType: "json",
+            success: function (response) {
+                // console.log(response);
+                // console.log(response.rentHouseTests.length)
+                /**渲染数据 */
+                fill(response.greenHouseTests);
+            },
+            error: function (response) {
+                console.log(response);
+            }
+        });
+    }
+    
+    /**
+     * 搜索事件
+     */
+    function search(val) {
+        var name = val;
+        var reqData = {
+            "name": name
+        }
+
+        $.ajax({
+            type: "post",
+            url: "http://localhost:8080/slectByName",
+            data: reqData,
+            dataType: "json",
+            success: function (response) {
+                
+                /**渲染数据 */
+                fill(response.greenHouseTests);
+            },
+            error: function (response) {
+                console.log(response);
+            }
+        });
+
     }
 }) 
