@@ -165,7 +165,7 @@
 .search-bg .search-body .search-right i {
   position: absolute;
   top: 77px;
-  left: 1400px;
+  left: 1300px;
 }
 /** 条件查询样式 */
 .select-wrap {
@@ -174,7 +174,7 @@
 }
 .select-wrap .select-body {
   width: 1150px;
-  height: 340px;
+  height: 320px;
   margin: 0 auto;
   background-color: #fbfbfb;
   box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.2);
@@ -196,11 +196,12 @@
 }
 .select-wrap .select-body .select-area p {
   padding: 15px 0 0 15px;
-  font-size: 18px;
   color: #000;
   letter-spacing: 1;
 }
 .select-wrap .select-body .select-area p span {
+  line-height: 27px;
+  font-weight: 700;
   padding-right: 5px;
 }
 .select-wrap .select-body .select-area p span:hover,
@@ -231,7 +232,7 @@
   margin-bottom: 15px;
 }
 .select-wrap .select-body .select-area .drop-menu li a {
-  font-size: 16px;
+  line-height: 27px;
   padding: 5px;
   color: #666;
 }
@@ -243,9 +244,16 @@
 .select-wrap .select-body .select-area hr {
   clear: both;
 }
+.select-wrap .select-body .select-perPrice {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  clear: both;
+  height: 25px;
+}
 .select-wrap .select-body .select-perPrice span {
   padding-left: 15px;
-  font-size: 18px;
+  line-height: 27px;
+  font-weight: 700;
   float: left;
   line-height: 25px;
 }
@@ -263,7 +271,7 @@
   margin: 0 15px;
 }
 .select-wrap .select-body .select-perPrice .ul-item-perPrice li a {
-  font-size: 16px;
+  line-height: 27px;
   color: #666;
 }
 .select-wrap .select-body .select-perPrice .ul-item-perPrice li a:hover,
@@ -275,34 +283,42 @@
 .select-wrap .select-body .select-tolPrice,
 .select-wrap .select-body .select-area,
 .select-wrap .select-body .select-type,
-.select-wrap .select-body .select-status {
+.select-wrap .select-body .select-status,
+.select-wrap .select-body .select-areatype {
   margin-top: 20px;
   clear: both;
+  height: 25px;
 }
 .select-wrap .select-body .select-tolPrice span,
 .select-wrap .select-body .select-area span,
 .select-wrap .select-body .select-type span,
-.select-wrap .select-body .select-status span {
+.select-wrap .select-body .select-status span,
+.select-wrap .select-body .select-areatype span {
   padding-left: 15px;
-  font-size: 18px;
+  line-height: 27px;
+  font-weight: 700;
   float: left;
 }
 .select-wrap .select-body .select-tolPrice .ul-item-tolPrice,
 .select-wrap .select-body .select-area .ul-item-tolPrice,
 .select-wrap .select-body .select-type .ul-item-tolPrice,
 .select-wrap .select-body .select-status .ul-item-tolPrice,
+.select-wrap .select-body .select-areatype .ul-item-tolPrice,
 .select-wrap .select-body .select-tolPrice .ul-item-area,
 .select-wrap .select-body .select-area .ul-item-area,
 .select-wrap .select-body .select-type .ul-item-area,
 .select-wrap .select-body .select-status .ul-item-area,
+.select-wrap .select-body .select-areatype .ul-item-area,
 .select-wrap .select-body .select-tolPrice .ul-item-type,
 .select-wrap .select-body .select-area .ul-item-type,
 .select-wrap .select-body .select-type .ul-item-type,
 .select-wrap .select-body .select-status .ul-item-type,
+.select-wrap .select-body .select-areatype .ul-item-type,
 .select-wrap .select-body .select-tolPrice .ul-item-status,
 .select-wrap .select-body .select-area .ul-item-status,
 .select-wrap .select-body .select-type .ul-item-status,
-.select-wrap .select-body .select-status .ul-item-status {
+.select-wrap .select-body .select-status .ul-item-status,
+.select-wrap .select-body .select-areatype .ul-item-status {
   list-style: none;
   display: inline;
 }
@@ -310,18 +326,22 @@
 .select-wrap .select-body .select-area .ul-item-tolPrice li,
 .select-wrap .select-body .select-type .ul-item-tolPrice li,
 .select-wrap .select-body .select-status .ul-item-tolPrice li,
+.select-wrap .select-body .select-areatype .ul-item-tolPrice li,
 .select-wrap .select-body .select-tolPrice .ul-item-area li,
 .select-wrap .select-body .select-area .ul-item-area li,
 .select-wrap .select-body .select-type .ul-item-area li,
 .select-wrap .select-body .select-status .ul-item-area li,
+.select-wrap .select-body .select-areatype .ul-item-area li,
 .select-wrap .select-body .select-tolPrice .ul-item-type li,
 .select-wrap .select-body .select-area .ul-item-type li,
 .select-wrap .select-body .select-type .ul-item-type li,
 .select-wrap .select-body .select-status .ul-item-type li,
+.select-wrap .select-body .select-areatype .ul-item-type li,
 .select-wrap .select-body .select-tolPrice .ul-item-status li,
 .select-wrap .select-body .select-area .ul-item-status li,
 .select-wrap .select-body .select-type .ul-item-status li,
-.select-wrap .select-body .select-status .ul-item-status li {
+.select-wrap .select-body .select-status .ul-item-status li,
+.select-wrap .select-body .select-areatype .ul-item-status li {
   float: left;
   margin: 0 15px;
 }
@@ -329,50 +349,62 @@
 .select-wrap .select-body .select-area .ul-item-tolPrice li:hover,
 .select-wrap .select-body .select-type .ul-item-tolPrice li:hover,
 .select-wrap .select-body .select-status .ul-item-tolPrice li:hover,
+.select-wrap .select-body .select-areatype .ul-item-tolPrice li:hover,
 .select-wrap .select-body .select-tolPrice .ul-item-area li:hover,
 .select-wrap .select-body .select-area .ul-item-area li:hover,
 .select-wrap .select-body .select-type .ul-item-area li:hover,
 .select-wrap .select-body .select-status .ul-item-area li:hover,
+.select-wrap .select-body .select-areatype .ul-item-area li:hover,
 .select-wrap .select-body .select-tolPrice .ul-item-type li:hover,
 .select-wrap .select-body .select-area .ul-item-type li:hover,
 .select-wrap .select-body .select-type .ul-item-type li:hover,
 .select-wrap .select-body .select-status .ul-item-type li:hover,
+.select-wrap .select-body .select-areatype .ul-item-type li:hover,
 .select-wrap .select-body .select-tolPrice .ul-item-status li:hover,
 .select-wrap .select-body .select-area .ul-item-status li:hover,
 .select-wrap .select-body .select-type .ul-item-status li:hover,
 .select-wrap .select-body .select-status .ul-item-status li:hover,
+.select-wrap .select-body .select-areatype .ul-item-status li:hover,
 .select-wrap .select-body .select-tolPrice .ul-item-tolPrice li:active,
 .select-wrap .select-body .select-area .ul-item-tolPrice li:active,
 .select-wrap .select-body .select-type .ul-item-tolPrice li:active,
 .select-wrap .select-body .select-status .ul-item-tolPrice li:active,
+.select-wrap .select-body .select-areatype .ul-item-tolPrice li:active,
 .select-wrap .select-body .select-tolPrice .ul-item-area li:active,
 .select-wrap .select-body .select-area .ul-item-area li:active,
 .select-wrap .select-body .select-type .ul-item-area li:active,
 .select-wrap .select-body .select-status .ul-item-area li:active,
+.select-wrap .select-body .select-areatype .ul-item-area li:active,
 .select-wrap .select-body .select-tolPrice .ul-item-type li:active,
 .select-wrap .select-body .select-area .ul-item-type li:active,
 .select-wrap .select-body .select-type .ul-item-type li:active,
 .select-wrap .select-body .select-status .ul-item-type li:active,
+.select-wrap .select-body .select-areatype .ul-item-type li:active,
 .select-wrap .select-body .select-tolPrice .ul-item-status li:active,
 .select-wrap .select-body .select-area .ul-item-status li:active,
 .select-wrap .select-body .select-type .ul-item-status li:active,
 .select-wrap .select-body .select-status .ul-item-status li:active,
+.select-wrap .select-body .select-areatype .ul-item-status li:active,
 .select-wrap .select-body .select-tolPrice .ul-item-tolPrice li:focus,
 .select-wrap .select-body .select-area .ul-item-tolPrice li:focus,
 .select-wrap .select-body .select-type .ul-item-tolPrice li:focus,
 .select-wrap .select-body .select-status .ul-item-tolPrice li:focus,
+.select-wrap .select-body .select-areatype .ul-item-tolPrice li:focus,
 .select-wrap .select-body .select-tolPrice .ul-item-area li:focus,
 .select-wrap .select-body .select-area .ul-item-area li:focus,
 .select-wrap .select-body .select-type .ul-item-area li:focus,
 .select-wrap .select-body .select-status .ul-item-area li:focus,
+.select-wrap .select-body .select-areatype .ul-item-area li:focus,
 .select-wrap .select-body .select-tolPrice .ul-item-type li:focus,
 .select-wrap .select-body .select-area .ul-item-type li:focus,
 .select-wrap .select-body .select-type .ul-item-type li:focus,
 .select-wrap .select-body .select-status .ul-item-type li:focus,
+.select-wrap .select-body .select-areatype .ul-item-type li:focus,
 .select-wrap .select-body .select-tolPrice .ul-item-status li:focus,
 .select-wrap .select-body .select-area .ul-item-status li:focus,
 .select-wrap .select-body .select-type .ul-item-status li:focus,
-.select-wrap .select-body .select-status .ul-item-status li:focus {
+.select-wrap .select-body .select-status .ul-item-status li:focus,
+.select-wrap .select-body .select-areatype .ul-item-status li:focus {
   cursor: pointer;
 }
 /* 查询结果样式*/
@@ -411,6 +443,12 @@
 .select-result .nav-tabs li a:focus {
   background-color: #3072f6;
   color: #fff;
+}
+.select-result .tab-content #realData,
+.select-result .tab-content #realData2 {
+  position: absolute;
+  margin-top: 480px;
+  margin-left: 730px;
 }
 .select-result .result-item {
   padding-bottom: 20px;

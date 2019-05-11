@@ -19,7 +19,11 @@ require(['jquery', 'bootstrap','login','layui'], function () {
             $(".active-tab span").html(activeTab);
             $(".previous-tab span").html(previousTab);
         });
-
+        var name = getUrlParam('name');
+        if(name){
+            search(name);
+        }
+        
         /**
          * 搜索框搜索
          */
@@ -31,15 +35,28 @@ require(['jquery', 'bootstrap','login','layui'], function () {
                 search(val);
             }
         });
+          
+  
 
         /**
          * 渲染页面总函数
          */
-        initUI(); 
+        if(!name){
+            initUI(); 
+        }
         
+      
+        // console.log(name)
            
     });
-
+    function getUrlParam(name) {
+        var search = decodeURIComponent(location.search);
+        var reg = new RegExp(".*" + name + "\\=" + "([^&]*)(&?.*|)", "g");
+        return search.replace(reg, "$1");
+        // var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        // var r = window.location.search.substr(1).match(reg);
+        // if (r != null) return unescape(r[2]); return null;
+    }
     function initUI(){
         $.ajax({
             type: "get",
@@ -566,7 +583,7 @@ require(['jquery', 'bootstrap','login','layui'], function () {
             data: reqData,
             dataType: "json",
             success: function (response) {
-                
+              
                 /**渲染数据 */
                 fill(response.greenHouseTests);
             },

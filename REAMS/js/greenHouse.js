@@ -18,7 +18,7 @@ require(['jquery', 'bootstrap','login','layui'], function () {
             var previousTab = $(e.relatedTarget).text();
             $(".active-tab span").html(activeTab);
             $(".previous-tab span").html(previousTab);
-        });
+        }); 
 
         /**
          * 渲染页面总函数
@@ -83,7 +83,7 @@ require(['jquery', 'bootstrap','login','layui'], function () {
                         fillTime(count);
                     }
                     if (text == "总价") {
-                        /**按面积排序 */
+                        /**按价格排序 */
                         fillPrice(count);
                     }
                     if (text == "面积") {

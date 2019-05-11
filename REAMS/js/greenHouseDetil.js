@@ -5,6 +5,7 @@ require(['jquery','bootstrap','login'],function(){
    
     $(document).ready(function () {
       
+        
         /**渲染页面数据 */
         fillData();
     });

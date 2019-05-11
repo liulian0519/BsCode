@@ -7,6 +7,7 @@
      <!-- 引入图标库样式 -->
      <link rel="stylesheet" type="text/css" href="css/iconfont.css">
      <!-- bootstrap样式文件 -->
+     <link rel="stylesheet" type="text/css" href="./lib/layui/css/layui.css">
      <link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap.min.css">
      <link rel="stylesheet" type="text/css" href="./css/newHouse.css">
     <title>新房页面</title>
@@ -130,57 +131,40 @@
                 <hr />
             </div>
             <div class="select-perPrice">
-                <span>单价</span>
+                <span>价钱</span>
                 <ul class="ul-item-perPrice">
-                    <li><input type="checkbox" name="test" value="500元以下" />5000元/m²以下</li>
-                    <li><input type="checkbox" name="test" value="500-1000元" />5000-8000/m²</li>
-                    <li><input type="checkbox" name="test" value="1000-1500元" />8000-10000/m²</li>
-                    <li><input type="checkbox" name="test" value="1500-2000元" />10000-12000/m²</li>
-                    <li><input type="checkbox" name="test" value="2000-3000元" />12000-15000/m²</li>
-                    <li><input type="checkbox" name="test" value="3000-4000元" />15000-20000/m²</li>
-                    <li><input type="checkbox" name="test" value="3000-4000元" />20000/m²</li>
-                </ul>
-            </div>
-            <div class="select-tolPrice">
-                <span>总价</span>
-                <ul class="ul-item-tolPrice">
-                    <li><input type="checkbox" name="test" value="40万以下" />40万以下</li>
-                    <li><input type="checkbox" name="test" value="40万-60万" />40万-60万</li>
-                    <li><input type="checkbox" name="test" value="60万-80万" />60万-80万</li>
-                    <li><input type="checkbox" name="test" value="80-100万" />80-100万</li>
-                    <li><input type="checkbox" name="test" value="100-150万" />100-150万</li>
-                    <li><input type="checkbox" name="test" value="150-200万" />150-200万</li>
-                    <li><input type="checkbox" name="test" value="200万以上" />200万以上</li>
-                </ul>
-            </div>
-            <div class="select-area">
-                <span>面积</span>
-                <ul class="ul-item-area">
-                    <li><input type="checkbox" name="test" value="50m²以下" />50m²以下</li>
-                    <li><input type="checkbox" name="test" value="50-70m²" />50-70m²</li>
-                    <li><input type="checkbox" name="test" value="70-90m²" />70-90m²</li>
-                    <li><input type="checkbox" name="test" value="90-110m²" />90-110m²</li>
-                    <li><input type="checkbox" name="test" value="110-130m²" />110-130m²</li>
-                    <li><input type="checkbox" name="test" value="130-150m²" />130-150m²</li>
-                    <li><input type="checkbox" name="test" value="150m²以上" />150m²以上</li>
+                    <li><input type="checkbox" name="price" value="5000元/m²以下" />5000元/m²以下</li>
+                    <li><input type="checkbox" name="price" value="5000-10000元/m²" />5000-10000元/m²</li>
+                    <li><input type="checkbox" name="price" value="10000-15000元/m²" />10000-15000元/m²</li>
+                    <li><input type="checkbox" name="price" value="15000-20000元/m²" />15000-20000元/m²</li>
+                    <li><input type="checkbox" name="price" value="20000-30000元/m²" />20000-30000元/m²</li>
+                    <!-- <li><input type="checkbox" name="price" value="25000-30000/m²" />25000-30000元/m²</li> -->
+                    <li><input type="checkbox" name="price" value="30000元/m²以上" />30000元/m²以上</li>
                 </ul>
             </div>
             <div class="select-type">
-                <span>户型</span>
-                <ul class="ul-item-type">
-                    <li><input type="checkbox" name="test" value="一室" />一室</li>
-                    <li><input type="checkbox" name="test" value="两室" />两室</li>
-                    <li><input type="checkbox" name="test" value="三室" />三室</li>
-                    <li><input type="checkbox" name="test" value="四室" />四室</li>
-                    <li><input type="checkbox" name="test" value="五室" />五室</li>
+                <span>类型</span>
+                <ul class="ul-item-area">
+                    <li><input type="checkbox" name="type" value="住宅" />住宅</li>
+                    <li><input type="checkbox" name="type" value="商业" />商业</li>
+                    <li><input type="checkbox" name="type" value="写字楼" />写字楼</li>
                 </ul>
             </div>
+          
             <div class="select-status">
                 <span>状态</span>
                 <ul class="ul-item-status">
-                    <li><input type="checkbox" name="test" value="在售" />在售</li>
-                    <li><input type="checkbox" name="test" value="未开盘" />未开盘</li>
-                    <li><input type="checkbox" name="test" value="售罄" />售罄</li>
+                    <li><input type="checkbox" name="status" value="在售" />在售</li>
+                    <li><input type="checkbox" name="status" value="预售" />预售</li>
+                    <li><input type="checkbox" name="status" value="售罄" />售罄</li>
+                </ul>
+            </div>
+            <div class="select-areatype">
+                <span>供暖</span>
+                <ul class="ul-item-type">
+                    <li><input type="checkbox" name="heating" value="集中供暖" />集中供暖</li>
+                    <li><input type="checkbox" name="heating" value="自供暖" />自供暖</li>
+                    
                 </ul>
             </div>
         </div>
@@ -188,82 +172,8 @@
     <!-- 条件查询结束 -->
     <!-- 查询结果展示开始 -->
     <div class="select-result">
-        <div class="result-title">
-            <p>已经为您找到112套房</p>
-        </div>
-        <ul id="myTab" class="nav nav-tabs">
-            <li class="active"><a href="#home" data-toggle="tab">默认排序</a></li>
-            <li><a href="#price" data-toggle="tab">均价</a></li>
-            <li><a href="#time" data-toggle="tab">开盘时间</a></li>
-        </ul>
-        <div id="myTabContent" class="tab-content">
-            <div class="tab-pane fade in active" id="home">
-                <div class="result-item">
-                    <div class="result-img">
-                        <a href="newhousedetil.html?x=108.959845&y=34.195217">
-                            <img
-                                src="https://ke-image.ljcdn.com/newhouse-user-image/6e13bcc74a8d298790f635b1c48a9f1c.jpg.592x432.jpg" />
-                        </a>
-                    </div>
-                    <div class="result-detil">
-                        <div class="detil-title">
-                            <span class="name">春天花园</span>
-                            <span class="block-type" style="background: #5F94FF;">在售</span>
-                            <span class="block-type" style="background: #FB9252;">住宅</span>
-                        </div>
-                        <div class="detil-content">
-                            <a href="" title="长安区韦曲街道府东一路320号近西安邮电大学"><i class="iconfont iconditu"></i>长安区韦曲街道府东一路320号近西安邮电大学</a>
-                            <a href=""><i class="iconfont iconfangzi1" style="font-size:16px;"></i>户型：三室/四室 &nbsp; 建面：112-116m²</a>
-                        </div>
-                        <div class="detil-surround">
-                            <span class="surround-type">绿化率高</span>
-                            <span class="surround-type">低密度</span>
-                        </div>
-                    </div> 
-                    <div class="detil-price">
-                        <p>25000<span>元/平(均价)</span></p>
-                    </div>
-                    <hr>
-                </div>
-                <div class="result-item">
-                    <div class="result-img">
-                        <a href="newhousedetil.html">
-                            <img
-                                src="https://ke-image.ljcdn.com/newhouse-user-image/6e13bcc74a8d298790f635b1c48a9f1c.jpg.592x432.jpg" />
-                        </a>
-                    </div>
-                    <div class="result-detil">
-                        <div class="detil-title">
-                            <span class="name">春天花园</span>
-                            <span class="block-type" style="background: #5F94FF;">在售</span>
-                            <span class="block-type" style="background: #FB9252;">住宅</span>
-                        </div>
-                        <div class="detil-content">
-                            <a href="" title="长安区韦曲街道府东一路320号近西安邮电大学"><i class="iconfont iconditu"></i>长安区韦曲街道府东一路320号近西安邮电大学</a>
-                            <a href=""><i class="iconfont iconfangzi1" style="font-size:16px;"></i>户型：三室/四室 &nbsp; 建面：112-116m²</a>
-                        </div>
-                        <div class="detil-surround">
-                            <span class="surround-type">绿化率高</span>
-                            <span class="surround-type">低密度</span>
-                        </div>
-                    </div> 
-                    <div class="detil-price">
-                        <p>25000<span>元/平(均价)</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="price">
-                <p>均价排序展示</p>
-            </div>
-            <div class="tab-pane fade" id="time">
-                <p>开盘时间展示。</p>
-            </div>
-
-        </div>
     </div>
-    <!-- 查询结果展示结束 -->
-
-
+    <!-- 查询结果展示结束 --> 
 
     <script type="text/javascript" src="./lib/require/require.js"></script>
     <script type="text/javascript" src="./require.config.js"></script>

@@ -55,7 +55,7 @@
             i{
                 position: absolute;
                 top: 77px;
-                left: 1400px;
+                left: 1300px;
             }
         }
     }
@@ -68,7 +68,7 @@
     
     .select-body{
         width: 1150px;
-        height: 340px;
+        height: 320px;
         margin: 0 auto;
         background-color: #fbfbfb;
         box-shadow: 0 1px 2px -1px rgba(0,0,0,.2);
@@ -91,10 +91,12 @@
         .select-area{
             p{
                 padding:15px 0 0 15px;
-                font-size: 18px;
+                
                 color: #000;
                 letter-spacing: 1;
                 span{
+                    line-height: 27px;
+                    font-weight: 700;
                     &:hover, &:active, &:focus{
                         color: @primary-color;
                     }
@@ -119,7 +121,7 @@
                    margin-right: 10px;
                    margin-bottom: 15px;
                    a{
-                       font-size: 16px;
+                        line-height: 27px;
                        padding: 5px;
                        color: #666;
                        &:hover, &:active, &:focus{
@@ -134,10 +136,14 @@
                             
         }
         .select-perPrice{
-        
+            padding-top: 20px;
+            padding-bottom: 20px;
+            clear: both;
+            height: 25px;
             span{
                 padding-left: 15px;
-                font-size: @text-size-md;
+                line-height: 27px;
+                font-weight: 700;
                 float: left;
                 line-height: 25px;
             }
@@ -153,7 +159,7 @@
                     float: left;
                     margin: 0 15px;
                     a{
-                        font-size: @text-size-sm;
+                        line-height: 27px;
                         color: #666;
                         &:hover, &:active, &:focus{
                             text-decoration: none;
@@ -163,12 +169,14 @@
                 }
             }
         }
-        .select-tolPrice, .select-area, .select-type, .select-status{
+        .select-tolPrice, .select-area, .select-type, .select-status, .select-areatype{
             margin-top: 20px;
             clear: both;
+            height: 25px;
             span{
                 padding-left: 15px;
-                font-size: @text-size-md;
+                line-height: 27px;
+                font-weight: 700;
                 float: left;
             }
             .ul-item-tolPrice, .ul-item-area, .ul-item-type, .ul-item-status{
@@ -188,6 +196,7 @@
 
 /* 查询结果样式*/ 
 .select-result{
+
     width: 1050px;
     vertical-align: left;
     margin:40px 0 40px 180px;
@@ -220,6 +229,13 @@
                     color: #fff;
                 } 
             }
+        }
+    }
+    .tab-content{
+        #realData,#realData2{
+            position: absolute;
+            margin-top: 480px;
+            margin-left: 730px;
         }
     }
     .result-item{

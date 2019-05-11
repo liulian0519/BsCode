@@ -5,6 +5,42 @@ require(['jquery', 'bootstrap', 'login'], function () {
 
     $(document).ready(function () {
         initUI();
+        /**
+         * 搜索框搜索
+         */
+        $('.search1').keydown(function (e) {
+            var event = window.event || arguments.callee.caller.arguments[0];
+            if (event.keyCode == 13) {
+                var val = $(this).val();
+                console.log(1);
+                /**触发搜索事件 */
+                // search(val);
+                var direct = '../greenHouse.html?name='+val;
+                $(location).prop('href', direct)
+            }
+        });
+        $('.search2').keydown(function (e) {
+            var event = window.event || arguments.callee.caller.arguments[0];
+            if (event.keyCode == 13) {
+                var val = $(this).val();
+                console.log(1);
+                /**触发搜索事件 */
+                // search(val);
+                var direct = '../newHouse.html?name='+val;
+                $(location).prop('href', direct)
+            }
+        });
+        $('.search3').keydown(function (e) {
+            var event = window.event || arguments.callee.caller.arguments[0];
+            if (event.keyCode == 13) {
+                var val = $(this).val();
+                console.log(1);
+                /**触发搜索事件 */
+                // search(val);
+                var direct = '../rootHouse.html?name='+val;
+                $(location).prop('href', direct)
+            }
+        });
     });
 
 
@@ -32,7 +68,8 @@ require(['jquery', 'bootstrap', 'login'], function () {
                 $(".search-menu li").eq(2).find("a").removeClass("style3");
                 $(".search-menu i").css({
                     'left': '195px'
-                })
+                });
+                // $(location).prop('href', 'http://www.jb51.net')
 
             }
             if (index == 1) {
