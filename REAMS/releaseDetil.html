@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <!--头部导航开始  -->
+    <!--头部导航开始  --> 
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -145,6 +145,13 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label class="col-lg-3 control-label">小区均价</label>
+                                <div class="col-lg-6 price">
+                                    <input type="text" class="form-control" name="avgprice" />
+                                    <span>平/月</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label class="col-lg-3 control-label"><i class="iconfont iconbitian2-5"></i>房屋类型</label>
                                 <div class="col-lg-4">
                                     <select class="form-control" name="type">
@@ -164,6 +171,39 @@
                                         <option value="塔板结合">塔板结合</option>
                                         <option value="其他">其他</option>
                                     </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><i class="iconfont iconbitian2-5"></i>供暖方式</label>
+                                <div class="col-lg-4">
+                                    <select class="form-control" name="heating">
+                                        <option value="请选择">请选择</option>
+                                        <option value="1" selected>集中供暖</option>
+                                        <option value="0">自供暖</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><i class="iconfont iconbitian2-5"></i>抵押信息</label>
+                                <div class="col-lg-4">
+                                    <select class="form-control" name="mortgage">
+                                        <option value="请选择">请选择</option>
+                                        <option value="1" selected>有抵押</option>
+                                        <option value="0">无抵押</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><i class="iconfont iconbitian2-5"></i>电梯情况</label>
+                                <div class="col-lg-4">
+                                    <select class="form-control" name="elevator">
+                                        <option value="请选择">请选择</option>
+                                        <option value="1" selected>有</option>
+                                        <option value="0">没有</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4">
+                                    <input type="text" class="form-control" name="laderhouse" placeholder="梯户比例" />
                                 </div>
                             </div>
                             <div class="form-group">
@@ -208,17 +248,22 @@
                                     <span>年</span>
                                 </div>
                                 <div class="col-lg-4 rightage">
-                                    <input type="text" class="form-control" name="datetime" placeholder="建筑年代" />
+                                    <input type="date" class="form-control" name="datetime" placeholder="建筑年代" />
 
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label class="col-lg-3 control-label"><i class="iconfont"></i>规划户数</label>
+                                <div class="col-lg-4 ">
+                                    <input type="text" class="form-control" name="buildnum" placeholder="规划户数" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 <label class="col-lg-3 control-label"><i class="iconfont iconbitian2-5"></i>挂牌时间</label>
                                 <div class="col-lg-4 ">
-                                    <input type="date" class="form-control" name="datetime" />
-
+                                    <input type="date" class="form-control" name="contime" placeholder="挂牌时间" />
                                 </div>
-
                             </div>
                         </div>
                         <div class="maintwo">
@@ -250,7 +295,7 @@
                             <div class="form-group">
                                 <label class="col-lg-3 control-label"><i class="iconfont iconbitian2-5"></i>上传图片</label>
                                 <div class="col-lg-8">
-                                    <input type="file" name="file">
+                                    <input type="file" id="pic" name="file">
                                 </div>
                             </div>  
                         </div>
@@ -277,7 +322,7 @@
                     <div class="modal-content">
                         <div>
                             <p>委托成功！请等待审核</p>
-                            <button class="btn btn-order"><a href="order.html">我的发布</a></button>
+                            <button class="btn btn-order"><a class="jump">我的发布</a></button>
                             <button class="btn btn-index"><a href="index.html">回首页</a></button>
                         </div>
                     </div><!-- /.modal-content -->

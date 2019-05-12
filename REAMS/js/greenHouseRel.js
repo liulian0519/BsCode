@@ -419,7 +419,7 @@ require(['jquery', 'bootstrap','login','layui'], function () {
             "area_type":area_type,
             "position":position,
             "build_use":build_use,
-            "heating":heating
+            "heating":heating 
         }
         $.ajax({
             type: "post",

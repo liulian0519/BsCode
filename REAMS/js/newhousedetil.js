@@ -9,7 +9,7 @@ require(['jquery','bootstrap', 'login'], function () {
   });
 
   /**渲染数据 */
-  function fillData() {
+  function fillData() { 
     var new_id = getUrlParam('id');
     var reqData = {
       "new_id": new_id,

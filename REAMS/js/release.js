@@ -14,6 +14,11 @@ require(['jquery', 'bootstrap','login','popt','cityjson','cityset'], function ()
         $("#root-city").click(function (e) { 
             SelCity(this,e);
         });
+        $('.btn-more').click(function(){
+            var phone = $('#phone').val();
+            var url = "releaseDetil.html?phone=" + phone;
+            $(".jump").attr("href",url);
+        })
 
         /** 点击提交委托的函数 */
         $('#btn-sale').click(function(){
@@ -121,16 +126,16 @@ require(['jquery', 'bootstrap','login','popt','cityjson','cityset'], function ()
             $('#phone').removeClass('input-error');
         }
         
-        var reqData = {
-            "city":city,
-            "houseAdd":houseAdd,
-            "addLou":addLou,
-            "addUnit":addUnit,
-            "addDoor":addDoor,
-            "salePrice":salePrice,
-            "name":name,
-            "phone":phone
-        }
+        // var reqData = {
+        //     "city":city,
+        //     "houseAdd":houseAdd,
+        //     "addLou":addLou,
+        //     "addUnit":addUnit,
+        //     "addDoor":addDoor,
+        //     "salePrice":salePrice,
+        //     "name":name,
+        //     "phone":phone
+        // }
         // id="myModal" 
         // console.log(reqData);
         // 向后台发送数据
