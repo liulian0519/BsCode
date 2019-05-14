@@ -86,37 +86,6 @@ require(['jquery', 'bootstrap', 'login', 'layui'], function () {
             success: function (response) {
                 var count = response.count;
                 fillNum(response);
-                // var result = "";
-                // result +=
-                //     '<div class="result-title">\n' +
-                //     '<p>已经为您找到' + response.count + '套房</p>\n' +
-                //     '</div>\n' +
-                //     '<ul id="myTab" class="nav nav-tabs">\n' +
-                //     '<li class="active"><a href="#home" data-toggle="tab">综合排序</a></li>\n' +
-                //     '<li><a href="#latest" data-toggle="tab">最新上架</a></li>\n' +
-                //     '<li><a href="#price" data-toggle="tab">价格</a></li>\n' +
-                //     '<li><a href="#area" data-toggle="tab">面积</a></li>\n' +
-                //     '</ul>\n' +
-                //     '<div id="myTabContent" class="tab-content">\n' +
-                //     '<div class="tab-pane fade in active" id="home">\n' +
-                //     // '<p>moren排序。</p>\n'+
-                //     '<div id="realData"></div>\n' +
-                //     '</div>\n' +
-                //     '<div class="tab-pane fade" id="latest">\n' +
-                //     // 按时间排序
-                //     // '<p>按shijians排序。</p>\n'+
-                //     '<div id="realData2"></div>\n' +
-                //     '</div>\n' +
-                //     '<div class="tab-pane fade" id="price">\n' +
-                //     // '<p>按价格排序。</p>\n' +
-                //     '<div id="realData3"></div>\n' +
-                //     '</div>\n' +
-                //     '<div class="tab-pane fade" id="area">\n' +
-                //     // '<p>按面积。</p>\n' +
-                //     '<div id="realData4"></div>\n' +
-                //     '</div>\n' +
-                //     '</div>\n'
-                // $(".select-result").append(result);
 
                 /**综合排序分页 */
                 fillMoren(count);
