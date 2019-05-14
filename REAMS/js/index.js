@@ -5,6 +5,28 @@ require(['jquery', 'bootstrap', 'login'], function () {
 
     $(document).ready(function () {
         initUI();
+        
+        var cookie = getCookie('phone');
+        var phone = cookie.substring(0, 3) + '****' + cookie.substring(7, 11);
+        if(cookie!=null&&cookie!=""){
+            var result = "";
+            result +=
+            '<li id="nothing">\n'+
+            '<a href="order.html"><span>欢迎,'+phone+'</span></a>\n'+
+            '</li>\n'+
+            '<li id="nothing">\n'+
+            '<a class="logout" href="#"><span>退出</span></a>\n'+
+            '</li>\n'
+            
+            $('#t').addClass('hide');
+            $("#list").append(result);
+        }
+
+        $(".logout").bind("click", function(){
+            alert("退出成功");
+            setCookie('phone', "",  -1);
+            window.location.reload();
+        });
         /**
          * 搜索框搜索
          */

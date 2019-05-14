@@ -6,7 +6,31 @@ require(['jquery', 'bootstrap','login','popt','cityjson','cityset'], function ()
 
     $(document).ready(function () {
         $(".sub-nav li").bind("click",accAvalue);
+        var cookie = getCookie('phone');
+        console.log(cookie);
+        var phone = cookie.substring(0, 3) + '****' + cookie.substring(7, 11);
 
+        if(cookie!=null&&cookie!=""){
+            var result = "";
+            result +=
+            '<li id="nothing">\n'+
+            '<a href="order.html"><span>欢迎您！'+phone+'</span></a>\n'+
+            '</li>\n'+
+            '<li id="nothing">\n'+
+            '<a class="logout" href="#"><span>退出</span></a>\n'+
+            '</li>\n';
+            $('#t').addClass('hide');
+            $("#list").append(result);
+        }else{
+            alert("请先登录");
+            window.open("index.html","_self");
+         
+        }
+        $(".logout").bind("click", function(){
+            alert("退出成功");
+            setCookie('phone', "",  -1);
+            window.location.reload();
+        });
         /** 省市区三级联动函数 */
         $("#city").click(function (e) {
             SelCity(this,e);

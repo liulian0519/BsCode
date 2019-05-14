@@ -31,7 +31,7 @@ $('#verify_code').on('click', function () {
  * 不正确。 
  * 
 */
-$('#reLogin').on('click', function () {
+$('#reLogin').on('click', function () { 
 
     doLogin();
 })
@@ -42,19 +42,54 @@ $('#reLogin').on('click', function () {
      * 获取图片验证码
      */
     function acceptImg() {
+        console.log("jjjjj")
+        var url = "http://localhost:8080/verfiycode";
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.responseType = "blob";
+        // xhr.setRequestHeader("client_type", "DESKTOP_WEB");
+        // xhr.setRequestHeader("desktop_web_access_key", _desktop_web_access_key);
+        xhr.onload = function() {
+            
+            if (this.status == 200) {
+                console.log(this)
+                var blob = this.response;
+                
+           
+                var img = document.getElementById("verifyimg");
+                img.onload = function(e) {
+                    window.URL.revokeObjectURL(img.src); 
+                };
+                img.src = window.URL.createObjectURL(blob);
+           
+        
+                // $("#verifyimg").html(img);    
+            }
+        }
+        xhr.send()
         // $.ajax({
-        //     type:"GET",
-        //     // url:"./dataImg.json",
-        //     dataType:"json",
+        //     xhrFields:{
+        //         withCredentials:true
+        //     },
+        //     type:"get",
+        //     url:"http://localhost:8080/verfiycode",
+        //     // dataType:"blob",
         //     success:function(data){
-        //         // console.log(data.imgurl);
+        //        // console.log(data);
+        //         // console.log(data);
+        //         // var src = "data:image/png;base64," + data
+        //         //  
+        //         // var imgsrc = 'data:image/png;base64,' + btoa(new Uint8Array(data).reduce((data, byte) => data + String.fromCharCode(byte), ''));
+        //         // var src = encodeURI(data);
+        //         // var imgSrc = "data:image/png;base64," + src
+        //         // console.log(src)
+        //         // $("#verifyimg").attr('src', imgsrc);
         //     },
         //     error:function(jqXHR){
         //         console.log("Error: "+jqXHR.status);
         //     }
         // });
-        var imgSrc = "https://upassport.ke.com/freshCaptch?t=1554431733278"
-        $("#verifyimg").attr('src', imgSrc);
+       
     }
 
     /**
@@ -86,22 +121,45 @@ $('#reLogin').on('click', function () {
         } else {
             $('#login_error').addClass('hide');
             $('.border-m').removeClass('input-error');
-
-            /** 此处应挪至ajax成功之后 
-             * 
-             *  设计倒计时
-            */
-            var t = $('#verify_code');
-            console.log(t);
-            verifyCodeTime(t);
+           
         }
 
 
         var reqData = {
-            "phoneNum": phoneNum,
-            "imgCode": imgCode
+            "phone": phoneNum,
+            "verfiycode": imgCode
         };
         console.log(reqData);
+        $.ajax({
+            xhrFields:{
+                withCredentials:true
+            },
+            type: "post",
+            url: "http://localhost:8080/verfiy",
+            data: reqData,
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
+                /** 此处应挪至ajax成功之后 
+             * 
+             *  设计倒计时
+            */
+           if(response.msg == true){
+            var t = $('#verify_code');
+            console.log(t);
+            verifyCodeTime(t);
+           }else{
+            $('#login_error').removeClass('hide')
+            $('.border-m').addClass('input-error');
+            $('#login_error').html("请输入有效的图片验证码");
+            $("#img_code").focus();
+           }
+           
+            },
+            error:function (response) {
+                console.log(response);
+            }
+        });
         // 传给后台 如果成功设计倒计时
     }
 
@@ -133,6 +191,12 @@ $('#reLogin').on('click', function () {
         }, 1000)
 
     }
+    function setCookie(c_name,value,expiredays){
+        var exdate=new Date();
+        exdate.setDate(exdate.getDate()+expiredays);
+        document.cookie=c_name+ "=" +escape(value)+
+            ((expiredays==null) ? "" : ";expires="+exdate.toGMTString())
+    }
 
     /**
      * 主要登录逻辑
@@ -149,38 +213,56 @@ $('#reLogin').on('click', function () {
             $("#phone_code").focus();
             return;
         }
-
-
-
         var reqData = {
-            "phoneNum": phoneNum,
-            "phoneCode": phoneCode
+            "phone": phoneNum,
+            "code": phoneCode
         };
 
         // 传给后台 如果成功则登录
-        // $.ajax({
-        //     type:"post",
-        //     url:"/",
-        //     dataType:"json",
-        //     data:reqData,
-        //     success:function(data){
-        //         console.log(data);
-        //     },
-        //     error:function(jqXHR){
-        //         console.log("Error: "+jqXHR.status);
-        //     }
-        // });
+        $.ajax({
+            xhrFields:{
+                withCredentials:true
+            },
+            type:"get",
+            url:"http://localhost:8080/login",
+            dataType:"json",
+            data:reqData,
+            success:function(data){
+                console.log(data);
+                console.log(data.msg);
+                if(!data.msg){
+   
+                    $('#login_error').removeClass('hide')
+                    $('.border-c').addClass('input-error');
+                    $('#login_error').html("请输入有效的短信验证码");
+                    $("#phone_code").focus();
+                }else{
+                    setCookie('phone',phoneNum,1); // cookie过期时间为1天。
+                    alert("登录成功");
+                    $('#login').modal('hide');
+                    window.location.reload();
+                }
+                
+            },
+            error:function(jqXHR){
+                console.log("Error: "+jqXHR.status);
+            }
+        });
 
         // 所有均正确 重新请求数据，显示登录的手机号
         // 隐藏模态框
-        $('#login').modal('hide')
-        $('#nothing').removeClass("hide")
-        $('#nothing').addClass("show");
-        $('#t').addClass('hide');
-
-        
-        // window.location.reload();
-
-
-
+  
     }
+    function getCookie(cookieName) {
+        var strCookie = document.cookie;
+        var arrCookie = strCookie.split("; ");
+        for(var i = 0; i < arrCookie.length; i++){
+            var arr = arrCookie[i].split("=");
+            if(cookieName == arr[0]){
+                return arr[1];
+            }
+        }
+        return "";
+    }
+  
+ 
