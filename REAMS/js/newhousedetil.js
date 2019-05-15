@@ -17,7 +17,7 @@ require(['jquery','bootstrap', 'login'], function () {
             '<a class="logout" href="#"><span>退出</span></a>\n'+
             '</li>\n';
             $('#t').addClass('hide');
-            $("#list").append(result);
+            $("#list").append(result); 
         }
         $(".logout").bind("click", function(){
           alert("退出成功");
@@ -54,13 +54,61 @@ require(['jquery','bootstrap', 'login'], function () {
               console.log("Error: " + jqXHR.status);
           }
     
-      });
+        });
 
+        /**
+        * 预约函数
+        */
+
+       $('.ttt').attr('id','myModal');
+       $(".preorder").bind("click",function(){
+        var time = $("#preTime").val();
+        console.log(time);
+        // 将时间发送，并设置正确回调
+        var phone = getCookie('phone');
+        var order_time = time;
+        var order_type = "新房";
+        var newHouse_id = getUrlParam('id');
+        var reqDatas = {
+          "phone":phone,
+          "order_time":order_time,
+          "order_type":order_type,
+          "newhouse_id":newHouse_id,
+          "area_type":"",
+          "area":"",
+          "price":"",
+          "name":"",
+          "greenhouse_id":"0",
+          "renthouse_id":"0"
+        }
+        console.log(reqDatas);
+        $.ajax({
+          type: "post",
+          url: "http://localhost:8080/preorderAdd",
+          data: reqDatas,
+          dataType: "json",
+          success: function (response) {
+            alert("预约成功，去个人中心查看呦");
+            window.location.reload();
+            console.log(response);
+
+          },
+          error:function(response){
+            console.log(response)
+          }
+        });
+        // 
+        // window.location.reload();
+
+       })
+       
       },
       error: function (response) {
         console.log(response);
       }
     });
+
+
     
   }
 
@@ -69,7 +117,7 @@ require(['jquery','bootstrap', 'login'], function () {
     var r = window.location.search.substr(1).match(reg);
     if (r != null) return unescape(r[2]); return null;
   }
-
+ 
   function initData(response) {
     console.log(response);
     if (response.newHouse.status == 0) {
@@ -173,7 +221,18 @@ require(['jquery','bootstrap', 'login'], function () {
           '<span class="block-tag">'+midu+'</span>\n'+
         '</div>\n'+
         '<div class="preOrder">\n'+
-          '<input type="button" class="btn btn-preOrder" value="预约" />\n'+
+          '<input type="button" class="btn btn-preOrder" id="btnOrder"  value="预约" data-toggle="modal" data-target="#myModal" />\n'+
+        '</div>\n'+
+        '<div class="modal ttt fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">\n'+
+            '<div class="modal-dialog">\n'+
+                '<div class="modal-content">\n'+
+                    '<div>\n'+
+                        '<p>请选择预约时间</p>\n'+
+                        '<input type="date" id="preTime" class="form-control" value="2019-05-15">\n'+
+                        '<button class="btn preorder">确定</button>\n'+
+                    '</div>\n'+
+                '</div>\n'+
+            '</div>\n'+
         '</div>\n'+
         '<hr>\n'+
         '<div class="mid-info">\n'+
@@ -604,5 +663,7 @@ require(['jquery','bootstrap', 'login'], function () {
       }
     });
   }
+  
+ 
     
 });

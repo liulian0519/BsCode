@@ -61,35 +61,10 @@ $('#reLogin').on('click', function () {
                     window.URL.revokeObjectURL(img.src); 
                 };
                 img.src = window.URL.createObjectURL(blob);
-           
-        
-                // $("#verifyimg").html(img);    
+          
             }
         }
         xhr.send()
-        // $.ajax({
-        //     xhrFields:{
-        //         withCredentials:true
-        //     },
-        //     type:"get",
-        //     url:"http://localhost:8080/verfiycode",
-        //     // dataType:"blob",
-        //     success:function(data){
-        //        // console.log(data);
-        //         // console.log(data);
-        //         // var src = "data:image/png;base64," + data
-        //         //  
-        //         // var imgsrc = 'data:image/png;base64,' + btoa(new Uint8Array(data).reduce((data, byte) => data + String.fromCharCode(byte), ''));
-        //         // var src = encodeURI(data);
-        //         // var imgSrc = "data:image/png;base64," + src
-        //         // console.log(src)
-        //         // $("#verifyimg").attr('src', imgsrc);
-        //     },
-        //     error:function(jqXHR){
-        //         console.log("Error: "+jqXHR.status);
-        //     }
-        // });
-       
     }
 
     /**

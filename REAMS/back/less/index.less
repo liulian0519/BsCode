@@ -1,0 +1,139 @@
+@import "../../less/basic.less";
+
+.result-item{
+    padding-bottom: 20px;
+    margin-top: 20px;
+    .result-img{
+        float: left;
+        img{
+            width: 250px;
+            height: 180px;
+            border: 1px solid #dfdfdf;
+            .borderRadius();
+        }
+        margin-right: 40px;
+    }
+    .result-detil{
+       .detil-title{
+        padding-top: 10px;
+        .name{
+            display: inline-block;
+            margin-right: 7px;
+            max-width: 75%;
+            font-size: 22px;
+            color:@placeholder-color;
+            line-height: 22px;
+            vertical-align: middle;
+            font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            a{
+                color: #101d37;
+                text-decoration: none;
+                &:hover, &:active, &:focus{
+                    color: @primary-color;
+                }
+            }
+        }
+       
+       }
+       .detil-content{
+           margin-top: 20px;
+           a{
+                color: #9399a5;
+                display: block;
+                padding-bottom: 5px;
+                i{
+                   margin-right: 7px;
+                }
+            }
+        }
+       .detil-surround{
+           padding-top: 18px;
+            .surround-type{
+                display: inline-block;
+                height: 30px;
+                margin-right: 10px;
+                padding: 0 14px;
+                line-height: 30px;
+                font-size:@text-size-um;
+                color: #849aae;
+                background: rgba(132,154,174,.1);
+            }
+            .block-type{
+                display: inline-block;
+                padding: 7px;
+                margin-right: 7px;
+                line-height: @text-size-um;
+                font-size: @text-size-um;
+                vertical-align: middle;
+                border-radius: 2px;
+                letter-spacing: -.27px;
+                text-align: center;
+                font-weight: 400;
+                color: #fff;
+            } 
+       }
+       .detil-price{
+            float: right;
+            margin-top: -95px;
+            p{
+                font-size: 30px;
+                line-height: 28px;
+                color: #db4c3f;
+                font-weight: 700;
+                span{
+                    font-size: 16px;
+                    font-weight: 100
+                }
+            }
+        }
+        hr{
+            margin-top: 35px;
+            margin-bottom: -10px;
+        }
+        
+    }  
+}
+#noexam{
+    .right{
+        float: right;
+        .goMap{
+            width: 380px;
+            margin-top: -180px;
+            float: left;
+            padding-right: 200px;
+            .layui-form-item{
+                margin-top: 20px;
+            }
+        }
+        .btnGroup{
+            margin-top: -120px;
+            clear: both;
+            float: right;
+        }
+    }
+}
+#examy{
+    .btnGroup{
+        clear: both;
+        float: right;
+        padding-right: 100px;
+        .btn-yes{
+            margin-top: -200px;
+            
+        }
+
+    }
+}
+#examn{
+    .btnGroup{
+        clear: both;
+        float: right;
+        padding-right: 100px;
+        .btn-no{
+            margin-top: -200px;
+        }
+    }
+}

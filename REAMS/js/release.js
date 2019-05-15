@@ -118,7 +118,7 @@ require(['jquery', 'bootstrap','login','popt','cityjson','cityset'], function ()
         }else{
             $('#input_error').addClass('hide')
             $('#add-lou').removeClass('input-error');
-        }
+        } 
         if(salePrice == ""){
             $('#input_error').removeClass('hide')
             $('#price').addClass('input-error');

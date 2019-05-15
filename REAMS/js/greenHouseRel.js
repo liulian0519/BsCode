@@ -343,7 +343,7 @@ require(['jquery', 'bootstrap','login','layui'], function () {
     /**
      * 数据公共部分
      */
-    function fillZonghe(response){
+    function fillZonghe(response){ 
        
         var detil = "";
         for(var i=0;i<response.list.length;i++){
@@ -355,7 +355,7 @@ require(['jquery', 'bootstrap','login','layui'], function () {
                     '</a>\n' +
                 '</div>\n' +
                 '<div class="result-detil">\n' +
-                    '<div class="detil-title">\n'+
+                    '<div class="detil-title">\n'+ 
                         '<span class="name">\n'+
                             '<a href="greenHouseDetil.html?id=' + response.list[i].id + '">'+response.list[i].name+'|'+response.list[i].area_type+'|'+response.list[i].position+'</a>\n'+
                         '</span>\n'+

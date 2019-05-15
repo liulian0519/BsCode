@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- 引入图标库样式 -->
-    <link rel="stylesheet" type="text/css" href="css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../css/iconfont.css">
     <!-- bootstrap样式文件 -->
-    <link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./css/newhousedetil.css">
-    <link rel="stylesheet" type="text/css" href="./css/swiper.min.css">
-    <title>新房详情页面</title>
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-
+    <link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/greenHouseDetil.css">
+    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
+    <title>二手房详情页面</title>
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+    
+    <script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../lib/swiper.min.js"></script>
+    <script type="text/javascript" src="./js/greenHouseDetil.js"></script>  
 </head>
- 
 <body>
     <!--头部导航开始  -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand" href="index.html">
@@ -29,8 +31,8 @@
                 <ul class="nav navbar-nav">
                     <li><a href="index.html">首页</a></li>
                     <li><a href="rootHouse.html">租房</a></li>
-                    <li><a href="greenHouse.html">二手房</a></li>
-                    <li class="active"><a href="newHouse.html">新房</a></li>
+                    <li class="active"><a href="greenHouse.html">二手房</a></li>
+                    <li><a href="newHouse.html">新房</a></li>
                     <li><a href="release.html">发布房源</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" id="list">
@@ -40,9 +42,9 @@
                             <span>登录</span>
                         </a>
                     </li>
-                </ul>
+                </ul> -->
                 <!-- 登录的模态框开始 -->
-                <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <!-- <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog modal-sm" role="document">
                         <div class="modal-content">
                             <button type="button" class="close login-close" data-dismiss="modal"
@@ -85,40 +87,35 @@
                         </div>
 
                     </div>
-                </div>
+                </div> -->
                 <!-- 登录的模态框结束 -->
 
-            </div>
+            <!-- </div>
 
         </div>
 
-    </nav>
+    </nav> -->
     <!-- 头部导航结束 -->
 
     <!-- 搜索框开始 -->
-    <div class="search-bg">
+    <!-- <div class="search-bg">
         <div class="search-body">
             <div class="search-left">
                 <img src="./img/logo.png" />
-                <span class="ti">PPX新房</span>
-                <a class="s-city" data-xftrack="10124" title="选择城市"><span>西安<i class="iconfont iconditu"
-                            style="margin-left:7px;"></i></span></a>
+                <span class="ti">PPX二手房</span>
             </div>
             <div class="search-right">
-                <input type="text" value="" id="" class="search-input" placeholder="请输入楼盘名开始查找" />
+                <input type="text" value="" id="" class="search-input" placeholder="请输入二手房信息开始查找" />
                 <i class="iconfont iconicon--"></i>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- 搜索框结束 -->
     <!-- 房源详细信息开始 -->
     <div class="houseDetil-wrap"></div>
+  
     <!-- 房源详细信息结束 -->
 
 
-    <script type="text/javascript" src="./lib/require/require.js"></script>
-    <script type="text/javascript" src="./require.config.js"></script>
-    <script type="text/javascript" src="./js/newhousedetil.js"></script>
 </body>
-
-</html>
+</html> 

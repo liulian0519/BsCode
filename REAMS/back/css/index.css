@@ -1,0 +1,130 @@
+.result-item {
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+.result-item .result-img {
+  float: left;
+  margin-right: 40px;
+}
+.result-item .result-img img {
+  width: 250px;
+  height: 180px;
+  border: 1px solid #dfdfdf;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -ms-broder-radius: 4px;
+  border-radius: 4px;
+}
+.result-item .result-detil .detil-title {
+  padding-top: 10px;
+}
+.result-item .result-detil .detil-title .name {
+  display: inline-block;
+  margin-right: 7px;
+  max-width: 75%;
+  font-size: 22px;
+  color: #101d37;
+  line-height: 22px;
+  vertical-align: middle;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.result-item .result-detil .detil-title .name a {
+  color: #101d37;
+  text-decoration: none;
+}
+.result-item .result-detil .detil-title .name a:hover,
+.result-item .result-detil .detil-title .name a:active,
+.result-item .result-detil .detil-title .name a:focus {
+  color: #3072f6;
+}
+.result-item .result-detil .detil-content {
+  margin-top: 20px;
+}
+.result-item .result-detil .detil-content a {
+  color: #9399a5;
+  display: block;
+  padding-bottom: 5px;
+}
+.result-item .result-detil .detil-content a i {
+  margin-right: 7px;
+}
+.result-item .result-detil .detil-surround {
+  padding-top: 18px;
+}
+.result-item .result-detil .detil-surround .surround-type {
+  display: inline-block;
+  height: 30px;
+  margin-right: 10px;
+  padding: 0 14px;
+  line-height: 30px;
+  font-size: 14px;
+  color: #849aae;
+  background: rgba(132, 154, 174, 0.1);
+}
+.result-item .result-detil .detil-surround .block-type {
+  display: inline-block;
+  padding: 7px;
+  margin-right: 7px;
+  line-height: 14px;
+  font-size: 14px;
+  vertical-align: middle;
+  border-radius: 2px;
+  letter-spacing: -0.27px;
+  text-align: center;
+  font-weight: 400;
+  color: #fff;
+}
+.result-item .result-detil .detil-price {
+  float: right;
+  margin-top: -95px;
+}
+.result-item .result-detil .detil-price p {
+  font-size: 30px;
+  line-height: 28px;
+  color: #db4c3f;
+  font-weight: 700;
+}
+.result-item .result-detil .detil-price p span {
+  font-size: 16px;
+  font-weight: 100;
+}
+.result-item .result-detil hr {
+  margin-top: 35px;
+  margin-bottom: -10px;
+}
+#noexam .right {
+  float: right;
+}
+#noexam .right .goMap {
+  width: 380px;
+  margin-top: -180px;
+  float: left;
+  padding-right: 200px;
+}
+#noexam .right .goMap .layui-form-item {
+  margin-top: 20px;
+}
+#noexam .right .btnGroup {
+  margin-top: -120px;
+  clear: both;
+  float: right;
+}
+#examy .btnGroup {
+  clear: both;
+  float: right;
+  padding-right: 100px;
+}
+#examy .btnGroup .btn-yes {
+  margin-top: -200px;
+}
+#examn .btnGroup {
+  clear: both;
+  float: right;
+  padding-right: 100px;
+}
+#examn .btnGroup .btn-no {
+  margin-top: -200px;
+}
