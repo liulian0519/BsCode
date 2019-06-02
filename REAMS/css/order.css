@@ -252,6 +252,23 @@
 .main-body .right-wrapper .result-item .result-detil .detil-title .name a:focus {
   color: #3072f6;
 }
+.main-body .right-wrapper .result-item .result-detil .detil-title .block-type {
+  margin-left: 30px;
+  background: #3072f6;
+  padding: 7px;
+  margin-right: 7px;
+  line-height: 14px;
+  font-size: 14px;
+  vertical-align: middle;
+  border-radius: 2px;
+  letter-spacing: -0.27px;
+  text-align: center;
+  font-weight: 400;
+  color: #fff;
+}
+.main-body .right-wrapper .result-item .result-detil .detil-title .block-type a {
+  color: #fff;
+}
 .main-body .right-wrapper .result-item .result-detil .detil-content {
   margin-top: 20px;
 }
@@ -393,6 +410,20 @@
   color: #fff;
   font-size: 14px;
   font-weight: 100;
+}
+.main-body .right-wrapper #myorder .result-detil .detil-house .rentDelete {
+  margin-left: 20px;
+  display: inline-block;
+  padding: 7px;
+  margin-right: 7px;
+  line-height: 14px;
+  font-size: 14px;
+  vertical-align: middle;
+  letter-spacing: -0.27px;
+  text-align: center;
+  font-weight: 400;
+  color: #fff;
+  border-radius: 2px;
 }
 .main-body .right-wrapper #myorder .result-detil .detil-house span {
   font-size: 20px;

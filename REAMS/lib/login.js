@@ -142,7 +142,7 @@ $('#reLogin').on('click', function () {
     /**
      * 倒计时函数
      */
-    var time = 10;
+    var time = 60;
     function verifyCodeTime(obj) {
         console.log(obj);
         if (time == 0) {

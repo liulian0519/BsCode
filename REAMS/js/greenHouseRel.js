@@ -183,6 +183,7 @@ require(['jquery', 'bootstrap','login','layui'], function () {
                         },
                         dataType: "json",
                         success: function (response) {
+                            console.log(response)
                             /**渲染数据 */
                             
                             fillData(response);

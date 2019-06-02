@@ -1,0 +1,95 @@
+@import "basic.less";
+@import "loginModal.less";
+/* 页面大标题样式 */
+.sub-headerWrap{
+    width: 100%;
+    height: 100px;
+    padding: 25px 0;
+    background: #f5f5f6;
+    box-sizing: border-box;
+    margin-top:30px;
+    .sub-header{
+        width: 1150px;
+        margin: 0 auto; 
+        .navbar-header{
+            img {
+                display: inline; 
+            }
+            .ti{
+                font-size: 18px;
+                font-weight: 500;
+                color: @primary-color;
+                // line-height: 47px;
+            }
+        }
+        .sub-nav{ 
+            ul{     
+                list-style: none;
+                .current{
+                    a{
+                        color: @primary-color;
+                    }
+                }
+                li{
+                    float: left;
+                    height: 40px;
+                    line-height: 70px;
+                    vertical-align: bottom;
+                    a{
+                        display: block;
+                        font-weight: 700;
+                        text-decoration: none;
+                        color: @placeholder-color;
+                        font-size: @text-size-sm;
+                        padding-left: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+.container{
+    .row{
+        .has-success{
+            .form-control{
+                border-color: @primary-color;
+            }
+            .form-control-feedback, .control-label{
+                color: @primary-color;
+            }
+            
+        }
+        .mainone{
+            margin-top: -45px;
+            // margin-bottom: 10px;
+            .title{
+                font-size: 18px;
+                font-weight: 700;
+                color: #333;
+                
+            }
+            .form-group{
+                padding-bottom: 20px;
+            }
+            padding-top: 100px;
+            i{
+                padding-right: 7px;
+            }
+
+        }
+        #validateBtn, #resetBtn{
+            width: 80px;
+            line-height: 30px;
+            font-size: 16px;
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            background-color:@primary-color;
+            cursor: pointer;
+            outline: none;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            margin-right: 10px;
+        } 
+    }
+}

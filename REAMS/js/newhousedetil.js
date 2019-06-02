@@ -59,10 +59,10 @@ require(['jquery','bootstrap', 'login'], function () {
         /**
         * 预约函数
         */
-
        $('.ttt').attr('id','myModal');
        $(".preorder").bind("click",function(){
         var time = $("#preTime").val();
+        var rent_phone = $("#prePhone").val();
         console.log(time);
         // 将时间发送，并设置正确回调
         var phone = getCookie('phone');
@@ -74,6 +74,7 @@ require(['jquery','bootstrap', 'login'], function () {
           "order_time":order_time,
           "order_type":order_type,
           "newhouse_id":newHouse_id,
+          "rent_phone":rent_phone,
           "area_type":"",
           "area":"",
           "price":"",
@@ -227,8 +228,11 @@ require(['jquery','bootstrap', 'login'], function () {
             '<div class="modal-dialog">\n'+
                 '<div class="modal-content">\n'+
                     '<div>\n'+
-                        '<p>请选择预约时间</p>\n'+
+                        '<p>请选择预信息</p>\n'+
+                        '<span class="preSpan">预约时间</span>\n'+
                         '<input type="date" id="preTime" class="form-control" value="2019-05-15">\n'+
+                        '<span class="preSpan1">手机号码</span>\n'+
+                        '<input type="text" id="prePhone" class="form-control">\n'+
                         '<button class="btn preorder">确定</button>\n'+
                     '</div>\n'+
                 '</div>\n'+

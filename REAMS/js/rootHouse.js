@@ -653,6 +653,7 @@ require(['jquery', 'bootstrap', 'login', 'layui'], function () {
             data: reqData,
             dataType: "json",
             success: function (response) {
+                console.log("response");
                 /**渲染数据 */
                 fill(response.rentHouseTests);
             },

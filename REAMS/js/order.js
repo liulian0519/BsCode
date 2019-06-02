@@ -89,6 +89,14 @@ require(['jquery', 'bootstrap','bootstrapvalidator','login'], function () {
                  */
                 $("#myContribute").append(fillcon(response.greenHouseTests));
 
+                $(".userOwner").hover(function () {
+
+                    $(this).find('#user2').show();
+                    $(this).find('#user').hide();
+                }, function () {
+                    $(this).find('#user2').hide();
+                    $(this).find('#user').show();
+                });     
                 var phone = getCookie('phone');
 
                 /**
@@ -133,6 +141,7 @@ require(['jquery', 'bootstrap','bootstrapvalidator','login'], function () {
                 var exam = "审核未通过";
                 var ba = '#fe615a';
             }
+            var phone = response[i].user_phone.substring(0, 3) + '****' + response[i].user_phone.substring(7, 11);
             detil +=
             '<div class="result-item">\n'+
                 '<div class="result-img">\n'+
@@ -145,6 +154,8 @@ require(['jquery', 'bootstrap','bootstrapvalidator','login'], function () {
                         '<span class="name">\n'+
                             '<a href="greenHouseDetil.html?id=' + response[i].id + '">'+response[i].name+'|'+response[i].area_type+'|'+response[i].position+'</a>\n'+
                         '</span>\n'+
+                        '<span class="block-type"><a href="modifyRelease.html?id=' + response[i].id + '">修改</a></span>\n'+
+                        '<div class="userOwner" style="float:right;padding-right:30px"><span>房东:</span><span id="user">'+phone+'</span><span id="user2" style="display:none">'+response[i].user_phone+'</span></div>\n'+
                     '</div>\n'+
                     '<div class="detil-content">\n'+
                         '<a><i class="iconfont iconditu"></i>'+response[i].address+'</a>\n'+
@@ -155,15 +166,15 @@ require(['jquery', 'bootstrap','bootstrapvalidator','login'], function () {
                         '<span class="block-type" style="background: #FB9252;">'+response[i].build_use+'</span>\n'+
                         '<span class="surround-type">随时看房</span>\n'+
                         '<span class="block-type" style="background: '+ba+'; margin-left:100px;">'+exam+'</span>\n'+
-                        
-
                     '</div>\n'+
                     '<div class="detil-price">\n' +
                         '<p>'+response[i].price+'<span>万</span></p>\n' +
                     '</div>\n' +
                 '</div>\n' +
                 '<hr>\n' +
-            '</div>\n'              
+            '</div>\n'  
+              
+        
         }
         return detil;
         
@@ -192,13 +203,118 @@ require(['jquery', 'bootstrap','bootstrapvalidator','login'], function () {
                 $("#myorder").append(detil);
                 }
                 if(response.newHouses.length!=0){
-                    $("#myorder").append(fillNew(response.newHouses));
+                    console.log(response.newHouses);
+                    $("#myorder").append(fillNew(response.newHouses,response.preOrders));
+                    // 删除操作
+                    $(".delete").on("click", function () {
+                        console.log($(this).attr('id').substring(9));
+                    }); 
+                    // 修改操作
+                    // $(".modify").on("click", function () {
+                    //     // console.log($(this).attr('id').substring(9));
+                    //     // $('.ttt').attr('id','myModal');
+                    //     // var id = $(this).attr('id').substring(9);
+                    //     // var rent_phone = $();
+                    //     // var c ;
+                    //     // $("#prePhone").bind("input oninput",function(event){
+                    //     //     // console.log($("#prePhone").val())
+                    //     //     rent_phone = $("#prePhone").val();
+                    //     //     console.log(rent_phone)
+                    //     //     c = rent_phone;
+                    //     // }(c));
+                    //     // console.log(c)
+                    //     var rent_phone = $(this).children("#prePhone").val();
+                    //     var order_time =  $("#preTime").val();
+                    //     var reqData = {
+                    //         "id":id,
+                    //         "rent_phone":rent_phone,
+                    //         "order_time" :order_time,
+                    //     }
+                        
+                    //     $(".preorder").bind("click",function(){
+                    //         console.log(reqData)
+                    //     });
+                    //     // $.ajax({
+                    //     //     type: "post",
+                    //     //     url: "http://localhost:8080/preorderUpdate",
+                    //     //     data: {
+                    //     //         id:id
+                    //     //     },
+                    //     //     dataType: "json",
+                    //     //     success: function (response) {
+                    //     //         console.log(response);
+                    //     //         alert("修改成功");
+                    //     //         window.location.reload();
+                    //     //     },
+                    //     //     error:function (response) { 
+                    //     //         console.log(response);
+                    //     //         alert("修改失败");
+                    //     //         window.location.reload();
+                    //     //     }
+                    //     // });
+                    // }); 
+
+                    if($("#newTime").text() == "已过期"){
+                        $("#newDelete").removeClass("hide");
+                    }
                 }
                 if(response.greenHouseTests.length !=0){
-                    $("#myorder").append(fillGreen(response.greenHouseTests));
+                    $("#myorder").append(fillGreen(response.greenHouseTests,response.preOrders));
+                    if($("#greenTime").text() == "已过期"){
+                        $(".greenDelete").removeClass("hide");
+                    }
+                    $(".greenDelete").on("click", function () {
+                        // console.log($(this).attr('id').substring(11))
+                        var id = $(this).attr('id').substring(11)
+                        $.ajax({
+                            type: "post",
+                            url: "http://localhost:8080/preorderDelete",
+                            data: {
+                                id:id
+                            },
+                            dataType: "json",
+                            success: function (response) {
+                                console.log(response);
+                                alert("删除成功");
+                                window.location.reload();
+                            },
+                            error:function (response) { 
+                                console.log(response);
+                                alert("删除失败");
+                                window.location.reload();
+                            }
+                        });
+                    }); 
                 }
                 if(response.rentHouses.length!=0){
-                    $("#myorder").append(fillRent(response.rentHouses));
+                    $("#myorder").append(fillRent(response.rentHouses,response.preOrders));
+                    // console.log($("#rentTime").text())
+                    if($("#rentTime").text() == "已过期"){
+                        $(".rentDelete").removeClass("hide");
+                    }
+                    $(".rentDelete").on("click", function () {
+                        // console.log($(this).attr('id').substring(10));
+                        // 删除操作
+                        var id = $(this).attr('id').substring(10)
+                        $.ajax({
+                            type: "post",
+                            url: "http://localhost:8080/preorderDelete",
+                            data: {
+                                id:id
+                            },
+                            dataType: "json",
+                            success: function (response) {
+                                console.log(response);
+                                alert("删除成功");
+                                window.location.reload();
+                            },
+                            error:function (response) { 
+                                console.log(response);
+                                alert("删除失败");
+                                window.location.reload();
+                            }
+                        });
+                    }); 
                 }
             },
             error:function(response){
@@ -312,8 +428,18 @@ require(['jquery', 'bootstrap','bootstrapvalidator','login'], function () {
             return true;
         }
     }
-    function fillNew(response){
+    function fillNew(response,preOrders){
         console.log(response);
+        console.log(preOrders);
+        var preoderID = new Array()
+        for(var i = 0;i<preOrders.length;i++){
+            for(var j=0;j<response.length;j++){
+                if(preOrders[i].newhouse_id == response[j].id){
+                    preoderID.push(preOrders[i].id)
+                }
+            }
+        }
+        console.log(preoderID)
         var detil = "";
         var housetype = new Array();
         for (var i = 0; i < response.length; i++) {
@@ -351,10 +477,6 @@ require(['jquery', 'bootstrap','bootstrapvalidator','login'], function () {
                 var bat = "#C0C5CF";
                 var textba = "#9395a5"
             }
-        //     console.log(now)
-        //     console.log(response[i].order_time);
-        
-        //    console.log(timedown(now,response[i].order_time));
             detil +=
                 '<div class="result-item">\n' +
                 '<div class="result-img">\n' +
@@ -363,35 +485,61 @@ require(['jquery', 'bootstrap','bootstrapvalidator','login'], function () {
                 '</a>\n' +
                 '</div>\n' +
                 '<div class="result-detil">\n' +
-                '<div class="detil-title">\n' +
+                '<div id="box" class="detil-title">\n' +
                 '<span class="name">\n' +
                 '<a href="newHouseDetil.html?id=' + response[i].id + '">' + response[i].name + '</a>\n' +
                 '</span>\n' +
                 '<span class="block-type" style="background: ' + ba + ';">' + response[i].status + '</span>\n' +
                 '<span class="block-type" style="background: ' + typeBg + ';">' + response[i].type + '</span>\n' +
+                '<span id="newDelete'+preoderID[i]+'" class="block-type hide delete" style="background:#FE615A;">删除</span>\n'+
                 '<span class="logo" style="background:#DAAc24">新房</sapn>\n'+
                 '</div>\n' +
                 '<div class="detil-content" style=" margin-bottom: 48px;">\n' +
                 '<a><i class="iconfont iconditu"></i>' + response[i].address + '</a>\n' +
-                // '<a><i class="iconfont iconfangzi1"></i>户型 ' + housetype[i] + ' </a>\n' +
+                // '<span id="newModify'+preoderID[i]+'" class="block-type  modify" style="background:#B199FF;" data-toggle="modal" data-target="#myModal">修改</span>\n'+
                 '</div>\n' +
                 '<div class="detil-surround">\n' +
                 '<span class="surround-type" style="background: ' + ba + '; color:#fff">' + response[i].status + '</span>\n' +
                 '<span class="surround-type">随时看房</span>\n' +
-                '<span class="surround-type" style="background:'+bat+';color:#fff;margin-left:150px">'+time+'</span>\n' +
-                '<sapn style="color:'+textba+'">'+response[i].order_time+'</span>\n'+
-                // '<i class="iconfont iconxiugai"></i>\n'+
-
+                '<span id="newTime" class="surround-type" style="background:'+bat+';color:#fff;margin-left:20px">'+time+'</span>\n' +
+                '<sapn style=";color:'+textba+'" >时间&nbsp'+response[i].order_time+'</span>\n'+
+                '<sapn style="margin-left:10px;color:'+textba+'">手机号码&nbsp'+response[i].rent_phone+'</span>\n'+
                 '</div>\n' +
                 '<div class="detil-price">\n' +
                 '<p>' + response[i].price + '<span>元/平</span></p>\n' +
                 '</div>\n' +
                 '</div>\n' +
+                '<div class="modal ttt fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">\n'+
+            '<div class="modal-dialog">\n'+
+                '<div class="modal-content">\n'+
+                    '<div>\n'+
+                        '<p>请输入预约信息</p>\n'+
+                        '<span class="preSpan">预约时间</span>\n'+
+                        '<input type="date" id="preTime" class="form-control">\n'+
+                        '<span class="preSpan1">手机号码</span>\n'+
+                        '<input type="text" id="prePhone" class="form-control" >\n'+
+                        '<button class="btn preorder">确定</button>\n'+
+                    '</div>\n'+
+                '</div>\n'+
+            '</div>\n'+
+        '</div>\n'+
                 '<hr>\n'
         }
         return detil;
     }
-    function fillGreen(response){
+    function fillGreen(response,preOrders){
+        console.log(response);
+        console.log(preOrders);
+        var preoderID = new Array();
+        for(var i = 0;i<preOrders.length;i++){
+            for(var j=0;j<response.length;j++){
+                if(preOrders[i].greenhouse_id == response[j].id){
+                    preoderID.push(preOrders[i].id)
+                }
+            }
+        }
+        console.log(preoderID)
+        var detil = "";
         for(var i=0;i<response.length;i++){
             var now = getFormatDate();
             console.log(now);
@@ -408,7 +556,7 @@ require(['jquery', 'bootstrap','bootstrapvalidator','login'], function () {
                 var bat = "#C0C5CF"
                 var textba = "#9395a5"
             }
-            var detil = "";
+            
             detil +=
             '<div class="result-item">\n'+
                 '<div class="result-img">\n'+
@@ -421,6 +569,7 @@ require(['jquery', 'bootstrap','bootstrapvalidator','login'], function () {
                         '<span class="name">\n'+
                             '<a href="greenHouseDetil.html?id=' + response[i].id + '">'+response[i].name+'|'+response[i].area_type+'|'+response[i].position+'</a>\n'+
                         '</span>\n'+
+                        '<span id="greenDelete'+preoderID+'" class="block-type hide greenDelete delete" style="background:#FE615A;">删除</span>\n'+
                         '<span class="logo">二手房</sapn>\n'+
                     '</div>\n'+
                     '<div class="detil-content">\n'+
@@ -431,14 +580,11 @@ require(['jquery', 'bootstrap','bootstrapvalidator','login'], function () {
                     '<div class="detil-surround">\n'+
                         '<span class="block-type" style="background: #FB9252;">'+response[i].build_use+'</span>\n'+
                         '<span class="surround-type">随时看房</span>\n'+
-                        // '<span class="surround-type" style="background:#59A5EB; color:#fff;margin-left:150px">已预约</span>\n' +
-                        // '<span class="block-type" style="background: '+ba+'; margin-left:100px;">'+exam+'</span>\n'+
-                        '<span class="surround-type" style="background:'+bat+';color:#fff;margin-left:150px">'+time+'</span>\n' +
-                        '<sapn style="color:'+textba+'">'+response[i].order_time+'</span>\n'+
-
+                        '<span id="greenTime" class="surround-type" style="background:'+bat+';color:#fff;margin-left:12px">'+time+'</span>\n' +
+                        '<sapn style="color:'+textba+'">时间&nbsp'+response[i].order_time+'</span>\n'+
+                        '<sapn style="margin-left:10px;color:'+textba+'">手机号码&nbsp'+response[i].rent_phone+'</span>\n'+
                     '</div>\n'+
                     '<div class="detil-price">\n' +
-
                         '<p>'+response[i].price+'<span>万</span></p>\n' +
                     '</div>\n' +
                 '</div>\n' +
@@ -447,7 +593,15 @@ require(['jquery', 'bootstrap','bootstrapvalidator','login'], function () {
         }
         return detil;
     }
-    function fillRent(response){
+    function fillRent(response,preOrders){
+        var preoderID = new Array();
+        for(var i = 0;i<preOrders.length;i++){
+            for(var j=0;j<response.length;j++){
+                if(preOrders[i].renthouse_id == response[j].id){
+                    preoderID.push(preOrders[i].id)
+                }
+            }
+        }
         var result = ""
         for (var i = 0; i < response.length; i++) {
             if(response[i].heating == 1){
@@ -467,6 +621,8 @@ require(['jquery', 'bootstrap','bootstrapvalidator','login'], function () {
                 time = "已过期"
                 var bat = "#C0C5CF"
                 var textba = "#9395a5"
+                // $("#test1").addClass("show")
+                // $("#test1").removeClass("hide");
             }
             result +=
                 '<div class="result-item">\n' +
@@ -479,6 +635,7 @@ require(['jquery', 'bootstrap','bootstrapvalidator','login'], function () {
                 '<div class="detil-house">\n' +
                 '<span>' + response[i].name + '</span>\n' +
                 '<span>' + response[i].area_type + '</span>\n' +
+                '<span id="rentDelete'+preoderID+'" class="block-type hide rentDelete delete" style="background:#FE615A;">删除</span>\n'+
                 '<span class="logo" style="background:#B199FF">租房</sapn>\n'+
                 '</div>\n' +
                 '<div class="detil-address">\n' +
@@ -492,8 +649,9 @@ require(['jquery', 'bootstrap','bootstrapvalidator','login'], function () {
                 '<div class="ddetil-type">\n' +
                 '<button class="btn" disabled>' + response[i].heating + '</button>\n' +
                 '<button class="btn" disabled>随时看房</button>\n' +
-                '<span class="surround-type" style="background:'+bat+';color:#fff;margin-left:158px">'+time+'</span>\n' +
-                '<sapn style="color:'+textba+'">'+response[i].order_time+'</span>\n'+
+                '<span id="rentTime" class="surround-type" style="background:'+bat+';color:#fff;margin-left:12px">'+time+'</span>\n' +
+                '<sapn style="color:'+textba+'">时间&nbsp'+response[i].order_time+'</span>\n'+
+                '<sapn style="margin-left:10px;color:'+textba+'">手机号码&nbsp'+response[i].rent_phone+'</span>\n'+
                 '</div>\n' +
                 '<div class="detil-price">\n' +
                 '<p>'+response[i].price+'<span>元/月</span></p>\n' +
@@ -509,10 +667,8 @@ require(['jquery', 'bootstrap','bootstrapvalidator','login'], function () {
         var nowDate = new Date();   
         var year = nowDate.getFullYear();  
         var month = nowDate.getMonth() + 1 < 10 ? "0" + (nowDate.getMonth() + 1) : nowDate.getMonth() + 1;  
-        var date = nowDate.getDate() < 10 ? "0" + nowDate.getDate() : nowDate.getDate();  
-        // var hour = nowDate.getHours()< 10 ? "0" + nowDate.getHours() : nowDate.getHours();  
-        // var minute = nowDate.getMinutes()< 10 ? "0" + nowDate.getMinutes() : nowDate.getMinutes();  
-        // var second = nowDate.getSeconds()< 10 ? "0" + nowDate.getSeconds() : nowDate.getSeconds();  
+        var date = nowDate.getDate() < 10 ? "0" + nowDate.getDate() : nowDate.getDate(); 
         return year + "-" + month + "-" + date;  
-    }  
+    } 
+    
 });

@@ -30,6 +30,7 @@
                     <li><a href="rootHouse.html">租房</a></li>
                     <li><a href="greenHouse.html">二手房</a></li>
                     <li><a href="newHouse.html">新房</a></li>
+                    <li><a href="addUser.html">登记信息</a></li>
                     <li class="active"><a href="release.html">发布房源</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" id="list">
@@ -98,7 +99,7 @@
             <section>
                 <div class="col-lg-8 col-lg-offset-2">
 
-                    <form id="defaultForm" method="post" class="form-horizontal">
+                    <form id="defaultForm" method="post" class="form-horizontal" enctype="multipart/form-data">
                         <div class="mainone">
                             <span class="title">房源基本信息</span>
 
@@ -255,7 +256,7 @@
                             <div class="form-group">
                                 <label class="col-lg-3 control-label"><i class="iconfont"></i>规划户数</label>
                                 <div class="col-lg-4 ">
-                                    <input type="text" class="form-control" name="buildnum" placeholder="规划户数" />
+                                    <input type="text"  class="form-control" name="buildnum" placeholder="规划户数" />
                                 </div>
                             </div>
 
@@ -263,6 +264,17 @@
                                 <label class="col-lg-3 control-label"><i class="iconfont iconbitian2-5"></i>挂牌时间</label>
                                 <div class="col-lg-4 ">
                                     <input type="date" class="form-control" name="contime" placeholder="挂牌时间" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mainthree">
+                            <span class="title">房东基本信息</span>
+                        
+                           
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><i class="iconfont iconbitian2-5"></i>房东手机号码</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" name="userPhone" placeholder="请输入房东手机号码" />
                                 </div>
                             </div>
                         </div>

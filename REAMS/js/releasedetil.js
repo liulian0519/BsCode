@@ -1,6 +1,8 @@
+
 /**
  * created by liulian on 2019/04/20
  */
+
 
 require(['jquery', 'bootstrap', 'bootstrapvalidator', 'zh', 'login', 'popt', 'cityjson', 'cityset'], function () {
 
@@ -23,30 +25,30 @@ require(['jquery', 'bootstrap', 'bootstrapvalidator', 'zh', 'login', 'popt', 'ci
         }else{
             alert("请先登录");
             window.open("index.html","_self");
-         
+
         }
-        $(".logout").bind("click", function(){
+        $(".logout").bind("click", function () {
             alert("退出成功");
-            setCookie('phone', "",  -1);
+            setCookie('phone', "", -1);
             window.location.reload();
         });
-        $('.btn-order').click(function(){
+        $('.btn-order').click(function () {
             var phone = getUrlParam('phone');
             var url = "order.html?phone=" + phone;
-            $(".jump").attr("href",url);
+            $(".jump").attr("href", url);
         })
 
-        function getFormatDate(){  
-            var nowDate = new Date();   
-            var year = nowDate.getFullYear();  
-            var month = nowDate.getMonth() + 1 < 10 ? "0" + (nowDate.getMonth() + 1) : nowDate.getMonth() + 1;  
-            var date = nowDate.getDate() < 10 ? "0" + nowDate.getDate() : nowDate.getDate();  
+        function getFormatDate() {
+            var nowDate = new Date();
+            var year = nowDate.getFullYear();
+            var month = nowDate.getMonth() + 1 < 10 ? "0" + (nowDate.getMonth() + 1) : nowDate.getMonth() + 1;
+            var date = nowDate.getDate() < 10 ? "0" + nowDate.getDate() : nowDate.getDate();
             // var hour = nowDate.getHours()< 10 ? "0" + nowDate.getHours() : nowDate.getHours();  
             // var minute = nowDate.getMinutes()< 10 ? "0" + nowDate.getMinutes() : nowDate.getMinutes();  
             // var second = nowDate.getSeconds()< 10 ? "0" + nowDate.getSeconds() : nowDate.getSeconds();  
-            return year + "-" + month + "-" + date;  
-        }  
-        
+            return year + "-" + month + "-" + date;
+        }
+
         function getUrlParam(name) {
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
             var r = window.location.search.substr(1).match(reg);
@@ -175,7 +177,7 @@ require(['jquery', 'bootstrap', 'bootstrapvalidator', 'zh', 'login', 'popt', 'ci
                         }
                     }
                 },
-                laderhouse:{
+                laderhouse: {
                     validators: {
                         notEmpty: {
                             message: '梯户比例不能为空'
@@ -193,6 +195,13 @@ require(['jquery', 'bootstrap', 'bootstrapvalidator', 'zh', 'login', 'popt', 'ci
                     validators: {
                         notEmpty: {
                             message: '挂牌时间不能为空'
+                        }
+                    }
+                },
+                userPhone: {
+                    validators: {
+                        notEmpty: {
+                            message: '房东手机号码不能为空'
                         }
                     }
                 },
@@ -268,155 +277,211 @@ require(['jquery', 'bootstrap', 'bootstrapvalidator', 'zh', 'login', 'popt', 'ci
             // $('.mymodal').attr('id','myModal');
 
             // 这个到时候一定要打开
-            // if (bootstrapValidator.isValid()) {
+            if (bootstrapValidator.isValid()) {
                 // 所有数据
                 var greenhouse_id ="";
                 var renthous_id = "";
                 var newHouse_id = ""
                 var housey = "";
                 var housex = "";
+                var rent_phone = "";
                 var exam = 0;
                 var community_id ="";
                 var type = "";
-                var name = $('input[name="name"]').val();
-                var address = $('input[name="address"]').val();
 
-                var area_type="";
-                var houseone = $('input[name="houseone"]').val();
-                var housetwo = $('input[name="housetwo"]').val();
-                var housethree = $('input[name="housethree"]').val();
-                area_type += houseone + "室" + housetwo + "厅" +housethree + "卫";
-                
-                var area = $('input[name="area"]').val();
-                var price = $('input[name="price"]').val();
-                var avg_price = $('input[name="avgprice"]').val();
-                var build_use = $('select[name="type"] option:selected').val();
-                var build_type =$('select[name="build-type"] option:selected').val();
-                var heating = $('select[name="heating"] option:selected').val();
-                var mortgage = $('select[name="mortgage"] option:selected').val();
-                var elevator = $('select[name="elevator"] option:selected').val();
-                var ladderhouse = $('input[name="laderhouse"]').val();
-                var position = $('select[name="position"] option:selected').val();
-                var decorate = $('select[name="decorate"] option:selected').val();
-                
-                var floor = "";
-                var one = $('input[name="floor"]').val();
-                var two = $('input[name="all"]').val();
-                floor += '第'+one+'层共' + two+'层';
+            var name = $('input[name="name"]').val();
+            var address = $('input[name="address"]').val();
 
-                var right_age = $('input[name="rightage"]').val();
-                var build_time = $('input[name="datetime"]').val();
-                var buid_num = $('input[name="buildnum"]').val();
-                var con_time = $('input[name="contime"]').val();
+            var area_type = "";
+            var houseone = $('input[name="houseone"]').val();
+            var housetwo = $('input[name="housetwo"]').val();
+            var housethree = $('input[name="housethree"]').val();
+            area_type += houseone + "室" + housetwo + "厅" + housethree + "卫";
 
-                var introduce = $('textarea[name="introduce"]').val();
-                var surrouding = $('textarea[name="surrounding"]').val();
-                var keysale =  $('textarea[name="keysale"]').val();
-                var traffic = $('textarea[name="traffic"]').val();
+            var area = $('input[name="area"]').val();
+            var price = $('input[name="price"]').val();
+            var avg_price = $('input[name="avgprice"]').val();
+            var build_use = $('select[name="type"] option:selected').val();
+            var build_type = $('select[name="build-type"] option:selected').val();
 
-                var file = document.getElementById("pic").files[0];
-                var data = new FormData;
-                data.append("uploadedImageFile",file);
-                data.append("name",name);
-                data.append("address",address);
-                data.append("avg_price",avg_price);
-                data.append("build_time",build_time);
-                data.append("build_type",build_type);
-                data.append("build_num",buid_num);
-                data.append("introduce",introduce);
-                data.append("surrouding",surrouding);
-                data.append("traffic",traffic);
-                data.append("key_sale",keysale);
-                data.append("area",area);
-                data.append("area_type",area_type);
-                data.append("price",price);
-                data.append("floor",floor);
-                data.append("position",position);
-                data.append("decoration",decorate);
-                data.append("ladder_house",ladderhouse);
-                data.append("heating",heating);
-                data.append("elevator",elevator);
-                data.append("build_use",build_use);
-                data.append("right_age",right_age);
-                data.append("con_time",con_time);
-                data.append("mortgage",mortgage);
-                data.append("greenHouse_id",greenhouse_id);
-                data.append("newHouse_id",newHouse_id);
-                data.append("rentHouse_id",renthous_id);
-                data.append("housey",housey);
-                data.append("housex",housex);
-                data.append("exam",exam);
-                data.append("community_id",community_id);
-                data.append("type",type);
-                // data.append("")
-                console.log(data);
-                
-                // 将数据传给后台
-                // $("#defaultForm").submit();
-                // $.ajax({
-                //     xhrFields:{
-                //         withCredentials:true
-                //     },
-                //     type: "post",
-                //     url: "http://localhost:8080/greenHouseAdd",
-                //     contentType:"multipart/form-data",
-                //     contentType: false,
-		        //     processData: false,
-                //     data: data,
-                //     dataType: "json",
-                //     success: function (response) {
-                //         console.log(response);
+            var heating = $('select[name="heating"] option:selected').val();
+            var mortgage = $('select[name="mortgage"] option:selected').val();
+            var elevator = $('select[name="elevator"] option:selected').val();
+            var ladderhouse = $('input[name="laderhouse"]').val();
+            var position = $('select[name="position"] option:selected').val();
+            var decorate = $('select[name="decorate"] option:selected').val();
 
-                //         var name = response.name;
-                //         var sale_time = getFormatDate();
-                //         var area_type = response.area_type;
-                //         var area = response.area;
-                //         var sale_type = "二手房";
-                //         var price = response.price;
-                //         var phone = getUrlParam('phone')
-                //         var greenhouse_id = response.id;
-                //         var newhouse_id = 0;
-                //         var renthouse_id = 0;
-                //         var reqData = {
-                //             "name":name,
-                //             "sale_time":sale_time,
-                //             "area_type":area_type,
-                //             "area":area,
-                //             "sale_type":sale_type,
-                //             "price":price,
-                //             "phone":phone,
-                //             "greenhouse_id":greenhouse_id,
-                //             "newhouse_id":newhouse_id,
-                //             "renthouse_id":renthouse_id
-                //         }
-                //         // $.ajax({
-                //         //     type: "post",
-                //         //     url: "http://localhost:8080/saleorderAdd",
-                //         //     data: reqData,
-                //         //     dataType: "json",
-                //         //     success: function (response) {
-                //         //         console.log(response);
-                //         //     },
-                //         //     error:function(response){
-                //         //         console.log(response);
-                //         //     }
-                //         // });
-                //     },
-                //     error:function(xhr,errorText,errorType){
-                //         console.log(xhr);
-                //     }
-                // });
-                $('.mymodal').attr('id', 'myModal');
+            var floor = "";
+            var one = $('input[name="floor"]').val();
+            var two = $('input[name="all"]').val();
+            floor += '第' + one + '层共' + two + '层';
 
-            // }
+            var right_age = $('input[name="rightage"]').val();
+
+            var build_time = $('input[name="datetime"]').val();
+            var build_num = $('input[name="buildnum"]').val();
+            var con_time = $('input[name="contime"]').val();
+
+            // // 房东信息
+            
+            var userPhone = $('input[name="userPhone"]').val();
+
+            var introdunce = $('textarea[name="introduce"]').val();
+            var surrouding = $('textarea[name="surrounding"]').val();
+            var key_sale = $('textarea[name="keysale"]').val();
+            var traffic = $('textarea[name="traffic"]').val();
+
+            var file = document.getElementById("pic").files[0];
+            var data = new FormData;
+            data.append("uploadedImageFile", file);
+           
+        
+            data.append("name", name);
+            data.append("address", address);
+            data.append("avg_price", avg_price);
+            data.append("build_time", build_time);
+            data.append("build_type", build_type);
+            data.append("build_num", build_num);
+            data.append("introduce", introdunce);
+            data.append("surrouding", surrouding);
+            data.append("traffic", traffic);
+            data.append("key_sale", key_sale);
+            data.append("area", area);
+            data.append("area_type", area_type);
+            data.append("price", price);
+            data.append("floor", floor);
+            data.append("position", position);
+            data.append("decoration", decorate);
+            data.append("ladder_house", ladderhouse);
+            data.append("heating", heating);
+            data.append("elevator", elevator);
+            data.append("build_use", build_use);
+            data.append("right_age", right_age);
+            data.append("con_time", con_time);
+          
+            data.append("user_phone", userPhone);
+            data.append("rent_phone", rent_phone);
+
+            data.append("mortgage", mortgage);
+            data.append("greenHouse_id", greenhouse_id);
+            data.append("newhouse_id", newHouse_id);
+            data.append("rentHouse_id", renthous_id);
+            data.append("housey", housey);
+            data.append("housex", housex);
+            data.append("exam", exam);
+            data.append("community_id", community_id);
+            data.append("type", type);
+         
+            // console.log(data);
 
 
-            // else return;
+            // 将数据传给后台
+            // $("#defaultForm").submit();
+
+            // 向greenhouse中插入一条新数据
+            $.ajax({
+                xhrFields: {
+                    withCredentials: true
+                },
+                type:"post",
+                url: "http://localhost:8080/greenHouseAdd",
+                contentType: "multipart/form-data",
+                contentType: false,
+                processData: false,
+                data: data,
+                dataType: "json",
+                success: function (response) {
+                    console.log(response);
+                    // 插入成功则返回greenhouse相关信息
+
+                    var name = response.name;
+                    var sale_time = getFormatDate();
+                    var area_type = response.area_type;
+                    var area = response.area;
+                    var sale_type = "二手房";
+                    var price = response.price;
+                    var phone = getUrlParam('phone')
+                    var greenhouse_id = response.id;
+                    var newhouse_id = 0;
+                    var renthouse_id = 0;
+                    var user_phone = userPhone;
+                    var reqData = {
+                        "name": name,
+                        "sale_time": sale_time,
+                        "area_type": area_type,
+                        "area": area,
+                        "sale_type": sale_type,
+                        "price": price,
+                        "phone": phone,
+                        "greenhouse_id": greenhouse_id,
+                        "newhouse_id": newhouse_id,
+                        "renthouse_id": renthouse_id,
+                        "user_phone":user_phone
+                    }
+                    console.log(reqData);
+                    // 在我的发布中增加一条信息
+                    $.ajax({
+                        type: "post",
+                        url: "http://localhost:8080/saleorderAdd",
+                        data: reqData,
+                        dataType: "json",
+                        success: function (response) {
+                            console.log(response);
+                        },
+                        error: function (response) {
+                            console.log(response);
+                        }
+                    });
+
+                    // 更新房东表中的数据
+                    // 根据手机号查找信息，再更新
+                    $.ajax({
+                        type: "post",
+                        url: "http://localhost:8080/userByPhone",
+                        data: {
+                            "phone": userPhone
+                        },
+                        dataType: "json",
+                        success: function (response) {
+                            console.log(response);
+                            console.log(response[0].id);
+                            var id = response[0].id;
+                            console.log(greenhouse_id);
+                            $.ajax({
+                                type: "post",
+                                url: "http://localhost:8080/userUpdate",
+                                data: {
+                                    id:id,
+                                    phone:userPhone,
+                                    greenHouse_id:greenhouse_id
+                                },
+                                dataType: "json",
+                                success: function (response) {
+                                    console.log(response);
+                                },
+                                error: function (response) {
+                                    console.log(response);
+                                }
+                            });
+                        },
+                        error: function (response) {
+                            console.log(response);
+                        }
+                    });
+
+                },
+                error: function (xhr, errorText, errorType) {
+                    console.log(xhr);
+                }
+            });
+            $('.mymodal').attr('id', 'myModal');
+
+            }
+
+
+            else return;
 
         });
-        //     $('#defaultForm').bootstrapValidator('validate');
-        //     $('.has-error .price span').css("top","15%");
-        // });
 
         $('#resetBtn').click(function () {
             $('#defaultForm').data('bootstrapValidator').resetForm(true);
